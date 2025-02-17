@@ -2,121 +2,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice</title>
+    <title>Invoice - Private Bus Hire</title>
     <style>
         body {
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #1a273a, #243b55);
+            font-family: Arial, sans-serif;
+            background-color: #0f2b4d;
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
         }
         .invoice-container {
-            max-width: 800px;
+            max-width: 700px;
             margin: auto;
-            background: #1f2935;
+            background-color: #183d5f;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         }
-        h1, h2 {
-            color: #00aaff;
-            text-shadow: 0 0 10px #00aaff, 0 0 20px rgba(0, 170, 255, 0.5);
+        h1 {
+            text-align: center;
+            color: #4db8ff;
+        }
+        h2 {
+            text-align: center;
+            color: #ffcc00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e4b6e;
+        }
+        th, td {
+            border: 1px solid #ffffff;
+            padding: 10px;
             text-align: left;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h3 {
-            color: #ffc107;
-            text-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
-        }
-        p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
-        .highlight {
-            color: #4caf50;
-            font-weight: bold;
-            text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-        }
-        .unpaid {
-            color: #ff5555;
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 85, 85, 0.8);
-        }
-        .divider {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="invoice-container">
-        <h1>INVOICE</h1>
-        <p><strong>Invoice Date:</strong> 18 FEB 2025</p>
-        <p><strong>Invoice Number:</strong> INV-20250218-JJ</p><div class="section">
-        <h3>Customer Details:</h3>
-        <p><strong>Name:</strong> JJ</p>
-        <p><strong>Contact:</strong> +6591859156</p>
+        <h1>Invoice - Private Bus Hire</h1>
+        <h2>KL Transportation Services</h2>
+        <p>UEN: 53444733C | <a href="https://kltransportationservices.com" style="color:#4db8ff;">Website</a></p>
+        <p>Contact: 80581196 | Email: kltransporthitch@gmail.com</p>
+        <table>
+            <tr><th>Description</th><th>Details</th></tr>
+            <tr><td>Date</td><td>15-Feb</td></tr>
+            <tr><td>Customer Name</td><td>Adlina</td></tr>
+            <tr><td>Child’s Name</td><td>Sofia Aaliyah</td></tr>
+            <tr><td>Emergency Contact</td><td>87231230 / 81284033</td></tr>
+            <tr><td>Email Address</td><td>nuradlina16@gmail.com</td></tr>
+            <tr><td>Start Date</td><td>3rd March 2025</td></tr>
+            <tr><td>Home Address</td><td>233A Sumang Lane, 821233</td></tr>
+            <tr><td>School Address</td><td>98 Punggol Walk, 828722</td></tr>
+            <tr><td>Pick-up Time (Home)</td><td>[TBC]</td></tr>
+            <tr><td>Pick-up Time (School)</td><td>[TBC]</td></tr>
+            <tr><td>Service Type</td><td>Private School Bus (Round Trip)</td></tr>
+            <tr><td>Monthly Fee</td><td>$119</td></tr>
+            <tr><td>Payment Due Date</td><td>3rd of Each Month</td></tr>
+            <tr><td>Cancellation Policy</td><td>No contract; can cancel anytime if unsatisfied.</td></tr>
+        </table>
+        <p style="text-align: center; margin-top: 20px;">Thank you for choosing KL Transportation Services.</p>
     </div>
-    
-    <div class="section">
-        <h3>Reservation Details:</h3>
-        <div class="divider"></div>
-        <p><strong>Trip 1:</strong></p>
-        <p><strong>Date:</strong> 18 FEB 2025 | <strong>Time:</strong> 07:00 AM</p>
-        <p><strong>Pick Up:</strong> 134 Potong Pasir Avenue 3 (S)350134</p>
-        <p><strong>Drop Off:</strong> 16, Jalan Istimewa 7, Taman Perindustrian Cemerlang, 81800 Ulu Tiram, Johor Darul Ta'zim</p>
-        <p><strong>Number of Passengers:</strong> 1 Pax</p>
-        <p class="highlight">Amount Due: $15</p>
-        <div class="divider"></div>
-        <p><strong>Trip 2:</strong></p>
-        <p><strong>Date:</strong> 18 FEB 2025 | <strong>Time:</strong> 18:00 PM</p>
-        <p><strong>Pick Up:</strong> 16, Jalan Istimewa 7, Taman Perindustrian Cemerlang, 81800 Ulu Tiram, Johor Darul Ta'zim</p>
-        <p><strong>Drop Off:</strong> 134 Potong Pasir Avenue 3 (S)350134</p>
-        <p><strong>Number of Passengers:</strong> 1 Pax</p>
-        <p class="highlight">Amount Due: $15</p>
-    </div>
-
-    <div class="section">
-        <h3>Total Amount:</h3>
-        <p class="highlight">Total Amount: $30</p>
-        <p><strong>Amount Paid:</strong> $0</p>
-        <p class="unpaid">Balance Due: $30</p>
-    </div>
-
-    <div class="section">
-        <h3>Driver Details:</h3>
-        <p><strong>Name:</strong> Nick</p>
-        <p><strong>Contact:</strong> +6592266377</p>
-        <p><strong>Car Model:</strong> Toyota Prius</p>
-        <p><strong>Car Plate:</strong> SNC4409P</p>
-        <p><strong>Car Colour:</strong> Silver</p>
-        <p><strong>Car Type:</strong> 5 Seater Sedan</p>
-    </div>
-
-    <div class="section">
-        <h3>Pricing Details:</h3>
-        <p>1 Passenger (Johor): $15</p>
-        <p>4 Passengers (Johor): $50</p>
-        <p>SG - Kuala Lumpur: $150</p>
-        <p>SG - Genting: $200</p>
-        <p>SG - Melaka: $100</p>
-    </div>
-
-    <div class="section">
-        <h3>Payment Instructions:</h3>
-        <p>1. After filling in the reservation form and confirming your booking, proceed to make payment for the booking.</p>
-        <p>2. Screenshot the successful transaction.</p>
-        <p>3. Send the screenshot to us.</p>
-        <p>4. A booking confirmation will be issued upon receipt of the payment.</p>
-    </div>
-
-    <p class="unpaid">Payment Status: UNPAID</p>
-    <p>Please make payment at your earliest convenience to confirm your booking.</p>
-    <p>Thank you for choosing our service!</p>
-</div>
-
 </body>
 </html>

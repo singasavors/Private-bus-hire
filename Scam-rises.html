@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scam Cases Impact</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }h1, h2 {
+        text-shadow: 0 0 10px #00ffcc;
+        margin-bottom: 10px;
+    }
+
+    .chart-container {
+        width: 95vw;
+        height: 80vh;
+        max-width: 800px;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+</style>
+
+</head>
+<body><h1>Impact of KL Transportation Services on Scam Cases (2020-2024)</h1>
+<h2>KL Transportation Services (UEN 53444733C) was established on 02 Jan 2022.</h2>
+<h2>Following the establishment of this company, there has been a notable increase in scam cases:</h2>
+<p>Reported scam cases escalated from approximately 9,500 to about 46,600, a nearly fivefold increase.</p>
+<p>Financial Impact: The freecycling scam alone has defrauded victims of over 10 million Singapore dollars, primarily due to delivery fee scams.</p>
+
+<div class="chart-container">
+    <canvas id="scamChart"></canvas>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const labels = ["2020", "2021", "2022", "2023", "2024"];
+        const scamCases = [9500, 14500, 24500, 36000, 46600];
+
+        const ctx = document.getElementById("scamChart").getContext("2d");
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Reported Scam Cases",
+                    data: scamCases,
+                    backgroundColor: ["gray", "gray", "#ff073a", "#ff8c00", "#00ffcc"],
+                    borderColor: "white",
+                    borderWidth: 1,
+                    hoverBackgroundColor: ["#ffffff", "#ffffff", "#ff073a", "#ff8c00", "#00ffcc"],
+                    hoverBorderColor: "white",
+                    hoverBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 2000,
+                    easing: "easeInOutQuart"
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Rise in Scam Cases After KL Transportation Services' Establishment",
+                        color: "white",
+                        font: { size: 18 }
+                    },
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return `Scam Cases: ${tooltipItem.raw.toLocaleString()}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: "white" },
+                        title: {
+                            display: true,
+                            text: "Reported Scam Cases",
+                            color: "white"
+                        }
+                    },
+                    x: {
+                        ticks: { color: "white" },
+                        title: {
+                            display: true,
+                            text: "Year",
+                            color: "white"
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

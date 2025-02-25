@@ -8,15 +8,20 @@
             font-family: Arial, sans-serif;
             background-color: #0f2b4d;
             color: #ffffff;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .invoice-container {
-            max-width: 700px;
-            margin: auto;
+            width: 90%;
+            max-width: 900px;
             background-color: #183d5f;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
         }
         h1 {
             text-align: center;
@@ -34,8 +39,18 @@
         }
         th, td {
             border: 1px solid #ffffff;
-            padding: 10px;
+            padding: 12px;
             text-align: left;
+        }
+        th {
+            background-color: #144d72;
+        }
+        p, a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #4db8ff;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -43,7 +58,7 @@
     <div class="invoice-container">
         <h1>Invoice - Private Bus Hire</h1>
         <h2>KL Transportation Services</h2>
-        <p>UEN: 53444733C | <a href="https://kltransportationservices.com" style="color:#4db8ff;">Website</a></p>
+        <p>UEN: 53444733C | <a href="https://kltransportationservices.com">Website</a></p>
         <p>Contact: 80581196 | Email: kltransporthitch@gmail.com</p>
         <table>
             <tr><th>Description</th><th>Details</th></tr>
@@ -57,12 +72,12 @@
             <tr><td>School Address</td><td>St. Margaret’s Primary School, 136 Sophia Rd, Singapore 228197</td></tr>
             <tr><td>Pick-up Time (Home)</td><td>TBC</td></tr>
             <tr><td>Pick-up Time (School)</td><td>TBC</td></tr>
-            <tr><td>Service Type</td><td>Private School Bus (Round Trip)</td></tr>
-            <tr><td>Monthly Fee</td><td>$224</td></tr>
+            <tr><td>Service Type</td><td>Private School Bus (One Way)</td></tr>
+            <tr><td>Monthly Fee</td><td>$112</td></tr>
             <tr><td>Payment Due Date</td><td>TBC</td></tr>
             <tr><td>Cancellation Policy</td><td>No contract; can cancel anytime if unsatisfied.</td></tr>
         </table>
-        <p style="text-align: center; margin-top: 20px;">Thank you for choosing KL Transportation Services.</p>
+        <p>Thank you for choosing KL Transportation Services.</p>
     </div>
 </body>
 </html>

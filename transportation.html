@@ -35,11 +35,10 @@
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             color: #4db8ff;
-            text-shadow: none; /* Removes unwanted shadow */
-            background: none; /* Ensures no background effect */
+            text-shadow: 0 0 15px #4db8ff;
         }
 
         h2 {
@@ -54,7 +53,7 @@
         }
 
         .container {
-            width: 100%;  /* Full width */
+            width: 100%;
             max-width: 100%;
             margin: 0;
             padding: 20px;
@@ -75,10 +74,11 @@
             width: 280px;
             box-shadow: 0 0 10px #4db8ff;
             text-align: center;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             color: #ffcc00;
             font-size: 18px;
             font-weight: 600;
+            cursor: pointer;
         }
 
         .pricing-item:hover {
@@ -149,25 +149,22 @@
                 max-width: 350px;
             }
         }
-</style>
+    </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Travel Between Singapore and Malaysia</h1>
-        <p>With Comfort & Style</p>
+        <h2>With Comfort & Style</h2>
 
-        <h2>Service Fees (One Way)</h2>
         <div class="pricing-table">
-            <div class="pricing-item">Johor Bahru – $15/Pax</div>
-            <div class="pricing-item">Malacca – $20/Pax</div>
-            <div class="pricing-item">Kuala Lumpur – $25/Pax</div>
-            <div class="pricing-item">Genting Highland - $30/Pax</div>
-            <div class="pricing-item">Puala Pinang - $35/Pax</div>
+            <div class="pricing-item" onclick="redirectTo('https://singasavors.github.io/Private-bus-hire/transport1.html')">Online Booking</div>
+            <div class="pricing-item" onclick="redirectTo('https://s.tfrbot.com/xeDK1d')">Private School Bus Hire</div>
+            <div class="pricing-item" onclick="redirectTo('https://s.tfrbot.com/zDtJUI')">Monthly Travel Pass</div>
+            <div class="pricing-item" onclick="redirectTo('https://www.kltransportationservices.com/')">Moving and Disposal Services</div>
+            <div class="pricing-item" onclick="redirectTo('https://wa.me/+6580581196')">Contact Us</div>
         </div>
 
-
-        <h2>Our Fleet</h2>
         <div class="slider">
             <img src="https://s.tfrbot.com/h/efC4ko">
             <img src="https://s.tfrbot.com/h/aK2wj8">

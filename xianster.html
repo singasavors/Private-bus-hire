@@ -1,35 +1,40 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice - Private Bus Hire</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #0f2b4d;
             color: #ffffff;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
         .invoice-container {
-            width: 90%;
-            max-width: 900px;
+            width: 100vw; /* Full screen width */
             background-color: #183d5f;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 0; /* Remove rounded corners */
+            box-shadow: none;
         }
         h1 {
             text-align: center;
             color: #4db8ff;
+            font-size: 22px;
         }
         h2 {
             text-align: center;
             color: #ffcc00;
+            font-size: 18px;
         }
         table {
             width: 100%;
@@ -39,8 +44,10 @@
         }
         th, td {
             border: 1px solid #ffffff;
-            padding: 12px;
+            padding: 10px;
             text-align: left;
+            word-wrap: break-word;
+            font-size: 14px;
         }
         th {
             background-color: #144d72;
@@ -51,6 +58,22 @@
             margin-top: 10px;
             color: #4db8ff;
             text-decoration: none;
+            font-size: 14px;
+        }
+        .payment-details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #144d72;
+            text-align: center;
+        }
+        .payment-details p {
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .highlight {
+            color: #ff6666; /* Light red */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -62,21 +85,29 @@
         <p>Contact: 80581196 | Email: kltransporthitch@gmail.com</p>
         <table>
             <tr><th>Description</th><th>Details</th></tr>
-            <tr><td>Date</td><td>17-Feb</td></tr>
+            <tr><td>Date</td><td>24 March 2025</td></tr>
             <tr><td>Customer Name</td><td>Xianster</td></tr>
             <tr><td>Child’s Name</td><td>Please provide details</td></tr>
-            <tr><td>Emergency Contact</td><td>Please provide details</td></tr>
+            <tr><td>Emergency Contact</td><td>90288759</td></tr>
             <tr><td>Email Address</td><td>Please provide details</td></tr>
-            <tr><td>Start Date</td><td>TBC</td></tr>
+            <tr><td>Start Date</td><td>24 March 2025</td></tr>
             <tr><td>Home Address</td><td>23 Lor 3 Toa Payoh, Singapore 319582</td></tr>
             <tr><td>School Address</td><td>St. Margaret’s Primary School, 136 Sophia Rd, Singapore 228197</td></tr>
             <tr><td>Pick-up Time (Home)</td><td>TBC</td></tr>
             <tr><td>Pick-up Time (School)</td><td>TBC</td></tr>
             <tr><td>Service Type</td><td>Private School Bus (One Way)</td></tr>
-            <tr><td>Monthly Fee</td><td>$112</td></tr>
-            <tr><td>Payment Due Date</td><td>TBC</td></tr>
+            <tr><td>Weekly Fee</td><td>$28</td></tr>
             <tr><td>Cancellation Policy</td><td>No contract; can cancel anytime if unsatisfied.</td></tr>
         </table>
+        
+        <div class="payment-details">
+            <p>Please make a payment via Local Bank Transfer to:</p>
+            <p>Payee Name: <span class="highlight">KL Transport</span></p>
+            <p>Bank Name: <span class="highlight">GPay Network(s) Pte Ltd</span></p>
+            <p>Account Number: <span class="highlight">6580110239</span></p>
+            <p>Once completed with payment, please screenshot and send it to us, and we will send you the final invoice.</p>
+        </div>
+
         <p>Thank you for choosing KL Transportation Services.</p>
     </div>
 </body>

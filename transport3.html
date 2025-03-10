@@ -1,206 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice - KL Transportation Services</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f2b4d;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .invoice-container {
-            width: 100%;
-            max-width: 700px;
-            background-color: #183d5f;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #4db8ff;
-            text-align: center;
-        }
-        h1 {
-            color: #00ff7f;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        h2 {
-            color: #ffea00;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #1e4b6e;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        th, td {
-            border: 1px solid #ffffff;
-            padding: 10px;
-            text-align: left;
-            font-size: 14px;
-        }
-        th {
-            background-color: #144d72;
-        }
-        p, a {
-            text-align: center;
-            display: block;
-            margin-top: 10px;
-            color: #00ff7f;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .payment-details {
-            margin-top: 20px;
-            padding: 15px;
-            background: linear-gradient(145deg, #28313b, #3a4d5f);
-            text-align: left;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
-        }
-        .payment-details h3 {
-            text-align: center;
-            color: #ffea00;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .payment-details p {
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 14px;
-            margin-left: 10px;
-        }
-        .highlight {
-            color: #00ff7f;
-            font-weight: bold;
-        }
-        .align-left {
-            text-align: left;
-        }
-        .btn-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .btn {
-            padding: 10px 15px;
-            font-weight: bold;
-            border-radius: 8px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn-back {
-            background-color: #777;
-            color: #fff;
-        }
-        .btn-back:hover {
-            background-color: #555;
-            transform: scale(1.05);
-        }
-        .btn-contact {
-            background-color: #ffea00;
-            color: #000;
-        }
-        .btn-contact:hover {
-            background-color: #ffd700;
-            transform: scale(1.05);
-        }
-        .paynow-img {
-            display: block;
-            width: 100%;
-            max-width: 280px; /* Adjusted for proper scaling */
-            margin: 10px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        @media (max-width: 768px) {
-            .paynow-img {
-                max-width: 230px; /* Smaller size for mobile */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="invoice-container">
-        <h1>Invoice - Private Bus Hire</h1>
-        <h2>KL Transportation Services</h2>
-        <p>UEN: 53444733C | <a href="https://kltransportationservices.com">Website</a></p>
-        <p>Contact: 80581196 | Email: kltransporthitch@gmail.com</p>
-        
-        <table>
-            <tr><th>Description</th><th>Details</th></tr>
-            <tr><td>Date</td><td id="selectedDate">Loading...</td></tr>
-            <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
-            <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
-            <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
-            <tr><td>Time</td><td id="pickupTime">Loading...</td></tr>
-            <tr><td>Pick-Up Location</td><td id="pickupLocation">Loading...</td></tr>
-            <tr><td>Drop-Off Location</td><td id="dropoffLocation">Loading...</td></tr>
-            <tr><td>Passengers</td><td id="numPassengers">Loading...</td></tr>
-            <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
-        </table>
-
-        <!-- Payment Instructions -->
-        <div class="payment-details">
-            <h3>Payment Instructions</h3>
-            <p>Scan or Screenshot the PayNow QR Code</p>
-            <!-- QR Code Image -->
-            <img src="https://s.tfrbot.com/h/faIeip" alt="PayNow QR Code" class="paynow-img">
-
-            <p><strong>PayNow VPA:</strong> <span class="highlight">+6580170839#GRAB</span></p>
-            
-            <p class="align-left">1️⃣ Copy & paste the VPA above.</p>
-            <p class="align-left">2️⃣ Enter the total amount for Payment.</p>
-            <p class="align-left">3️⃣ Once completed, take a screenshot and notify us.</p>
-
-            <h3>Bank Transfer</h3>
-            <p class="align-left"><strong>Payee Name:</strong> <span class="highlight">KL Transport</span></p>
-            <p class="align-left"><strong>Bank:</strong> <span class="highlight">GPay Network(s) Pte Ltd</span></p>
-            <p class="align-left"><strong>Account Number:</strong> <span class="highlight">6580170839</span></p>
-        </div>
-
-        <div class="btn-container">
-            <a class="btn btn-back" onclick="goBack()">Go Back</a>
-            <a class="btn btn-contact" href="https://wa.me/+6580581196">Contact Us</a>
-        </div>
-    </div>
-
-    <script>
-        // Load data dynamically from query parameters
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "Not provided";
-            document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "Not provided";
-            document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "Not provided";
-            document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "Not provided";
-            document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "Not provided";
-            document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "Not provided";
-            document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
-            document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "0";
-            document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_Amount") || 0).toFixed(2)}`;
-        });
-
-        function goBack() {
-            history.back();
-        }
-    </script>
-
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - KL Transportation Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f2b4d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .invoice-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: #183d5f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #4db8ff;
+            text-align: center;
+        }
+        h1 {
+            color: #00ff7f;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #ffea00;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e4b6e;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ffffff;
+            padding: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #144d72;
+        }
+        p, a {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #00ff7f;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .payment-details {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(145deg, #28313b, #3a4d5f);
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+        }
+        .payment-details h3 {
+            text-align: center;
+            color: #ffea00;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .payment-details p {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .highlight {
+            color: #00ff7f;
+            font-weight: bold;
+        }
+        .align-left {
+            text-align: left;
+        }
+        .btn-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-back {
+            background-color: #777;
+            color: #fff;
+        }
+        .btn-back:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+        .btn-contact {
+            background-color: #ffea00;
+            color: #000;
+        }
+        .btn-contact:hover {
+            background-color: #ffd700;
+            transform: scale(1.05);
+        }
+        .paynow-img {
+            display: block;
+            width: 100%;
+            max-width: 280px; /* Adjusted for proper scaling */
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        @media (max-width: 768px) {
+            .paynow-img {
+                max-width: 230px; /* Smaller size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-container">
+        <h1>Invoice - Private Bus Hire</h1>
+        <h2>KL Transportation Services</h2>
+        <p>UEN: 53444733C | <a href="https://kltransportationservices.com">Website</a></p>
+        <p>Contact: 80174905 | Email: kltransporthitch@gmail.com</p>
+        
+        <table>
+            <tr><th>Description</th><th>Details</th></tr>
+            <tr><td>Date</td><td id="selectedDate">Loading...</td></tr>
+            <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
+            <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
+            <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
+            <tr><td>Time</td><td id="pickupTime">Loading...</td></tr>
+            <tr><td>Pick-Up Location</td><td id="pickupLocation">Loading...</td></tr>
+            <tr><td>Drop-Off Location</td><td id="dropoffLocation">Loading...</td></tr>
+            <tr><td>Passengers</td><td id="numPassengers">Loading...</td></tr>
+            <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
+        </table>
+
+        <!-- Payment Instructions -->
+        <div class="payment-details">
+            <h3>Payment Instructions</h3>
+            <p>Scan or Screenshot the PayNow QR Code</p>
+            <!-- QR Code Image -->
+            <img src="https://s.tfrbot.com/h/faIeip" alt="PayNow QR Code" class="paynow-img">
+
+            <p><strong>PayNow VPA:</strong> <span class="highlight">+6580170839#GRAB</span></p>
+            
+            <p class="align-left">1️⃣ Copy & paste the VPA above.</p>
+            <p class="align-left">2️⃣ Enter the total amount for Payment.</p>
+            <p class="align-left">3️⃣ Once completed, take a screenshot and notify us.</p>
+
+            <h3>Bank Transfer</h3>
+            <p class="align-left"><strong>Payee Name:</strong> <span class="highlight">KL Transport</span></p>
+            <p class="align-left"><strong>Bank:</strong> <span class="highlight">GPay Network(s) Pte Ltd</span></p>
+            <p class="align-left"><strong>Account Number:</strong> <span class="highlight">6580170839</span></p>
+        </div>
+
+        <div class="btn-container">
+            <a class="btn btn-back" onclick="goBack()">Go Back</a>
+            <a class="btn btn-contact" href="https://wa.me/+6580174905">Contact Us</a>
+        </div>
+    </div>
+
+    <script>
+        // Load data dynamically from query parameters
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "Not provided";
+            document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "Not provided";
+            document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "Not provided";
+            document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "Not provided";
+            document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "Not provided";
+            document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "Not provided";
+            document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
+            document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "0";
+            document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_Amount") || 0).toFixed(2)}`;
+        });
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+
+</body>
 </html>

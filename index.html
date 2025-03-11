@@ -1,300 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private School Bus Hire</title>
-    <style>
-    /* General Styles */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #0a1a2a;
-        color: white;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Navigation Bar */
-    .navbar {
-        background-color: #003366;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        padding: 10px 0;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-    .navbar a {
-        color: white;
-        padding: 12px 20px;
-        text-decoration: none;
-        font-size: 16px;
-        transition: background 0.3s, box-shadow 0.3s;
-    }
-    .navbar a:hover {
-        background: #005f8a;
-        box-shadow: 0 0 10px #00c3ff;
-    }
-
-    /* Container */
-    .container {
-        width: 95%;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-    }
-
-    /* Headings */
-    h1, h2 {
-        text-shadow: 0 0 10px #00c3ff;
-    }
-
-    /* Pricing Table */
-    .pricing-table {
-        width: 100%;
-        max-width: 600px;
-        margin: auto;
-        border-collapse: collapse;
-        background: #0e223a;
-        text-align: center;
-    }
-    .pricing-table th, .pricing-table td {
-        border: 1px solid #fff;
-        padding: 10px;
-    }
-    .pricing-table th {
-        background: #008cba;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .pricing-table tr:hover {
-        background: #005f8a;
-    }
-
-    /* Fleet Image Styles */
-    .fleet {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin: 20px 0;
-    }
-    .fleet img {
-        width: 100%;
-        max-width: 350px; /* Adjusted for better responsiveness */
-        height: auto;
-        border-radius: 10px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .fleet img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px #00c3ff;
-    }
-
-    /* CTA Buttons */
-    .cta-container {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin: 20px 0;
-        flex-wrap: wrap;
-    }
-    .cta-button {
-        background: #f39c12;
-        color: white;
-        padding: 12px 18px;
-        text-decoration: none;
-        font-size: 16px;
-        display: inline-block;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: box-shadow 0.3s, transform 0.2s;
-    }
-    .cta-button:hover {
-        box-shadow: 0 0 15px #f39c12;
-        transform: scale(1.05);
-    }
-    .cta-enroll {
-        background: #28a745;
-    }
-    .cta-enroll:hover {
-        box-shadow: 0 0 15px #28a745;
-    }
-
-    /* FAQ Section */
-    .faq {
-        text-align: left;
-        background: #1b2d40;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-    .faq-item {
-        margin: 10px 0;
-        border-bottom: 1px solid #00c3ff;
-        padding-bottom: 10px;
-    }
-    .faq-item h3 {
-        cursor: pointer;
-        padding: 12px;
-        margin: 0;
-        background: #0e223a;
-        border-radius: 5px;
-        transition: background 0.3s;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .faq-item h3:hover {
-        background: #008cba;
-    }
-    .faq-item h3::after {
-        content: "+";
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .faq-item.active h3::after {
-        content: "−";
-    }
-    .faq-item p {
-        display: none;
-        margin: 8px 0 0;
-        padding: 10px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 5px;
-    }
-    .faq-item.active p {
-        display: block;
-        animation: fadeIn 0.3s ease-in-out;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-5px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-        .fleet img {
-            max-width: 90%; /* Adjust width for smaller screens */
-        }
-        .navbar {
-            flex-direction: column;
-        }
-        .navbar a {
-            padding: 10px;
-        }
-        .pricing-table th, .pricing-table td {
-            padding: 8px;
-        }
-        .cta-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-</style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-<div class="navbar">
-    <a href="https://s.tfrbot.com/tAWgdr">Home</a>
-    <a href="https://s.tfrbot.com/zDtJUI">Monthly Travel Pass</a>
-    <a href="https://s.tfrbot.com/BzH0Fr">Our Reviews</a>
-    <a href="https://s.tfrbot.com/23ovEX">Cross Border Service</a>
-    <a href="https://s.tfrbot.com/rRHxid">Enroll for School Bus</a>
-</div>
-
-<div class="container">
-    <h1>Private School Bus Hire</h1>
-    <h2>Safe and reliable transportation for school children - Available Monday to Friday</h2>
-    
-    <h2>Pricing</h2>
-    <table class="pricing-table">
-        <tr>
-            <th>Distance</th>
-            <th>Monthly Price</th>
-        </tr>
-        <tr><td>Up to 2 km</td><td>$119</td></tr>
-        <tr><td>2 – 4 km</td><td>$147</td></tr>
-        <tr><td>4 – 6 km</td><td>$189</td></tr>
-        <tr><td>6 – 8 km</td><td>$224</td></tr>
-        <tr><td>8 – 10 km</td><td>$259</td></tr>
-        <tr><td>10 – 12 km</td><td>$294</td></tr>
-        <tr><td>12 – 14 km</td><td>$322</td></tr>
-        <tr><td>14 – 16 km</td><td>$336</td></tr>
-    </table>
-    
-    <h2>Our Fleet</h2>
-    <div class="fleet">
-        <img src="https://s.tfrbot.com/h/qHFrSY" alt="Mini Van">
-        <img src="https://s.tfrbot.com/h/bELwDm" alt="Bus">
-    </div>
-    
-    <div class="cta-container">
-        <a href="https://wa.me/+6580174905" class="cta-button">Contact Us</a>
-        <a href="https://singasavors.github.io/Private-bus-hire/submit-details.html" class="cta-button cta-enroll">Enroll Online</a>
-    </div>
-    
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">What does the price include?</h3>
-            <p>The price includes 5 days a week of transport service, covering both pickup from home to school and return from school to home.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">Do you offer one-way transportation?</h3>
-            <p>Yes, we do! If you only need transportation to school (morning) or from school (afternoon), you can opt for a one-way service. The cost will be half of the full price.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">Are you a licensed company?</h3>
-            <p>Yes, we are a licensed transportation provider. Our UEN is 53444733C, and we operate under KL Transportation Services, with positive customer reviews on Carousell.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">Will my child be the only one on the bus?</h3>
-            <p>No, there will be other children on the bus as we provide shared transportation services. However, we ensure a safe, comfortable, and well-supervised environment for all passengers.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">Do you offer private bus hire for a single child?</h3>
-            <p>Yes, we can arrange private transport for your child only, but the pricing will be different from the shared service. Please contact us for a customized quote.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">How are the pickup and drop-off times determined?</h3>
-            <p>Pickup and drop-off times are based on your child's school schedule and our route planning to ensure efficient and timely service. We will provide an estimated time upon booking.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">What happens if my child is sick or absent?</h3>
-            <p>If your child will not be taking the bus on a particular day, please inform us in advance. However, there will be no refunds or price adjustments for missed rides.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">Can I request a change in pickup or drop-off location?</h3>
-            <p>Yes, minor changes in pickup or drop-off locations can be accommodated within the same area. However, additional charges may apply for significant route changes.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">What safety measures do you have in place?</h3>
-            <p>We ensure all children are seated securely throughout the journey. Our buses are regularly maintained, and our drivers are experienced and background-checked to ensure the safety of all passengers.</p>
-        </div>
-        <div class="faq-item">
-            <h3 onclick="toggleFAQ(this)">How do I make a booking?</h3>
-            <p>You can book our services by contacting us directly at +65 8058 1196 via phone or message. We will provide you with the necessary details and confirm your child’s slot.</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    function toggleFAQ(element) {
-        let parent = element.parentElement;
-        let answer = parent.querySelector("p");
-
-        if (parent.classList.contains("active")) {
-            parent.classList.remove("active");
-            answer.style.display = "none";
-        } else {
-            document.querySelectorAll(".faq-item").forEach(item => {
-                item.classList.remove("active");
-                item.querySelector("p").style.display = "none";
-            });
-            parent.classList.add("active");
-            answer.style.display = "block";
-        }
-    }
-</script>
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Private School Bus Hire</title>    <style>    /* General Styles */    body {        font-family: Arial, sans-serif;        background-color: #0a1a2a;        color: white;        text-align: center;        margin: 0;        padding: 0;    }    /* Navigation Bar */    .navbar {        background-color: #003366;        overflow: hidden;        display: flex;        justify-content: center;        padding: 10px 0;        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);    }    .navbar a {        color: white;        padding: 12px 20px;        text-decoration: none;        font-size: 16px;        transition: background 0.3s, box-shadow 0.3s;    }    .navbar a:hover {        background: #005f8a;        box-shadow: 0 0 10px #00c3ff;    }    /* Container */    .container {        width: 95%;        max-width: 1200px;        margin: auto;        padding: 20px;    }    /* Headings */    h1, h2 {        text-shadow: 0 0 10px #00c3ff;    }    /* Pricing Table */    .pricing-table {        width: 100%;        max-width: 600px;        margin: auto;        border-collapse: collapse;        background: #0e223a;        text-align: center;    }    .pricing-table th, .pricing-table td {        border: 1px solid #fff;        padding: 10px;    }    .pricing-table th {        background: #008cba;        font-size: 18px;        font-weight: bold;    }    .pricing-table tr:hover {        background: #005f8a;    }    /* Fleet Image Styles */    .fleet {        display: flex;        flex-wrap: wrap;        justify-content: center;        gap: 10px;        margin: 20px 0;    }    .fleet img {        width: 100%;        max-width: 350px; /* Adjusted for better responsiveness */        height: auto;        border-radius: 10px;        transition: transform 0.3s, box-shadow 0.3s;    }    .fleet img:hover {        transform: scale(1.05);        box-shadow: 0 0 15px #00c3ff;    }    /* CTA Buttons */    .cta-container {        display: flex;        justify-content: center;        gap: 15px;        margin: 20px 0;        flex-wrap: wrap;    }    .cta-button {        background: #f39c12;        color: white;        padding: 12px 18px;        text-decoration: none;        font-size: 16px;        display: inline-block;        border-radius: 5px;        font-weight: bold;        transition: box-shadow 0.3s, transform 0.2s;    }    .cta-button:hover {        box-shadow: 0 0 15px #f39c12;        transform: scale(1.05);    }    .cta-enroll {        background: #28a745;    }    .cta-enroll:hover {        box-shadow: 0 0 15px #28a745;    }    /* FAQ Section */    .faq {        text-align: left;        background: #1b2d40;        padding: 15px;        border-radius: 10px;        margin-top: 20px;    }    .faq-item {        margin: 10px 0;        border-bottom: 1px solid #00c3ff;        padding-bottom: 10px;    }    .faq-item h3 {        cursor: pointer;        padding: 12px;        margin: 0;        background: #0e223a;        border-radius: 5px;        transition: background 0.3s;        display: flex;        justify-content: space-between;        align-items: center;    }    .faq-item h3:hover {        background: #008cba;    }    .faq-item h3::after {        content: "+";        font-size: 18px;        font-weight: bold;    }    .faq-item.active h3::after {        content: "−";    }    .faq-item p {        display: none;        margin: 8px 0 0;        padding: 10px;        background: rgba(255,255,255,0.1);        border-radius: 5px;    }    .faq-item.active p {        display: block;        animation: fadeIn 0.3s ease-in-out;    }    @keyframes fadeIn {        from { opacity: 0; transform: translateY(-5px); }        to { opacity: 1; transform: translateY(0); }    }    /* Responsive Design */    @media screen and (max-width: 768px) {        .fleet img {            max-width: 90%; /* Adjust width for smaller screens */        }        .navbar {            flex-direction: column;        }        .navbar a {            padding: 10px;        }        .pricing-table th, .pricing-table td {            padding: 8px;        }        .cta-container {            flex-direction: column;            align-items: center;        }    }</style></head><body>    <!-- Navigation Bar --><div class="navbar">    <a href="https://s.tfrbot.com/tAWgdr">Home</a>    <a href="https://s.tfrbot.com/zDtJUI">Monthly Travel Pass</a>    <a href="https://s.tfrbot.com/BzH0Fr">Our Reviews</a>    <a href="https://s.tfrbot.com/23ovEX">Cross Border Service</a>    <a href="https://s.tfrbot.com/rRHxid">Enroll for School Bus</a></div><div class="container">    <h1>Private School Bus Hire</h1>    <h2>Safe and reliable transportation for school children - Available Monday to Friday</h2>        <h2>Pricing</h2>    <table class="pricing-table">        <tr>            <th>Distance</th>            <th>Monthly Price</th>        </tr>        <tr><td>Up to 2 km</td><td>$119</td></tr>        <tr><td>2 – 4 km</td><td>$147</td></tr>        <tr><td>4 – 6 km</td><td>$189</td></tr>        <tr><td>6 – 8 km</td><td>$224</td></tr>        <tr><td>8 – 10 km</td><td>$259</td></tr>        <tr><td>10 – 12 km</td><td>$294</td></tr>        <tr><td>12 – 14 km</td><td>$322</td></tr>        <tr><td>14 – 16 km</td><td>$336</td></tr>    </table>        <h2>Our Fleet</h2>    <div class="fleet">        <img src="https://s.tfrbot.com/h/tfKU1l" alt="Mini Van">        <img src="https://s.tfrbot.com/h/DEakFw" alt="Bus">    </div>        <div class="cta-container">        <a href="https://wa.me/+6580174905" class="cta-button">Contact Us</a>        <a href="https://singasavors.github.io/Private-bus-hire/submit-details.html" class="cta-button cta-enroll">Enroll Online</a>    </div>        <h2>Frequently Asked Questions</h2>    <div class="faq">        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">What does the price include?</h3>            <p>The price includes 5 days a week of transport service, covering both pickup from home to school and return from school to home.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">Do you offer one-way transportation?</h3>            <p>Yes, we do! If you only need transportation to school (morning) or from school (afternoon), you can opt for a one-way service. The cost will be half of the full price.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">Are you a licensed company?</h3>            <p>Yes, we are a licensed transportation provider. Our UEN is 53444733C, and we operate under KL Transportation Services, with positive customer reviews on Carousell.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">Will my child be the only one on the bus?</h3>            <p>No, there will be other children on the bus as we provide shared transportation services. However, we ensure a safe, comfortable, and well-supervised environment for all passengers.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">Do you offer private bus hire for a single child?</h3>            <p>Yes, we can arrange private transport for your child only, but the pricing will be different from the shared service. Please contact us for a customized quote.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">How are the pickup and drop-off times determined?</h3>            <p>Pickup and drop-off times are based on your child's school schedule and our route planning to ensure efficient and timely service. We will provide an estimated time upon booking.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">What happens if my child is sick or absent?</h3>            <p>If your child will not be taking the bus on a particular day, please inform us in advance. However, there will be no refunds or price adjustments for missed rides.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">Can I request a change in pickup or drop-off location?</h3>            <p>Yes, minor changes in pickup or drop-off locations can be accommodated within the same area. However, additional charges may apply for significant route changes.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">What safety measures do you have in place?</h3>            <p>We ensure all children are seated securely throughout the journey. Our buses are regularly maintained, and our drivers are experienced and background-checked to ensure the safety of all passengers.</p>        </div>        <div class="faq-item">            <h3 onclick="toggleFAQ(this)">How do I make a booking?</h3>            <p>You can book our services by contacting us directly at +65 8058 1196 via phone or message. We will provide you with the necessary details and confirm your child’s slot.</p>        </div>    </div></div><script>    function toggleFAQ(element) {        let parent = element.parentElement;        let answer = parent.querySelector("p");        if (parent.classList.contains("active")) {            parent.classList.remove("active");            answer.style.display = "none";        } else {            document.querySelectorAll(".faq-item").forEach(item => {                item.classList.remove("active");                item.querySelector("p").style.display = "none";            });            parent.classList.add("active");            answer.style.display = "block";        }    }</script>

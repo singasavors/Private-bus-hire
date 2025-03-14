@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - KL Transportation Services</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0f2b4d;
+        color: #ffffff;
+        min-height: 100vh;
+        width: 100vw;
+        display: block;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .invoice-container {
+        width: 100vw;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #183d5f, #1e4b6e);
+        padding: 20px;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+        color: #00ffea;
+        text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ffea00;
+        text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    }
+
+    th, td {
+        border: 1px solid #ffffff;
+        padding: 10px;
+        text-align: left;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    th {
+        background: linear-gradient(135deg, #144d72, #1a597f);
+        color: #fff;
+    }
+
+    /* Payment Section Styling */
+    .payment-details {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        background: linear-gradient(145deg, #28313b, #3a4d5f);
+        border-radius: 10px;
+        text-align: left; /* Aligns text to the left */
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    }
+
+    .payment-details h3 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ffea00;
+        text-shadow: 0 0 10px #ffea00;
+    }
+
+    .payment-details p {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    /* PayNow VPA Highlight */
+    .paynow-highlight {
+        color: #00ff7f; /* Green color */
+        font-weight: bold;
+        font-size: 18px;
+        display: block; /* Ensures it appears on a new line */
+        margin-top: 10px;
+    }
+
+    /* Step-by-step Payment Instructions */
+    .payment-step {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .payment-step span {
+        background-color: #555;
+        color: white;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    .paynow-img {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+    }
+
+    @media (max-width: 768px) {
+        .paynow-img {
+            max-width: 100%;
+        }
+
+        .invoice-container {
+            padding: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice - Monthly Travel Pass</h1>
+        <h2>KL Transportation Services</h2>
+        <p>UEN: 53444733C | <a href="https://kltransportationservices.com">Website</a></p>
+        <p>Contact: 80174905 | Email: kltransporthitch@gmail.com</p>
+        
+        <table>
+            <tr><th>Description</th><th>Details</th></tr>
+            <tr><td>Customer Name</td><td>Sue Ching</td></tr>
+            <tr><td>Emergency Number</td><td>+60167235998</td></tr>
+            <tr><td>Email Address</td><td>Keesueching@gmail.com</td></tr>
+            <tr><td>Child’s Name</td><td>Sim Ming Xuan</td></tr>
+            <tr><td>Child's Contact</td><td>+6589327720</td></tr>
+            <tr><td>Child’s Name</td><td>Sim Ming Yan</td></tr>
+            <tr><td>Child's Contact</td><td>+6580622533</td></tr>
+            <tr><td>Child’s Name</td><td>Sim He Zong</td></tr>
+            <tr><td>Child’s Name</td><td>Sim He Yuan</td></tr>
+            <tr><td>Start Date</td><td>1st May 2025</td></tr>
+            <tr><td>Home Address</td><td>14, Jalan Jingga 4, Taman Pelangi 80400, Johor Bahru</td></tr>
+            <tr><td>School Address 1</td><td>11 Yishun Street 61, Singapore 768547</td></tr>
+            <tr><td>School Address 2</td><td>11 Woodlands Street 83, Singapore 738489</td></tr>
+            <tr><td>School Address 3</td><td>5 Woodlands Street 81, Singapore 738525</td></tr>
+            <tr><td>School Address 4</td><td>10 Woodlands Drive 50, Singapore 738853</td></tr>
+            <tr><td>Pick-Up Time (Home)</td><td>6:00 AM</td></tr>
+            <tr><td>Pick-Up Time (School)</td><td>1:30 PM / 4:00 PM (Tuesday for Sim He Zong)</td></tr>
+            <tr><td>Total Monthly Fee</td><td class="highlight">$666SGD / 2000MYR</td></tr>
+        </table>
+
+        <div class="payment-details">
+            <h3>Payment Instructions</h3>
+            <p>Scan or Screenshot the PayNow QR Code</p>
+            <img src="https://s.tfrbot.com/h/faIeip" alt="PayNow QR Code" class="paynow-img">
+            <p><strong>PayNow VPA:</strong> <span class="highlight">+6580170839#GRAB</span></p>
+            <p>1️⃣ Copy & paste the VPA above.</p>
+            <p>2️⃣ Enter the total amount for Payment.</p>
+            <p>3️⃣ Once completed, take a screenshot and notify us.</p>
+            <h3>Bank Transfer</h3>
+            <p><strong>Payee Name:</strong> KL Transport</p>
+            <p><strong>Bank:</strong> GPay Network(s) Pte Ltd</p>
+            <p><strong>Account Number:</strong> 6580170839</p>
+        </div>
+    </div>
+</body>
+</html>

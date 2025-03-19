@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
 
-    <style>
-        /* General Reset */
+<style>
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -26,40 +26,49 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #05000f, #1b0033, #2c004d);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #0a1a2f, #122b48, #204d7a, #003366);
+    background-size: 300% 300%;
+    animation: gradientBackground 10s ease infinite;
     color: #ffffff;
     text-align: center;
     overflow-x: hidden;
 }
 
-/* Animated Glowing Navbar */
+/* Animated Gradient Background */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Dark Blue Animated Glowing Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #12002b, #20004d, #320075);
+    background: linear-gradient(135deg, #051d3b, #0a2f5b, #073c71);
     padding: 15px 25px;
     position: relative;
     z-index: 1000;
-    box-shadow: 0 5px 25px rgba(255, 0, 255, 0.3);
-    border-bottom: 3px solid #ffcc00;
+    box-shadow: 0 5px 25px rgba(0, 191, 255, 0.5);
+    border-bottom: 3px solid #007acc;
     animation: neonGlow 2s infinite alternate;
 }
 
 @keyframes neonGlow {
     0% {
-        box-shadow: 0 0 10px #ffcc00;
+        box-shadow: 0 0 10px #007acc;
     }
     100% {
-        box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff6600;
+        box-shadow: 0 0 25px #007acc, 0 0 40px #00bfff;
     }
 }
 
 /* Glowing Menu Button */
 .menu-btn {
     font-size: 2rem;
-    color: #ffcc00;
+    color: #00bfff;
     cursor: pointer;
     display: none;
     padding: 12px;
@@ -68,7 +77,7 @@ body {
 
 .menu-btn:hover {
     transform: scale(1.1);
-    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff6600;
+    text-shadow: 0 0 15px #00bfff, 0 0 30px #007acc;
 }
 
 /* Glowing Navigation Links */
@@ -84,40 +93,52 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #ffcc00;
+    color: #ffffff;
     font-size: 1.3rem;
     font-weight: 700;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #ffffff;
-    text-shadow: 0px 0px 20px #ffcc00, 0px 0px 35px #ff6600;
+    color: #33ccff;
+    text-shadow: 0px 0px 20px #33ccff, 0px 0px 35px #00bfff;
 }
 
-/* Neon Glow Images (NO Hover Effects) */
+/* Ensure Images are 1080x1080 */
 .slider img {
     width: 100%;
-    max-height: 280px;
+    max-width: 1080px;
+    height: 1080px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+    margin: auto;
+    display: block;
+}
+
+/* Mobile Optimization */
+@media (max-width: 1080px) {
+    .slider img {
+        width: 100%;
+        height: auto;
+        max-height: 1080px;
+    }
 }
 
 /* WhatsApp & Telegram Floating Buttons - High Visibility */
 .contact-links {
     position: fixed;
-    bottom: 90px; /* Increased spacing */
-    right: 25px;
+    bottom: 70px;
+    right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     z-index: 1100;
 }
 
 .contact-links a {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     background: radial-gradient(circle, #25d366, #128c7e);
     color: white;
     display: flex;
@@ -132,8 +153,8 @@ body {
 }
 
 .contact-links a:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.8);
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.8);
 }
 
 .contact-links a.telegram {
@@ -146,7 +167,7 @@ body {
         box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
     }
     100% {
-        box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.8);
+        box-shadow: 0 0 25px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 0.8);
     }
 }
 
@@ -163,9 +184,9 @@ body {
         top: 70px;
         left: 0;
         width: 100%;
-        background: linear-gradient(135deg, #12002b, #20004d, #320075);
+        background: linear-gradient(135deg, #051d3b, #0a2f5b, #073c71);
         padding: 20px 0;
-        box-shadow: 0 6px 15px rgba(255, 0, 255, 0.3);
+        box-shadow: 0 6px 15px rgba(0, 191, 255, 0.5);
         text-align: center;
         z-index: 1000;
         animation: neonGlow 2s infinite alternate;
@@ -186,12 +207,12 @@ body {
     }
 
     .contact-links a {
-        width: 60px;
-        height: 60px;
-        font-size: 26px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
     }
 }
-    </style>
+</style>
 </head>
 <body>
 

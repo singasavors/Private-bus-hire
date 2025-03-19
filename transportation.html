@@ -1,258 +1,501 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KL Transportation Services</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- jQuery & Slick Carousel -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0f2b4d;
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #4db8ff;
-            text-shadow: 0 0 15px #4db8ff;
-        }
-
-        h2 {
-            font-size: 22px;
-            color: #ffcc00;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .pricing-table {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .pricing-item {
-            background: #1e4b6e;
-            padding: 20px;
-            border-radius: 10px;
-            width: 280px;
-            box-shadow: 0 0 10px #4db8ff;
-            text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            color: #ffcc00;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .pricing-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px #ffcc00;
-        }
-
-        .slider {
-            width: 100%;
-            margin: 20px auto;
-        }
-
-        .slider img {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #4db8ff;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .slider img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #ffcc00;
-        }
-
-        iframe {
-            width: 100%;
-            border: 0;
-            box-shadow: 0 0 15px #ffcc00;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .contact-links {
-            margin-top: 30px;
-        }
-
-        .contact-links a {
-            display: inline-block;
-            color: #4db8ff;
-            font-size: 22px;
-            text-decoration: none;
-            margin: 10px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .contact-links a:hover {
-            text-shadow: 0 0 10px #ffcc00;
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 22px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            .pricing-table {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .pricing-item {
-                width: 100%;
-                max-width: 350px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>Travel Between Singapore and Malaysia</h1>
-        <h2>With Comfort & Style</h2>
-
-        <div class="pricing-table">
-            <div class="pricing-item" onclick="redirectTo('https://singasavors.github.io/Private-bus-hire/transport1.html')">Online Booking</div>
-            <div class="pricing-item" onclick="redirectTo('https://s.tfrbot.com/xeDK1d')">Private School Bus Hire</div>
-            <div class="pricing-item" onclick="redirectTo('https://s.tfrbot.com/zDtJUI')">Monthly Travel Pass</div>
-            <div class="pricing-item" onclick="redirectTo('https://www.kltransportationservices.com/')">Moving and Disposal Services</div>
-            <div class="pricing-item" onclick="redirectTo('https://s.tfrbot.com/BzH0Fr')">Our Reviews</div>
-        </div>
-        
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/efC4ko">
-            <img src="https://s.tfrbot.com/h/aK2wj8">
-            <img src="https://s.tfrbot.com/h/rHgaEF">
-            <img src="https://s.tfrbot.com/h/gkKPfQ">
-            <img src="https://s.tfrbot.com/h/xJH3e7">
-        </div>
-        
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/NcSFQ9">
-            <img src="https://s.tfrbot.com/h/M8alNg">
-            <img src="https://s.tfrbot.com/h/Sgx6Vk">
-            <img src="https://s.tfrbot.com/h/trLiOS">
-            <img src="https://s.tfrbot.com/h/na5ApU">
-        </div>
-
-       <h2>Accommodation at RNF Princess Cove Studio</h2>
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/a7dHMs">
-            <img src="https://s.tfrbot.com/h/v82yXN">
-            <img src="https://s.tfrbot.com/h/CJcPSa">
-            <img src="https://s.tfrbot.com/h/wZB1Vk">
-        </div>
-        <div class="pricing-table">
-            <div class="pricing-item">RNF Studio – $100/night</div>
-        </div>
-        
-        
-        <h2>Accommodation at RNF Princess Cove 5 Bedroom</h2>
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/ZzbVRo">
-            <img src="https://s.tfrbot.com/h/OdL9kx">
-            <img src="https://s.tfrbot.com/h/d6H3wn">
-            <img src="https://s.tfrbot.com/h/5CYIho">
-            <img src="https://s.tfrbot.com/h/0LrJYD">
-            <img src="https://s.tfrbot.com/h/VJCObr">
-        </div>
-        <div class="pricing-table">
-            <div class="pricing-item">RNF 5 Bedroom – $150/night</div>
-        </div>
-        
-
-        <h2>3 Story Semi Detached Bungalow</h2>
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/U5Ffs8">
-            <img src="https://s.tfrbot.com/h/lzrpOq">
-            <img src="https://s.tfrbot.com/h/ihKl5a">
-            <img src="https://s.tfrbot.com/h/fpbQvK">
-            <img src="https://s.tfrbot.com/h/YEpGgw">
-            <img src="https://s.tfrbot.com/h/jdISyb">
-            <img src="https://s.tfrbot.com/h/aJEMnL">
-        </div>
-        <div class="pricing-table">
-            <div class="pricing-item">Semi Buangalow – $300/night</div>
-        </div>
-
-        <h2>📍 Location: RNF Princess Cove (5 min from Border Checkpoint)</h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.150775455895!2d103.77044165019186!3d1.4627106996898421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12fc54db79d1%3A0x75dbca8134b8e69b!2sR%26F%20Mall!5e0!3m2!1sen!2s!4v1709200000000" 
-            width="100%" 
-            height="400" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-
-        <h2>Contact Us Now</h2>
-        <div class="contact-links">
-            <a href="https://wa.me/+6580174905"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://t.me/dmsgbeng"><i class="fab fa-telegram"></i> Telegram</a>
-        </div>
-    </div>
-
-    <script>
-        function redirectTo(url) {
-            window.location.href = url;
-        }
-
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                dots: true,
-                infinite: true,
-                speed: 800,
-                slidesToShow: 1,
-                adaptiveHeight: true
-            });
-        });
-    </script>
-
-</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KL Transportation Services</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jQuery & Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #05000f, #1b0033, #2c004d);
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Animated Glowing Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #12002b, #20004d, #320075);
+    padding: 15px 25px;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 5px 25px rgba(255, 0, 255, 0.3);
+    border-bottom: 3px solid #ffcc00;
+    animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 10px #ffcc00;
+    }
+    100% {
+        box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff6600;
+    }
+}
+
+/* Glowing Menu Button */
+.menu-btn {
+    font-size: 2rem;
+    color: #ffcc00;
+    cursor: pointer;
+    display: none;
+    padding: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff6600;
+}
+
+/* Glowing Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 20px #ffcc00, 0px 0px 35px #ff6600;
+}
+
+/* Neon Glow Images (NO Hover Effects) */
+.slider img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+/* WhatsApp & Telegram Floating Buttons - High Visibility */
+.contact-links {
+    position: fixed;
+    bottom: 90px; /* Increased spacing */
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1100;
+}
+
+.contact-links a {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #25d366, #128c7e);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.9);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: pulseGlow 1.5s infinite alternate;
+}
+
+.contact-links a:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 60px rgba(0, 255, 0, 0.8);
+}
+
+.contact-links a.telegram {
+    background: radial-gradient(circle, #0088cc, #005f99);
+    box-shadow: 0 0 20px rgba(0, 136, 204, 0.9);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.8);
+    }
+}
+
+/* Mobile Menu Enhancements */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #12002b, #20004d, #320075);
+        padding: 20px 0;
+        box-shadow: 0 6px 15px rgba(255, 0, 255, 0.3);
+        text-align: center;
+        z-index: 1000;
+        animation: neonGlow 2s infinite alternate;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    /* Adjust WhatsApp & Telegram buttons for small screens */
+    .contact-links {
+        bottom: 50px;
+        right: 15px;
+    }
+
+    .contact-links a {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>SINGASAVOR</h1>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="https://singasavors.github.io/Private-bus-hire/transport1.html">Online Booking</a></li>
+            <li><a href="https://s.tfrbot.com/xeDK1d">Private School Bus Hire</a></li>
+            <li><a href="https://s.tfrbot.com/zDtJUI">Monthly Travel Pass</a></li>
+            <li><a href="https://www.kltransportationservices.com/">Moving & Disposal</a></li>
+            <li><a href="https://s.tfrbot.com/BzH0Fr">Our Reviews</a></li>
+        </ul>
+    </nav>
+        
+
+<h2>Cross Border Services</h2>
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/efC4ko">
+
+
+            <img src="https://s.tfrbot.com/h/aK2wj8">
+
+
+            <img src="https://s.tfrbot.com/h/rHgaEF">
+
+
+            <img src="https://s.tfrbot.com/h/gkKPfQ">
+
+
+            <img src="https://s.tfrbot.com/h/xJH3e7">
+
+
+        </div>
+
+
+        
+<h2>Disposal and Moving Services</h2>
+
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/NcSFQ9">
+
+
+            <img src="https://s.tfrbot.com/h/M8alNg">
+
+
+            <img src="https://s.tfrbot.com/h/Sgx6Vk">
+
+
+            <img src="https://s.tfrbot.com/h/trLiOS">
+
+
+            <img src="https://s.tfrbot.com/h/na5ApU">
+
+
+        </div>
+        
+        <h2>Private School Bus Hire</h2>
+
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/ryoVm8">
+
+
+            <img src="https://s.tfrbot.com/h/Eyx5v0">
+
+
+            <img src="https://s.tfrbot.com/h/7LnhHb">
+
+
+            <img src="https://s.tfrbot.com/h/wN4fZd">
+
+
+            <img src="https://s.tfrbot.com/h/gSwkBa">
+
+
+        </div>
+        
+        <h2>Event Logistics Services</h2>
+        <div class="slider">
+            <img src="https://s.tfrbot.com/h/pWL1QD">
+            <img src="https://s.tfrbot.com/h/fGKLAO">
+            <img src="https://s.tfrbot.com/h/Fj9bBv">
+            <img src="https://s.tfrbot.com/h/z6OBTS">
+        </div>
+        
+         <h2>Funeral Hearses</h2>
+        <div class="slider">
+            <img src="https://s.tfrbot.com/h/BZU0tH">
+            <img src="https://s.tfrbot.com/h/Eyq3CR">
+            <img src="https://s.tfrbot.com/h/V4AIEU">
+            <img src="https://s.tfrbot.com/h/1kLXjE">
+        </div>
+
+
+
+
+
+       <h2>Accommodation at RNF Princess Cove Studio</h2>
+
+
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/a7dHMs">
+
+
+            <img src="https://s.tfrbot.com/h/v82yXN">
+
+
+            <img src="https://s.tfrbot.com/h/CJcPSa">
+
+
+            <img src="https://s.tfrbot.com/h/wZB1Vk">
+
+
+        </div>
+
+
+        <div class="pricing-table">
+
+
+            <div class="pricing-item">RNF Studio – $100/night</div>
+
+
+        </div>
+
+
+        
+
+
+        
+
+
+        <h2>Accommodation at RNF Princess Cove 5 Bedroom</h2>
+
+
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/ZzbVRo">
+
+
+            <img src="https://s.tfrbot.com/h/OdL9kx">
+
+
+            <img src="https://s.tfrbot.com/h/d6H3wn">
+
+
+            <img src="https://s.tfrbot.com/h/5CYIho">
+
+
+            <img src="https://s.tfrbot.com/h/0LrJYD">
+
+
+            <img src="https://s.tfrbot.com/h/VJCObr">
+
+
+        </div>
+
+
+        <div class="pricing-table">
+
+
+            <div class="pricing-item">RNF 5 Bedroom – $150/night</div>
+
+
+        </div>
+
+
+        
+
+
+
+
+
+        <h2>3 Story Semi Detached Bungalow</h2>
+
+
+        <div class="slider">
+
+
+            <img src="https://s.tfrbot.com/h/U5Ffs8">
+
+
+            <img src="https://s.tfrbot.com/h/lzrpOq">
+
+
+            <img src="https://s.tfrbot.com/h/ihKl5a">
+
+
+            <img src="https://s.tfrbot.com/h/fpbQvK">
+
+
+            <img src="https://s.tfrbot.com/h/YEpGgw">
+
+
+            <img src="https://s.tfrbot.com/h/jdISyb">
+
+
+            <img src="https://s.tfrbot.com/h/aJEMnL">
+
+
+        </div>
+
+
+        <div class="pricing-table">
+
+
+            <div class="pricing-item">Semi Buangalow – $300/night</div>
+
+
+        </div>
+
+
+
+
+
+        <h2>📍 Location: RNF Princess Cove (5 min from Border Checkpoint)</h2>
+
+
+        <iframe 
+
+
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.150775455895!2d103.77044165019186!3d1.4627106996898421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12fc54db79d1%3A0x75dbca8134b8e69b!2sR%26F%20Mall!5e0!3m2!1sen!2s!4v1709200000000" 
+
+
+            width="100%" 
+
+
+            height="400" 
+
+
+            allowfullscreen="" 
+
+
+            loading="lazy">
+
+
+        </iframe>
+
+
+
+
+
+        <h2>Contact Us Now</h2>
+        <div class="contact-links">
+        <a href="https://wa.me/+6580174905" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/dmsgbeng" class="telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+    </div>
+
+
+
+
+
+   <script>
+        $(document).ready(function() {
+            // Initialize the Slick Slider
+            $('.slider').slick({
+                autoplay: true,
+                dots: true,
+                infinite: true,
+                speed: 800,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+
+            // Toggle menu when clicking the menu button
+            $('.menu-btn').on('click', function() {
+                $('#navMenu').toggleClass('active');
+            });
+
+            // Close menu when clicking a navigation link (only on mobile)
+            $('.nav-links a').on('click', function() {
+                if ($(window).width() < 768) {
+                    $('#navMenu').removeClass('active');
+                }
+            });
+
+            // Close menu when clicking outside
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.navbar').length) {
+                    if ($('#navMenu').hasClass('active')) {
+                        $('#navMenu').removeClass('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+
+
 </html>

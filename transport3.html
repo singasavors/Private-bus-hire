@@ -235,22 +235,5 @@
 }
     </script>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-
-    document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "N/A";
-    document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "N/A";
-    document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "N/A";
-    document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "N/A";
-    document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "N/A";
-    document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "N/A";
-    document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "N/A";
-    document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "N/A";
-    document.getElementById("totalAmount").textContent = "$" + (urlParams.get("F12_Amount") || "0.00");
-});
-</script>
-
 </body>
 </html>

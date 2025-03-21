@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #0f2b4d, #1e4b6e, #4db8ff, #00ff7f);
+            background: linear-gradient(45deg, #0f2b4d, #144d72, #1e4b6e, #00838f);
             background-size: 300% 300%;
             animation: gradientBackground 10s ease infinite;
             color: #ffffff;
@@ -94,21 +94,21 @@
             text-decoration: none;
             cursor: pointer;
             transition: 0.3s ease-in-out;
-            background-color: #1db5cc;
-            color: #0f2b4d;
+            background-color: #00838f;
+            color: #ffffff;
             width: 100%;
             max-width: 250px;
             text-transform: uppercase;
-            box-shadow: 0 0 10px #0085ff;
+            box-shadow: 0 0 10px #00796b;
             margin-top: 10px;
             display: block;
             text-align: center;
         }
 
         .btn:hover {
-            background-color: #00ffff;
+            background-color: #00bfa5;
             transform: translateY(-3px);
-            box-shadow: 0 0 20px #00ffff;
+            box-shadow: 0 0 20px #00bfa5;
         }
 
         .btn-container {
@@ -234,6 +234,23 @@
     };
 }
     </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "N/A";
+    document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "N/A";
+    document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "N/A";
+    document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "N/A";
+    document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "N/A";
+    document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "N/A";
+    document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "N/A";
+    document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "N/A";
+    document.getElementById("totalAmount").textContent = "$" + (urlParams.get("F12_Amount") || "0.00");
+});
+</script>
 
 </body>
 </html>

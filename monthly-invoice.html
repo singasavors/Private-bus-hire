@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice - Travel Pass</title>
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 1.2rem 1rem;
+}
+
+h1, h2 {
+  text-align: center;
+  color: deeppink;
+  font-family: "Baloo 2", cursive;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px auto 25px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+  border: 1px solid #f3cce9;
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+th {
+  background-color: deeppink;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.payment-details {
+  background: #fff0f6;
+  border-radius: 12px;
+  padding: 20px 18px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.payment-details h3 {
+  color: deeppink;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.paynow-img {
+  display: block;
+  margin: 0 auto 15px;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+  height: auto;
+}
+
+.paynow-info, .bank-info {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.neon-text {
+  color: #28f728;
+  font-weight: bold;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-back {
+  background: #ffccde;
+  color: deeppink;
+}
+
+.btn-contact {
+  background: deeppink;
+  color: #fff;
+}
+
+.btn-back:hover {
+  background: deeppink;
+  color: #fff;
+}
+
+.btn-contact:hover {
+  background: #fff;
+  color: deeppink;
+  border: 2px solid deeppink;
+}
+
+#receiptUpload {
+  display: none;
+}
+
+.upload-btn {
+  display: block;
+  background: deeppink;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 25px auto 10px;
+  font-size: 14px;
+}
+
+.upload-note {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  margin-top: -6px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table th, table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .upload-btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice</h1>
+    <h2>Travel Pass Subscription</h2>
+
+    <table>
+      <tr><th>Description</th><th>Details</th></tr>
+      <tr><td>Full Name</td><td id="passengerName">Loading...</td></tr>
+      <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
+      <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
+      <tr><td>Date of Birth</td><td id="selectedDate">Loading...</td></tr>
+      <tr><td>Home Address</td><td id="pickupLocation">Loading...</td></tr>
+      <tr><td>Work Address</td><td id="dropoffLocation">Loading...</td></tr>
+      <tr><td>Driver Preference</td><td id="pickupTime">Loading...</td></tr>
+      <tr><td>Ride Preferences</td><td id="numPassengers">Loading...</td></tr>
+      <tr><td>Subscription Pass</td><td id="F9_Pass">Loading...</td></tr>
+      <tr><td>Total Amount</td><td id="totalAmount" class="neon-text">Loading...</td></tr>
+    </table>
+
+    <div class="payment-details">
+      <h3>Payment Instructions</h3>
+      <p>Scan the PayNow QR Code below</p><br>
+      <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png"
+        alt="PayNow QR Code" class="paynow-img" width="300" height="300">
+
+      <div class="paynow-info">
+        <p><strong>PayNow VPA:</strong> <span class="neon-text">+6588572944#GRAB</span></p>
+        <ol>
+          <li>Login to iBanking and select Paynow to VPA</li>
+          <li>Enter the Virtual Payment Address (VPA)</li>
+          <li>Enter the amount to make Payment</li>
+        </ol>
+      </div>
+
+      <h3>Bank Transfer</h3>
+      <div class="bank-info">
+        <p><strong>Payee Name:</strong> <span class="neon-text">KL Transportation Services</span></p>
+        <p><strong>Bank Name:</strong> <span class="neon-text">DBS BANK</span></p>
+        <p><strong>Account Number:</strong> <span class="neon-text">88532600024849447</span></p>
+        <p>Once completed, Screenshot and upload the receipt below</p>
+      </div>
+    </div>
+ 
+    <div class="upload-btn" onclick="uploadReceipt()">Upload Receipt & Submit</div>
+    <input type="file" id="receiptUpload" accept="image/*,application/pdf" />
+
+  <script>
+    function uploadReceipt() {
+      const fileInput = document.getElementById("receiptUpload");
+      fileInput.click();
+
+      fileInput.onchange = () => {
+        const file = fileInput.files[0];
+        if (file) {
+          let formData = new FormData();
+          formData.append('receipt', file);
+          formData.append('Date', document.getElementById('selectedDate').textContent);
+          formData.append('Customer Name', document.getElementById('passengerName').textContent);
+          formData.append('Contact Number', document.getElementById('contactNumber').textContent);
+          formData.append('Email Address', document.getElementById('emailAddress').textContent);
+          formData.append('Time', document.getElementById('pickupTime').textContent);
+          formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
+          formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
+          formData.append('Passengers', document.getElementById('numPassengers').textContent);
+          formData.append('Subscription Pass', document.getElementById('F9_Pass').textContent);
+          formData.append('Total Amount', document.getElementById('totalAmount').textContent);
+
+          fetch('https://formsubmit.co/endgameis21@hotmail.com', {
+            method: 'POST',
+            body: formData,
+          })
+          .then(response => {
+            if (response.ok) {
+              alert('Receipt and details sent successfully!');
+              fileInput.value = '';
+            } else {
+              alert('Submission failed. Please try again.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during submission.');
+          });
+        }
+      };
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      document.getElementById("selectedDate").textContent = urlParams.get("F4_DOB") || "Not provided";
+      document.getElementById("passengerName").textContent = urlParams.get("F1_Name") || "Not provided";
+      document.getElementById("contactNumber").textContent = urlParams.get("F2_Contact") || "Not provided";
+      document.getElementById("emailAddress").textContent = urlParams.get("F3_Email") || "Not provided";
+      document.getElementById("pickupTime").textContent = urlParams.get("F7_Driver") || "Not provided";
+      document.getElementById("pickupLocation").textContent = urlParams.get("F5_Home") || "Not provided";
+      document.getElementById("dropoffLocation").textContent = urlParams.get("F6_Work") || "Not provided";
+      document.getElementById("numPassengers").textContent = urlParams.get("F8_RidePref") || "Not provided";
+      document.getElementById("F9_Pass").textContent = urlParams.get("F9_Pass") || "Not provided";
+      const totalAmount = urlParams.get("F12_Amount") || "0.00";
+      document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount).toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>

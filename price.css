@@ -114,7 +114,93 @@ body {
     color: deeppink;
 }
 
-/* Responsive Adjustments */
+/* --- FAQ Section Styling --- */
+.faq-section {
+    margin-top: 60px;
+    padding: 30px 20px;
+    background-color: #fff0f6;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-section h2 {
+    font-size: 24px;
+    color: deeppink;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: "Baloo 2", cursive;
+}
+
+.faq {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: #fff;
+    border-left: 4px solid deeppink;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.faq strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #111;
+    font-size: 16px;
+}
+
+.faq p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    width: 100%;
+    background: deeppink;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-items {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu-items a:hover {
+    color: #ffd6e6;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -127,5 +213,35 @@ body {
 
     .heading {
         font-size: 24px;
+    }
+
+    .faq-section {
+        padding: 20px 15px;
+    }
+
+    .faq {
+        padding: 12px 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: deeppink;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-top: 1px solid #fff3;
+    }
+
+    .menu-items a {
+        padding: 0.5rem 0;
+    }
+
+    .menu-items.active {
+        display: flex;
     }
 }

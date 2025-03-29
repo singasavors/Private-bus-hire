@@ -4,153 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invoice - Travel Pass</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;400;700&display=swap");
+ <style>
+  @import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;400;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+  }
 
-body {
-  background: linear-gradient(to bottom right, #fff0f6, #ffffff);
-  color: #333;
-  line-height: 1.6;
-  font-size: 16px;
-  transition: background 0.3s ease;
-}
+  body {
+    background: linear-gradient(to bottom right, #fff0f6, #ffffff);
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
 
-.container {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  padding: 1.5rem 1rem;
-}
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1.5rem 1rem;
+  }
 
-h1, h2 {
-  text-align: center;
-  color: deeppink;
-  font-family: "Baloo 2", cursive;
-  margin-bottom: 15px;
-  font-size: 2em;
-  text-shadow: 1px 1px 0 #ffcde8;
-}
+  h1, h2 {
+    text-align: center;
+    color: deeppink;
+    font-family: "Baloo 2", cursive;
+    margin-bottom: 15px;
+    font-size: 2em;
+    text-shadow: 1px 1px 0 #ffcde8;
+  }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px auto 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  overflow: hidden;
-  border-radius: 10px;
-  background: white;
-  animation: fadeIn 0.6s ease-in-out;
-}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    animation: fadeIn 0.6s ease-in-out;
+  }
 
-th, td {
-  border: 1px solid #f3cce9;
-  padding: 12px 15px;
-  font-size: 14px;
-  text-align: left;
-}
+  th, td {
+    border: 1px solid #f3cce9;
+    padding: 12px 15px;
+    font-size: 14px;
+    text-align: left;
+  }
 
-th {
-  background-color: deeppink;
-  color: #fff;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
+  th {
+    background-color: deeppink;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
 
-.payment-details {
-  background: #fff0f6;
-  border-radius: 14px;
-  padding: 24px 20px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
-}
+  .payment-details {
+    background: #fff0f6;
+    border-radius: 0;
+    padding: 24px 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    margin: 0;
+    width: 100%;
+  }
 
-.payment-details:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
+  .payment-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
 
-.payment-details h3 {
-  color: deeppink;
-  margin-bottom: 12px;
-  font-size: 18px;
-  font-weight: 700;
-}
+  .payment-details h3 {
+    color: deeppink;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+  }
 
-.paynow-img {
-  display: block;
-  margin: 0 auto 15px;
-  border: 6px solid #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
-  max-width: 280px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
+  .paynow-img {
+    display: block;
+    margin: 0 auto 15px;
+    border: 6px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
 
-.paynow-img:hover {
-  transform: scale(1.03);
-}
+  .paynow-img:hover {
+    transform: scale(1.03);
+  }
 
-.paynow-info, .bank-info {
-  margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.6;
-}
+  .paynow-info, .bank-info {
+    margin-top: 15px;
+  }
 
-/* Replace the neon-text class with this cleaner version */
-.highlight-green {
-  color: #28f728;
-  font-weight: bold;
-}
-.highlight-red {
-	color: #ac0000;
-	font-weight: bold;
-}
+  .bank-info {
+    margin-bottom: 20px;
+  }
 
-.upload-btn {
-  display: block;
-  background: linear-gradient(135deg, deeppink, #ff77c0);
-  color: white;
-  padding: 14px 35px;
-  text-align: center;
-  border-radius: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
-  margin: 25px auto 0;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+  .highlight-green {
+    color: #28f728;
+    font-weight: bold;
+  }
 
-.upload-btn:hover {
-  background: linear-gradient(135deg, #ff1493, #ff91c9);
-  transform: scale(1.05);
-}
+  .highlight-red {
+    color: #ac0000;
+    font-weight: bold;
+  }
 
-#receiptForm {
-  display: none;
-}
+  .upload-btn {
+    display: block;
+    background: linear-gradient(135deg, deeppink, #ff77c0);
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto 0;
+    width: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+  }
 
-@media (max-width: 768px) {
-  .container { padding: 1rem; }
-  .upload-btn { width: 100%; font-size: 14px; padding: 12px; }
-}
+  .upload-btn:hover {
+    background: linear-gradient(135deg, #ff1493, #ff91c9);
+    transform: scale(1.05);
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-  </style>
+  #receiptForm {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .upload-btn { width: 100%; font-size: 14px; padding: 12px; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
 <div class="container">
@@ -189,26 +192,24 @@ th {
   </form>
 
   <div class="payment-details">
-    <h3>Payment Instructions</h3>
-    <p>Scan the PayNow QR Code below</p><br>
-    <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img" width="300" height="300">
-    <div class="paynow-info">
-      <p><strong>PayNow VPA:</strong> <span class="highlight-red">+6588572944#GRAB</span></p>
-      <ol>
-        <li>Login to iBanking and select Paynow to VPA</li>
-        <li>Enter the Virtual Payment Address (VPA)</li>
-        <li>Enter the amount to make Payment</li>
-      </ol>
-    </div>
-    <h3>Bank Transfer</h3>
-    <div class="bank-info">
-      <p><strong>Payee Name:</strong> <span class="highlight-red">Singasavor</span></p>
-      <p><strong>Bank Name:</strong> <span class="highlight-red">DBS BANK</span></p>
-      <p><strong>Account Number:</strong> <span class="highlight-red">88532600024849447</span></p>
-      <p>Once completed, Screenshot and upload the receipt below</p>
-    </div>
-  <div class="upload-btn" onclick="uploadReceipt()">Upload Receipt & Submit</div>
-</div> <!-- now closes after the button -->
+  <h3>Payment Instructions</h3>
+  <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" class="paynow-img" style="max-width:100%;height:auto;">
+  <div class="paynow-info">
+    <ol>
+      <li>Login to iBanking and select 'Scan and Pay'</li>
+      <li>Choose from Gallery, Select the QR Code.</li>
+      <li>Key in the amount to complete the payment</li>
+    </ol>
+  </div>
+  <h3>Bank Transfer</h3>
+  <div class="bank-info">
+    <strong>Payee Name:</strong> Singasavor<br>
+    <strong>Bank Name:</strong> DBS BANK<br>
+    <strong>Account Number:</strong> 88532600024849447<br>
+    Once completed, screenshot and upload the receipt below.
+  </div>
+  <button class="upload-btn" onclick="uploadReceipt()">Upload Receipt & Submit</button>
+</div><!-- now closes after the button -->
 </div>
 <script>
 function uploadReceipt() {

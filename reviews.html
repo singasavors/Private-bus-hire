@@ -1,165 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KL Transportation - Customer Reviews</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singasavor - Customer Reviews</title>
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f5f5f5;
-        text-align: center;
-    }
-    .container {
-        max-width: 800px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .logo {
-        width: 200px;
-        margin-bottom: 20px;
-    }
+  @import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;400;700&display=swap");
+
+  :root {
+    --font-primary: 'Roboto', sans-serif;
+    --font-accent: 'Baloo 2', cursive;
+    --color-primary: #ff1493;
+    --color-secondary: #ff77c0;
+    --color-hover: #ff91c9;
+    --color-bg: #fff0f6;
+    --color-card-bg: #ffffff;
+    --color-muted: #666;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(0, 0, 0, 0.25);
+  }
+
+  body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, var(--color-bg), var(--color-card-bg));
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--color-card-bg);
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px var(--shadow-light);
+  }
+
+  h1 {
+    font-family: var(--font-accent);
+    color: var(--color-primary);
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px var(--color-hover);
+  }
+
+  .logo {
+    width: 160px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px var(--color-hover));
+  }
+
+  .review {
+    display: flex;
+    align-items: flex-start;
+    background: #fff5fa;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    padding: 20px;
+    box-shadow: 0 6px 14px var(--shadow-light);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .review:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px var(--shadow-medium);
+  }
+
+  .review img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 18px;
+    object-fit: cover;
+    box-shadow: 0 3px 8px var(--shadow-medium);
+  }
+
+  .review-content strong {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .stars {
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin: 6px 0;
+  }
+
+  .review-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .contact {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+
+  .whatsapp-link {
+    color: #25D366;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .home-button {
+    margin-top: 30px;
+  }
+
+  .home-button a {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 40px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 6px 16px var(--shadow-heavy);
+    transition: all 0.3s ease;
+  }
+
+  .home-button a:hover {
+    background: linear-gradient(135deg, #ff1493, #ff5fa6);
+    box-shadow: 0 0 14px var(--color-hover), 0 0 22px var(--color-primary);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
     .review {
-        display: flex;
-        align-items: flex-start;
-        text-align: left;
-        padding: 15px;
-        border-bottom: 1px solid #ddd;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
+
     .review img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 15px;
+      margin-bottom: 10px;
     }
+
     .review-content {
-        flex: 1;
+      text-align: center;
     }
-    .stars {
-        color: #FFD700;
-        font-size: 20px;
+
+    .logo {
+      width: 120px;
     }
-    .contact {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: bold;
+
+    h1 {
+      font-size: 2rem;
     }
-    .whatsapp-link {
-        color: #25D366;
-        text-decoration: none;
-        font-size: 20px;
-    }
-    .home-button {
-        margin-top: 20px;
-    }
-    .home-button a {
-        display: inline-block;
-        text-decoration: none;
-        background-color: #007BFF;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .home-button a:hover {
-        background-color: #0056b3;
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    }
+  }
 </style>
-</head>
-<body>
-
-    <div class="container">
-        <img src="https://s.tfrbot.com/h/vnIKDf" alt="Google Reviews" class="logo">
-        
-        <h1>KL Transportation - Customer Reviews</h1>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/KDtPQR" alt="Profile Image">
-            <div class="review-content">
-                <strong>Sarah Lim</strong>
-                <div class="stars">★★★★★</div>
-                <p>KL Transportation has been my go-to service for cross-border travel between Singapore and Malaysia. The drivers are punctual, professional, and extremely courteous. Highly recommend for hassle-free travel!</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/QJUnfb" alt="Profile Image">
-            <div class="review-content">
-                <strong>Jason Wong</strong>
-                <div class="stars">★★★★★</div>
-                <p>I use KL Transportation's private bus service for my kids’ school transport, and I must say, they are outstanding. The buses are clean, well-maintained, and most importantly, SAFE. The drivers ensure timely pick-ups and drop-offs.</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/9UAJ5L" alt="Profile Image">
-            <div class="review-content">
-                <strong>Amelia Tan</strong>
-                <div class="stars">★★★★★</div>
-                <p>Their cross-border transportation service is the best I’ve used so far. Even during peak hours, they navigate customs efficiently, and I always reach my destination on time. The vehicles are spacious, air-conditioned, and super comfortable.</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/94wBFX" alt="Profile Image">
-            <div class="review-content">
-                <strong>Ahmad Rahim</strong>
-                <div class="stars">★★★★★</div>
-                <p>KL Transportation provides excellent private bus services for school children. The drivers are patient and friendly, and they follow all safety regulations. I love how they send updates to parents, ensuring smooth communication.</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/ISOmu4" alt="Profile Image">
-            <div class="review-content">
-                <strong>Ng Cher Teck</strong>
-                <div class="stars">★★★★★</div>
-                <p>Highly recommended for frequent travelers between Singapore and Malaysia! Their service is professional, reliable, and stress-free. No more waiting for public transport—KL Transportation makes every trip smooth and enjoyable!</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/JHPS56" alt="Profile Image">
-            <div class="review-content">
-                <strong>Victoria Lim</strong>
-                <div class="stars">★★★★★</div>
-                <p>My family and I always rely on KL Transportation when traveling to Malaysia. Their private transport service is super convenient, and the drivers are very knowledgeable. The ride is always comfortable, and they handle customs efficiently.</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/VzKhL6" alt="Profile Image">
-            <div class="review-content">
-                <strong>Michelle Koh</strong>
-                <div class="stars">★★★★★</div>
-                <p>The school bus service is fantastic! My child looks forward to the ride every morning. The drivers are punctual and polite, and the bus is always in great condition. I trust KL Transportation completely with my child’s daily commute.</p>
-            </div>
-        </div>
-
-        <div class="review">
-            <img src="https://s.tfrbot.com/h/2VsK8p" alt="Profile Image">
-            <div class="review-content">
-                <strong>Stella Koh</strong>
-                <div class="stars">★★★★★</div>
-                <p>Very professional and well-organized! KL Transportation offers the best cross-border private transport service. The booking process is easy, and their customer support is always responsive. I wouldn’t choose any other service!</p>
-            </div>
-        </div>
-
-        <div class="contact">
-    📲 WhatsApp: <a href="https://wa.me/+6580174905" class="whatsapp-link">+65 8017 4905</a>
-</div>
-<div class="home-button">
-    <a href="https://s.tfrbot.com/tAWgdr" class="neon-btn">Home</a>
-</div>
-
-</body>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://singasavors.github.io/K-POD/Google.png" alt="Google Reviews" class="logo">
+        
+        <h1>Our - Customer Reviews</h1>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review1.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Gabriel Goh</strong>
+                <div class="stars">★★★★★</div>
+                <p>Singasavor has been my go-to service for cross-border travel between Singapore and Malaysia. The drivers are punctual, professional, and extremely courteous. Highly recommend for hassle-free travel!</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review2.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Elaine Goh</strong>
+                <div class="stars">★★★★★</div>
+                <p>I use Singasavor's private bus service for my kids’ school transport, and I must say, they are outstanding. The buses are clean, well-maintained, and most importantly, SAFE. The drivers ensure timely pick-ups and drop-offs.</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review4.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Chelsea Zeng</strong>
+                <div class="stars">★★★★★</div>
+                <p>Their cross-border transportation service is the best I’ve used so far. Even during peak hours, they navigate customs efficiently, and I always reach my destination on time. The vehicles are spacious, air-conditioned, and super comfortable.</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review3.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Nin Hairi</strong>
+                <div class="stars">★★★★★</div>
+                <p>Singasavor provides excellent private bus services for school children. The drivers are patient and friendly, and they follow all safety regulations. I love how they send updates to parents, ensuring smooth communication.</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review5.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Ng Bao Zheng</strong>
+                <div class="stars">★★★★★</div>
+                <p>Highly recommended for frequent travelers between Singapore and Malaysia! Their service is professional, reliable, and stress-free. No more waiting for public transport—Singasavor makes every trip smooth and enjoyable!</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review6.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Mas Kilat</strong>
+                <div class="stars">★★★★★</div>
+                <p>My family and I always rely on Singasavor when traveling to Malaysia. Their private transport service is super convenient, and the drivers are very knowledgeable. The ride is always comfortable, and they handle customs efficiently.</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review7.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Ezabel Ng</strong>
+                <div class="stars">★★★★★</div>
+                <p>The school bus service is fantastic! My child looks forward to the ride every morning. The drivers are punctual and polite, and the bus is always in great condition. I trust Singasavor completely with my child’s daily commute.</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <img src="https://singasavors.github.io/K-POD/Review8.png" alt="Profile Image">
+            <div class="review-content">
+                <strong>Liu Dong Hang</strong>
+                <div class="stars">★★★★★</div>
+                <p>Very professional and well-organized! Singasavor offers the best cross-border private transport service. The booking process is easy, and their customer support is always responsive. I wouldn’t choose any other service!</p>
+            </div>
+        </div>
+
+        <div class="contact">
+    📲 WhatsApp: <a href="https://wa.me/+6580174905" class="whatsapp-link">+65 8017 4905</a>
+</div>
+<div class="home-button">
+    <a href="https://singasavors.github.io/Private-bus-hire/transportation.html" class="neon-btn">Home</a>
+</div>
+
+</body>
 </html>

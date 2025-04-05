@@ -1,522 +1,199 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KL Transportation Services</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- jQuery & Slick Carousel -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anderson Bus Services | Chartered and Cross-Border Transport</title>
 
-<style>
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Anderson Bus Services provides reliable chartered, school, and cross-border bus hire solutions. Serving Singapore and Johor Bahru since 2007."/>
+  <meta name="keywords" content="chartered bus, school transport, Singapore JB transport, bus hire, cross border transport, disposal service"/>
+  <meta name="author" content="Anderson Bus Services"/>
 
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #0a1a2f, #122b48, #204d7a, #003366);
-    background-size: 300% 300%;
-    animation: gradientBackground 10s ease infinite;
-    color: #ffffff;
-    text-align: center;
-    overflow-x: hidden;
-}
+  <!-- Social Sharing -->
+  <meta property="og:title" content="Anderson Bus Services | Reliable Chartered & JB Transport"/>
+  <meta property="og:description" content="Chartered, school and cross-border transport serving SG & JB since 2007. Book your ride today."/>
+  <meta property="og:image" content="https://singasavors.github.io/Private-bus-hire/assets/anderson-cover.jpg"/>
+  <meta property="og:url" content="https://singasavors.github.io/Private-bus-hire/anderson-bus-services.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
-/* Animated Gradient Background */
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+  <!-- Favicon -->
+  <link rel="icon" href="https://singasavors.github.io/favicon.ico" type="image/x-icon"/>
 
-/* Dark Blue Animated Glowing Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #051d3b, #0a2f5b, #073c71);
-    padding: 15px 25px;
-    position: relative;
-    z-index: 1000;
-    box-shadow: 0 5px 25px rgba(0, 191, 255, 0.5);
-    border-bottom: 3px solid #007acc;
-    animation: neonGlow 2s infinite alternate;
-}
+  <!-- External Styles -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Baloo+2&display=swap" rel="stylesheet"/>
 
-@keyframes neonGlow {
-    0% {
-        box-shadow: 0 0 10px #007acc;
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #fff0f6;
+      color: #333;
     }
-    100% {
-        box-shadow: 0 0 25px #007acc, 0 0 40px #00bfff;
+    h1, h2 {
+      text-align: center;
+      color: deeppink;
+      font-family: 'Baloo 2', cursive;
+      text-shadow: 0 0 6px #ff91c9;
     }
-}
-
-/* Glowing Menu Button */
-.menu-btn {
-    font-size: 2rem;
-    color: #00bfff;
-    cursor: pointer;
-    display: none;
-    padding: 12px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu-btn:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 15px #00bfff, 0 0 30px #007acc;
-}
-
-/* Glowing Navigation Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.3rem;
-    font-weight: 700;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-.nav-links a:hover {
-    color: #33ccff;
-    text-shadow: 0px 0px 20px #33ccff, 0px 0px 35px #00bfff;
-}
-
-/* Ensure Images are 1080x1080 */
-.slider img {
-    width: 100%;
-    max-width: 1080px;
-    height: 1080px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
-    margin: auto;
-    display: block;
-}
-
-/* Mobile Optimization */
-@media (max-width: 1080px) {
-    .slider img {
-        width: 100%;
-        height: auto;
-        max-height: 1080px;
+    .navbar {
+      background: deeppink;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-}
-
-/* WhatsApp & Telegram Floating Buttons - High Visibility */
-.contact-links {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1100;
-}
-
-.contact-links a {
-    width: 65px;
-    height: 65px;
-    background: radial-gradient(circle, #25d366, #128c7e);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    text-decoration: none;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.9);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: pulseGlow 1.5s infinite alternate;
-}
-
-.contact-links a:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 25px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.8);
-}
-
-.contact-links a.telegram {
-    background: radial-gradient(circle, #0088cc, #005f99);
-    box-shadow: 0 0 20px rgba(0, 136, 204, 0.9);
-}
-
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
-    100% {
-        box-shadow: 0 0 25px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 0.8);
-    }
-}
-
-/* Mobile Menu Enhancements */
-@media (max-width: 768px) {
-    .menu-btn {
-        display: block;
-    }
-
     .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      color: #ffd6e6;
+    }
+    .menu-btn {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .slider img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+    iframe {
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 2rem;
+      margin: 30px 0;
+    }
+    .contact-links a {
+      color: deeppink;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
         display: none;
         flex-direction: column;
+        background: deeppink;
         position: absolute;
-        top: 70px;
-        left: 0;
+        top: 60px;
         width: 100%;
-        background: linear-gradient(135deg, #051d3b, #0a2f5b, #073c71);
-        padding: 20px 0;
-        box-shadow: 0 6px 15px rgba(0, 191, 255, 0.5);
-        text-align: center;
-        z-index: 1000;
-        animation: neonGlow 2s infinite alternate;
-    }
-
-    .nav-links.active {
+        left: 0;
+      }
+      .nav-links.active {
         display: flex;
+      }
+      .menu-btn {
+        display: block;
+      }
     }
-
-    .nav-links li {
-        padding: 15px 0;
-    }
-
-    /* Adjust WhatsApp & Telegram buttons for small screens */
-    .contact-links {
-        bottom: 50px;
-        right: 15px;
-    }
-
-    .contact-links a {
-        width: 55px;
-        height: 55px;
-        font-size: 28px;
-    }
-}
-</style>
+  </style>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <h1>SINGASAVOR</h1>
-        <div class="menu-btn" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <ul class="nav-links" id="navMenu">
-            <li><a href="https://singasavors.github.io/Private-bus-hire/transport1.html">Online Booking</a></li>
-            <li><a href="https://s.tfrbot.com/xeDK1d">Private School Bus Hire</a></li>
-            <li><a href="https://s.tfrbot.com/zDtJUI">Monthly Travel Pass</a></li>
-            <li><a href="https://singasavors.github.io/Private-bus-hire/contact-us.html">Contact Us</a></li>
-            <li><a href="https://s.tfrbot.com/BzH0Fr">Our Reviews</a></li>
-        </ul>
-    </nav>
-        
-
-<h2>Cross Border Services</h2>
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/efC4ko">
-
-
-            <img src="https://s.tfrbot.com/h/aK2wj8">
-
-
-            <img src="https://s.tfrbot.com/h/rHgaEF">
-
-
-            <img src="https://s.tfrbot.com/h/gkKPfQ">
-
-
-            <img src="https://s.tfrbot.com/h/xJH3e7">
-
-
-        </div>
-
-
-        
-<h2>Disposal and Moving Services</h2>
-
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/NcSFQ9">
-
-
-            <img src="https://s.tfrbot.com/h/M8alNg">
-
-
-            <img src="https://s.tfrbot.com/h/Sgx6Vk">
-
-
-            <img src="https://s.tfrbot.com/h/trLiOS">
-
-
-            <img src="https://s.tfrbot.com/h/na5ApU">
-
-
-        </div>
-        
-        <h2>Private School Bus Hire</h2>
-
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/ryoVm8">
-
-
-            <img src="https://s.tfrbot.com/h/Eyx5v0">
-
-
-            <img src="https://s.tfrbot.com/h/7LnhHb">
-
-
-            <img src="https://s.tfrbot.com/h/wN4fZd">
-
-
-            <img src="https://s.tfrbot.com/h/gSwkBa">
-
-
-        </div>
-        
-        <h2>Event Logistics Services</h2>
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/pWL1QD">
-            <img src="https://s.tfrbot.com/h/fGKLAO">
-            <img src="https://s.tfrbot.com/h/Fj9bBv">
-            <img src="https://s.tfrbot.com/h/z6OBTS">
-        </div>
-        
-         <h2>Funeral Hearses</h2>
-        <div class="slider">
-            <img src="https://s.tfrbot.com/h/BZU0tH">
-            <img src="https://s.tfrbot.com/h/Eyq3CR">
-            <img src="https://s.tfrbot.com/h/V4AIEU">
-            <img src="https://s.tfrbot.com/h/1kLXjE">
-        </div>
-
-
-
-
-
-       <h2>Accommodation at RNF Princess Cove Studio</h2>
-
-
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/a7dHMs">
-
-
-            <img src="https://s.tfrbot.com/h/v82yXN">
-
-
-            <img src="https://s.tfrbot.com/h/CJcPSa">
-
-
-            <img src="https://s.tfrbot.com/h/wZB1Vk">
-
-
-        </div>
-
-
-        <div class="pricing-table">
-
-
-            <div class="pricing-item">RNF Studio – $100/night</div>
-
-
-        </div>
-
-
-        
-
-
-        
-
-
-        <h2>Accommodation at RNF Princess Cove 5 Bedroom</h2>
-
-
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/ZzbVRo">
-
-
-            <img src="https://s.tfrbot.com/h/OdL9kx">
-
-
-            <img src="https://s.tfrbot.com/h/d6H3wn">
-
-
-            <img src="https://s.tfrbot.com/h/5CYIho">
-
-
-            <img src="https://s.tfrbot.com/h/0LrJYD">
-
-
-            <img src="https://s.tfrbot.com/h/VJCObr">
-
-
-        </div>
-
-
-        <div class="pricing-table">
-
-
-            <div class="pricing-item">RNF 5 Bedroom – $150/night</div>
-
-
-        </div>
-
-
-        
-
-
-
-
-
-        <h2>3 Story Semi Detached Bungalow</h2>
-
-
-        <div class="slider">
-
-
-            <img src="https://s.tfrbot.com/h/U5Ffs8">
-
-
-            <img src="https://s.tfrbot.com/h/lzrpOq">
-
-
-            <img src="https://s.tfrbot.com/h/ihKl5a">
-
-
-            <img src="https://s.tfrbot.com/h/fpbQvK">
-
-
-            <img src="https://s.tfrbot.com/h/YEpGgw">
-
-
-            <img src="https://s.tfrbot.com/h/jdISyb">
-
-
-            <img src="https://s.tfrbot.com/h/aJEMnL">
-
-
-        </div>
-
-
-        <div class="pricing-table">
-
-
-            <div class="pricing-item">Semi Buangalow – $300/night</div>
-
-
-        </div>
-
-
-
-
-
-        <h2>📍 Location: RNF Princess Cove (5 min from Border Checkpoint)</h2>
-
-
-        <iframe 
-
-
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.150775455895!2d103.77044165019186!3d1.4627106996898421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12fc54db79d1%3A0x75dbca8134b8e69b!2sR%26F%20Mall!5e0!3m2!1sen!2s!4v1709200000000" 
-
-
-            width="100%" 
-
-
-            height="400" 
-
-
-            allowfullscreen="" 
-
-
-            loading="lazy">
-
-
-        </iframe>
-
-
-
-
-
-        <h2>Contact Us Now</h2>
-        <div class="contact-links">
-        <a href="https://wa.me/+6580174905" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/dmsgbeng" class="telegram"><i class="fab fa-telegram"></i></a>
+  <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand mb-0 h1" href="#">Anderson Bus Services</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="https://singasavors.github.io/Private-bus-hire/transport1.html">Online Booking</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="https://singasavors.github.io/Private-bus-hire/">Private School Bus Hire</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="https://singasavors.github.io/Private-bus-hire/monthly-pass.html">Monthly Travel Pass</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="https://singasavors.github.io/Private-bus-hire/contact-us.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="https://singasavors.github.io/Private-bus-hire/reviews.html">Our Reviews</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
+
+  <div class="container my-5">
+    <h2>Cross Border Services</h2>
+  </div>
+  <div class="slider container mb-5">
+    <img src="https://singasavors.github.io/Private-bus-hire/Carpool2.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Carpool1.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Carpool3.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Carpool4.png"/>
+  </div>
+
+  <div class="container my-5">
+    <h2>Disposal and Moving Services</h2>
+  </div>
+  <div class="slider container mb-5">
+    <img src="https://singasavors.github.io/Private-bus-hire/Mover1.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Mover2.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Mover3.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Mover4.png"/>
+  </div>
+
+  <div class="container my-5">
+    <h2>Private School Bus Hire</h2>
+  </div>
+  <div class="slider container mb-5">
+    <img src="https://singasavors.github.io/Private-bus-hire/Private4.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Private3.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Private2.png"/>
+    <img src="https://singasavors.github.io/Private-bus-hire/Private1.png"/>
+  </div>
+
+  <div class="container my-5">
+    <h2>Location: 120C Rivervale Drive, #11-400, Rivervale Gardens, Singapore 543120</h2>
+  </div>
+  <div class="container mb-5">
+    <iframe src="https://www.google.com/maps?q=120C%20Rivervale%20Drive%20%2311-400%2C%20Singapore%20543120&amp;output=embed" width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="container my-5 text-center">
+    <h2>Contact Us Now</h2>
+    <div class="contact-links d-flex justify-content-center gap-4 fs-2 mt-3">
+      <a class="whatsapp" href="https://wa.me/+601158668656"><i class="fab fa-whatsapp"></i></a>
+      <a class="telegram" href="https://t.me/ezrtransport"><i class="fab fa-telegram"></i></a>
     </div>
+  </div>
 
-
-
-
-
-   <script>
-        $(document).ready(function() {
-            // Initialize the Slick Slider
-            $('.slider').slick({
-                autoplay: true,
-                dots: true,
-                infinite: true,
-                speed: 800,
-                slidesToShow: 1,
-                adaptiveHeight: true
-            });
-
-            // Toggle menu when clicking the menu button
-            $('.menu-btn').on('click', function() {
-                $('#navMenu').toggleClass('active');
-            });
-
-            // Close menu when clicking a navigation link (only on mobile)
-            $('.nav-links a').on('click', function() {
-                if ($(window).width() < 768) {
-                    $('#navMenu').removeClass('active');
-                }
-            });
-
-            // Close menu when clicking outside
-            $(document).click(function(event) {
-                if (!$(event.target).closest('.navbar').length) {
-                    if ($('#navMenu').hasClass('active')) {
-                        $('#navMenu').removeClass('active');
-                    }
-                }
-            });
-        });
-    </script>
-
-
-
-
-
+  <!-- Scripts -->
+  <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.slider').slick({
+      autoplay: true,
+      dots: true,
+      infinite: true,
+      speed: 600,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+  });
+</script>
 </body>
-
-
 </html>

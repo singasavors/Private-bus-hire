@@ -491,4 +491,77 @@
    <img alt="Telegram" height="55" src="https://singasavors.github.io/Private-bus-hire/Telegram.png" style="border-radius: 50%;" width="55"/>
   </a>
  </div>
+
+<script>
+// Toggle navigation for mobile
+document.querySelector('.menu-btn').addEventListener('click', function () {
+  document.getElementById('navMenu').classList.toggle('active');
+});
+
+// Smooth scroll to FAQ when link is clicked (if you later add anchor links)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
+
+// Accordion animation for FAQ
+document.querySelectorAll('.faq-section details').forEach(detail => {
+  detail.addEventListener('toggle', function () {
+    if (this.open) {
+      this.querySelector('summary').style.color = '#33ccff';
+    } else {
+      this.querySelector('summary').style.color = '#00c8ff';
+    }
+  });
+});
+
+// Form animation on submission
+document.querySelector('form').addEventListener('submit', function () {
+  const button = this.querySelector('button');
+  button.innerHTML = 'Sending...';
+  button.disabled = true;
+  button.style.background = '#00bfff';
+  button.style.transform = 'scale(0.97)';
+});
+
+// Scroll fade-in effect
+const faders = document.querySelectorAll('.contact-container, .faq-section, .contact-container h2, form');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('fade-in');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+<style>
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 </html>

@@ -1,150 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice - Cross Border Transportation</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singasavor Receipt | Cross Border Booking</title>
+  <meta name="description" content="Official receipt and payment page for Singasavor cross-border transport services." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://singasavor.com/transport3.html" />
+  <meta property="og:title" content="Singasavor Receipt | Cross Border Booking" />
+  <meta property="og:description" content="Confirm your payment and download your invoice for Singasavor transportation." />
+  <meta property="og:image" content="https://singasavor.com/assets/invoice.png" />
+  <meta property="og:url" content="https://singasavor.com/transport3.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Singasavor Receipt | Cross Border Booking" />
+  <meta name="twitter:description" content="Secure your cross-border transport invoice and payment receipt." />
+  <meta name="twitter:image" content="https://singasavor.com/assets/invoice.png" />
+  <link rel="icon" href="https://singasavor.com/assets/favicon.ico" type="image/x-icon">
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #0f2b4d, #144d72, #1e4b6e, #00838f);
-            background-size: 300% 300%;
-            animation: gradientBackground 10s ease infinite;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            width: 100%;
-        }
+ <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f2b4d, #144d72, #1e4b6e, #00838f);
+        background-size: 400% 400%;
+        animation: gradientBackground 12s ease infinite;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    @keyframes gradientBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .invoice-container, .payment-details {
+        width: 95%;
+        max-width: 800px;
+        background: rgba(24, 61, 95, 0.95);
+        padding: 25px 30px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        margin: 20px 0;
+        border-radius: 16px;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    h1, h2 {
+        margin-bottom: 15px;
+        text-align: center;
+        text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: rgba(30, 75, 110, 0.9);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th, td {
+        border: 1px solid #ffffff33;
+        padding: 14px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    th {
+        background-color: #165d89;
+        color: #ffffff;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #00e676;
+        text-shadow: 0px 0px 10px #00e676aa;
+        font-size: 18px;
+    }
+
+    .payment-details {
+        background-color: rgba(30, 75, 110, 0.9);
+    }
+
+    .paynow-img {
+        display: block;
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .paynow-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+
+    .payment-info {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background: linear-gradient(145deg, #00bfa5, #00796b);
+        color: #ffffff;
+        width: 100%;
+        max-width: 260px;
+        text-transform: uppercase;
+        box-shadow: 0 0 12px #00bfa5aa;
+        margin: 15px auto 5px;
+        display: block;
+        text-align: center;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 0 20px #00e0c6;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
         .invoice-container, .payment-details {
-            width: 100%;
-            max-width: 100%;
-            background: rgba(24, 61, 95, 0.97);
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
-            border-radius: 0;
-        }
-
-        h1, h2 {
-            margin-bottom: 10px;
-            text-align: center;
+            padding: 15px;
         }
 
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: rgba(30, 75, 110, 0.9);
-        }
-
-        th, td {
-            border: 1px solid #ffffff;
-            padding: 12px;
-            text-align: left;
-            font-size: 16px;
-        }
-
-        th {
-            background-color: #144d72;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #16dc33;
-            text-shadow: 0px 0px 8px #16dc33;
-        }
-
-        .payment-details {
-            text-align: center;
-            padding: 20px;
-            background-color: #1e4b6e;
-            margin-top: 10px;
-        }
-
-        .paynow-img {
-            display: block;
-            max-width: 300px;
-            margin: 15px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-        }
-
-        .payment-info {
-            text-align: left;
-            margin-left: 15%;
-            max-width: 70%;
+            font-size: 14px;
         }
 
         .btn {
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.3s ease-in-out;
-            background-color: #00838f;
-            color: #ffffff;
-            width: 100%;
-            max-width: 250px;
-            text-transform: uppercase;
-            box-shadow: 0 0 10px #00796b;
-            margin-top: 10px;
-            display: block;
-            text-align: center;
+            max-width: 100%;
         }
 
-        .btn:hover {
-            background-color: #00bfa5;
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px #00bfa5;
+        .payment-info {
+            max-width: 95%;
         }
-
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 0;
-            }
-
-            .invoice-container, .payment-details {
-                padding: 10px;
-            }
-
-            table {
-                font-size: 14px;
-            }
-
-            .btn {
-                max-width: 100%;
-            }
-
-            .payment-info {
-                margin-left: 5%;
-                max-width: 90%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
+    
     <div class="invoice-container">
+      <script>
+        if (!params.get("F12_Amount")) {
+          document.write('<div style="color: red; text-align: center; margin-top: 30px;"><strong>Missing payment info. Please return to the booking page.</strong></div>');
+        }
+      </script>
+    
         <h1>Invoice </h1>
         <h2>Cross Border Transportation</h2>
 
@@ -178,7 +213,7 @@
     <div class="btn-container">
         <input type="file" id="receiptUpload" name="receipt" accept="image/*" style="display: none;">
         <button class="btn" onclick="uploadReceipt()">Upload Receipt</button>
-        <a class="btn" href="https://wa.me/+6580174905">Contact Us</a>
+        <a class="btn" href="https://wa.me/message/YX7KRSVBIV4ZJ1">Contact Us</a>
     </div>
 
      <script>

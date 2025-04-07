@@ -29,8 +29,178 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Baloo+2&display=swap" rel="stylesheet"/>
 
   <!-- Custom Styles -->
-  <link href="https://singasavor.com/style.css" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #10253f, #183d5d);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    text-align: center;
+    color: #00bfff;
+    font-family: 'Baloo 2', cursive;
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
+  }
+
+  .navbar {
+  background: linear-gradient(135deg, #10253f, #183d5d);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.1);
+}
+
+  .menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #00bfff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #33ccff;
+  }
+
+  .slider img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+
+  iframe {
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2rem;
+    margin: 30px 0;
+  }
+
+  .contact-links a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+
+  .floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+
+  .floating-buttons a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00bfff;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 191, 255, 0.4);
+  }
+
+  .floating-buttons img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-buttons a:hover {
+    transform: scale(1.1);
+    background: #33ccff;
+  }
+
+  .card {
+    background-color: #0f2a46 !important;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.15);
+  }
+
+  .footer, .container {
+    background-color: transparent !important;
+  }
+
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #10253f;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      box-shadow: 0 6px 16px rgba(0,191,255,0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
 
 <script type="application/ld+json">
 {

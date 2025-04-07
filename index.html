@@ -51,18 +51,18 @@
   }
 
   .navbar {
-  background: linear-gradient(135deg, #10253f, #183d5d);
-  color: white;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.1);
-}
+    background: linear-gradient(135deg, #10253f, #183d5d);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.1);
+  }
 
   .menu-btn {
     display: none;
@@ -200,6 +200,17 @@
       margin-bottom: 1rem;
     }
   }
+
+  .loading-indicator {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .feedback-section {
+    margin-top: 40px;
+    text-align: center;
+  }
 </style>
 
 <script type="application/ld+json">
@@ -220,7 +231,6 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Singasavor</a>
@@ -229,7 +239,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="https://www.singasavor.com/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="carpool.html">Carpool Booking</a></li>
         <li class="nav-item"><a class="nav-link" href="monthly-pass.html">Monthly Pass</a></li>
         <li class="nav-item"><a class="nav-link" href="private-bus.html">Private Bus Hire</a></li>
@@ -239,7 +249,6 @@
     </div>
   </div>
 </nav>
-
 
   <div class="container my-5">
     <h2>Cross Border Services</h2>
@@ -279,13 +288,28 @@
   </div>
 
    <div class="floating-buttons">
-  <a href="https://wa.me/message/IMF74QQSFOYQA1" style="background: none;" target="_blank">
-   <img alt="WhatsApp" height="55" src="https://www.singasavor.com/WhatsApp.png" style="border-radius: 50%;" width="55"/>
-  </a>
-  <a class="telegram" href="https://t.me/m/xX_VdEcPNTBl" style="background: none;" target="_blank">
-   <img alt="Telegram" height="55" src="https://www.singasavor.com/Telegram.png" style="border-radius: 50%;" width="55"/>
-  </a>
- </div>
+    <a href="https://wa.me/message/IMF74QQSFOYQA1" style="background: none;" target="_blank">
+      <img alt="WhatsApp" height="55" src="https://www.singasavor.com/WhatsApp.png" style="border-radius: 50%;" width="55"/>
+    </a>
+    <a class="telegram" href="https://t.me/m/xX_VdEcPNTBl" style="background: none;" target="_blank">
+      <img alt="Telegram" height="55" src="https://www.singasavor.com/Telegram.png" style="border-radius: 50%;" width="55"/>
+    </a>
+  </div>
+
+  <div id="loadingIndicator" class="loading-indicator">
+    <img src="loading.gif" alt="Loading..." />
+  </div>
+
+  <div class="feedback-section">
+    <h3>We value your feedback</h3>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback" class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+  </div>
 
   <script>
   $(document).ready(function () {
@@ -309,7 +333,28 @@
       $('#navMenu').removeClass('active');
     });
   });
-</script>
+
+  function showLoading() {
+    document.getElementById("loadingIndicator").style.display = "block";
+  }
+
+  function hideLoading() {
+    document.getElementById("loadingIndicator").style.display = "none";
+  }
+
+  // Show loading indicator before form submission
+  document.getElementById("feedbackForm").addEventListener("submit", function () {
+    showLoading();
+  });
+
+  document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    // Submit feedback
+    // ...
+    alert("Thank you for your feedback!");
+    hideLoading();
+  });
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

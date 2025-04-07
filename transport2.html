@@ -100,6 +100,12 @@
                 width: 90%;
             }
         }
+
+        .loading-indicator {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +160,10 @@
     </form>
 </div>
 
+<div id="loadingIndicator" class="loading-indicator">
+    <img src="loading.gif" alt="Loading..." />
+</div>
+
 <script>
     // Get F12_Amount from URL
     document.addEventListener("DOMContentLoaded", function () {
@@ -166,6 +176,26 @@
         // Handle Form Submission
         document.getElementById("passengerForm").addEventListener("submit", function (event) {
             event.preventDefault();
+            
+            // Validate form fields
+            let isValid = true;
+            const fields = ["passengerName", "contactNumber", "emailAddress", "travelDate", "pickupTime", "pickupLocation", "dropoffLocation", "numPassengers"];
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value) {
+                    input.style.borderColor = "red";
+                    isValid = false;
+                } else {
+                    input.style.borderColor = "";
+                }
+            });
+            if (!isValid) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+            // Show loading indicator
+            showLoading();
 
             // Collect Form Data
             const passengerName = document.getElementById("passengerName").value;
@@ -178,12 +208,20 @@
             const numPassengers = document.getElementById("numPassengers").value;
 
             // Construct Query String
-            const queryString = `?travelDate=${encodeURIComponent(travelDate)}&passengerName=${encodeURIComponent(passengerName)}&contactNumber=${encodeURIComponent(contactNumber)}&emailAddress=${encodeURIComponent(emailAddress)}&pickupTime=${encodeURIComponent(pickupTime)}&pickupLocation=${encodeURIComponent(pickupLocation)}&dropoffLocation=${encodeURIComponent(dropoffLocation)}&numPassengers=${encodeURIComponent(numPassengers)}&F12_Amount=${amount.toFixed(2)}`;
+            const queryString = `?travelDate=${encodeURIComponent(travelDate)}&passengerName=${encodeURIComponent(passengerName)}&contactNumber=${encodeURIComponent(contactNumber)}&emailAddress=${encodeURIComponent(emailAddress)}&pickupTime=${encodeURIComponent(pickupTime)}&pickupLocation=${encodeURIComponent(pickupLocation)}&dropoffLocation=${encodeURIComponent(dropoffLocation)}&numPassengers=${encodeURIComponent(numPassengers)}&F12_Amount=${encodeURIComponent(amount)}`;
 
             // Redirect to Transport3.html
             window.location.href = "https://singasavors.github.io/Private-bus-hire/transport3.html" + queryString;
         });
     });
+
+    function showLoading() {
+        document.getElementById("loadingIndicator").style.display = "block";
+    }
+
+    function hideLoading() {
+        document.getElementById("loadingIndicator").style.display = "none";
+    }
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

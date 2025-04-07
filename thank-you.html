@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,6 +152,48 @@
       margin-top: 20px;
     }
 
+    .driver-info {
+      margin-top: 40px;
+    }
+
+    .driver-info h2 {
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff88;
+      margin-bottom: 15px;
+    }
+
+    .driver-info table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .driver-info th,
+    .driver-info td {
+      border: 1px solid #ffffff33;
+      padding: 12px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .driver-info th {
+      background-color: #144d72;
+      color: #ffffff;
+    }
+
+    .whatsapp-link {
+      color: #00ff88;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .whatsapp-link:hover {
+      text-decoration: underline;
+    }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -161,12 +204,12 @@
   <div class="thank-you-message active">
     <h1>Thank You for Your Order!</h1>
     <p>Your payment receipt has been submitted successfully.</p>
-    <a href="https://wa.me/message/YX7KRSVBIV4ZJ1" class="button">Notify Us</a>
   </div>
 
   <div class="loading-message">
     <p>Please wait while we connect you with a driver...</p>
     <div class="loading-spinner"></div>
+    <a href=" <a href="https://wa.me/message/YX7KRSVBIV4ZJ1" class="button">Notify Us</a>" class="button">Contact Support</a>
   </div>
 
   <div class="booking-details">
@@ -184,10 +227,26 @@
       <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
       <tr><td>Driver Contact</td><td id="driverContact">Loading...</td></tr>
     </table>
+
+    <div class="driver-info">
+      <h2>Your Assigned Driver</h2>
+      <table>
+        <tr><th>Description</th><th>Details</th></tr>
+        <tr><td>Name</td><td>YAP WAI MING</td></tr>
+        <tr><td>Plate Number</td><td>SNC1922B</td></tr>
+        <tr><td>Car</td><td>Toyota Prius 7 Seater</td></tr>
+        <tr><td>Car Type</td><td>Multi Purpose Vehicle</td></tr>
+        <tr><td>Fuel Type</td><td>Petrol-Electric</td></tr>
+        <tr><td>Contact</td>
+          <td>
+            <a href="https://wa.me/6591512248" class="whatsapp-link" target="_blank">+65 9151 2248</a>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <script>
-    // Show loading message after 5 seconds, then show booking details after another 5 seconds
     setTimeout(() => {
       document.querySelector('.thank-you-message').classList.remove('active');
       document.querySelector('.loading-message').classList.add('active');
@@ -206,9 +265,7 @@
         document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
         document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "Not provided";
         document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_Amount") || "0.00").toFixed(2)}`;
-
-        // Example driver contact, should be dynamically fetched or set
-        document.getElementById("driverContact").textContent = "John Doe - +65 1234 5678";
+        document.getElementById("driverContact").textContent = "YAP WAI MING - +65 9151 2248";
       }, 5000);
     }, 5000);
   </script>

@@ -34,6 +34,14 @@
       100% { background-position: 0% 50%; }
     }
 
+    .thank-you-message, .booking-details, .loading-message {
+      display: none;
+    }
+
+    .thank-you-message.active, .booking-details.active, .loading-message.active {
+      display: block;
+    }
+
     h1 {
       font-size: 3rem;
       color: #ff00ff;
@@ -91,11 +99,118 @@
         font-size: 1rem;
       }
     }
+
+    .booking-details h1 {
+      font-size: 2.5rem;
+      color: #00ff88;
+      text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88;
+    }
+
+    .booking-details table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: rgba(30, 75, 110, 0.9);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .booking-details th, .booking-details td {
+      border: 1px solid #ffffff33;
+      padding: 14px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .booking-details th {
+      background-color: #165d89;
+      color: #ffffff;
+    }
+
+    .booking-details .highlight {
+      font-weight: bold;
+      color: #00e676;
+      text-shadow: 0px 0px 10px #00e676aa;
+      font-size: 18px;
+    }
+
+    .loading-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-spinner {
+      border: 8px solid rgba(255, 255, 255, 0.2);
+      border-top: 8px solid #00ffff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
-  <h1>Thank You for Your Order!</h1>
-  <p>Your payment receipt has been submitted successfully.</p>
-  <a href="https://wa.me/message/YX7KRSVBIV4ZJ1" class="button">Notify Us</a>
+  <div class="thank-you-message active">
+    <h1>Thank You for Your Order!</h1>
+    <p>Your payment receipt has been submitted successfully.</p>
+    <a href="https://wa.me/message/YX7KRSVBIV4ZJ1" class="button">Notify Us</a>
+  </div>
+
+  <div class="loading-message">
+    <p>Please wait while we connect you with a driver...</p>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="booking-details">
+    <h1>Booking Confirmation</h1>
+    <table>
+      <tr><th>Description</th><th>Details</th></tr>
+      <tr><td>Date</td><td id="selectedDate">Loading...</td></tr>
+      <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
+      <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
+      <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
+      <tr><td>Time</td><td id="pickupTime">Loading...</td></tr>
+      <tr><td>Pick-Up Location</td><td id="pickupLocation">Loading...</td></tr>
+      <tr><td>Drop-Off Location</td><td id="dropoffLocation">Loading...</td></tr>
+      <tr><td>Passengers</td><td id="numPassengers">Loading...</td></tr>
+      <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
+      <tr><td>Driver Contact</td><td id="driverContact">Loading...</td></tr>
+    </table>
+  </div>
+
+  <script>
+    // Show loading message after 5 seconds, then show booking details after another 5 seconds
+    setTimeout(() => {
+      document.querySelector('.thank-you-message').classList.remove('active');
+      document.querySelector('.loading-message').classList.add('active');
+
+      setTimeout(() => {
+        document.querySelector('.loading-message').classList.remove('active');
+        document.querySelector('.booking-details').classList.add('active');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "Not provided";
+        document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "Not provided";
+        document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "Not provided";
+        document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "Not provided";
+        document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "Not provided";
+        document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "Not provided";
+        document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
+        document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "Not provided";
+        document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_Amount") || "0.00").toFixed(2)}`;
+
+        // Example driver contact, should be dynamically fetched or set
+        document.getElementById("driverContact").textContent = "John Doe - +65 1234 5678";
+      }, 5000);
+    }, 5000);
+  </script>
 </body>
 </html>

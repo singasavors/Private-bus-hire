@@ -172,18 +172,15 @@
 </head>
 <body>
 
-    
     <div class="invoice-container">
-      <script>
-        if (!params.get("F12_Amount")) {
-          document.write('<div style="color: red; text-align: center; margin-top: 30px;"><strong>Missing payment info. Please return to the booking page.</strong></div>');
-        }
-      </script>
-    
-        <h1>Invoice </h1>
+        <h1>Invoice</h1>
         <h2>Cross Border Transportation</h2>
+        
+        <div id="missingInfo" style="color: red; text-align: center; margin-top: 30px; display: none;">
+            <strong>Missing payment info. Please return to the booking page.</strong>
+        </div>
 
-        <table>
+        <table id="invoiceTable" style="display: none;">
             <tr><th>Description</th><th>Details</th></tr>
             <tr><td>Date</td><td id="selectedDate">Loading...</td></tr>
             <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
@@ -218,65 +215,75 @@
 
      <script>
         function uploadReceipt() {
-    const fileInput = document.getElementById("receiptUpload");
-    fileInput.click();
+            const fileInput = document.getElementById("receiptUpload");
+            fileInput.click();
 
-    fileInput.onchange = () => {
-        const file = fileInput.files[0];
-        if (file) {
-            let formData = new FormData();
-            formData.append('receipt', file);
+            fileInput.onchange = () => {
+                const file = fileInput.files[0];
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('receipt', file);
 
-            // Append all form details
-            formData.append('Date', document.getElementById('selectedDate').textContent);
-            formData.append('Customer Name', document.getElementById('passengerName').textContent);
-            formData.append('Contact Number', document.getElementById('contactNumber').textContent);
-            formData.append('Email Address', document.getElementById('emailAddress').textContent);
-            formData.append('Time', document.getElementById('pickupTime').textContent);
-            formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
-            formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
-            formData.append('Passengers', document.getElementById('numPassengers').textContent);
-            formData.append('Total Amount', document.getElementById('totalAmount').textContent);
+                    // Append all form details
+                    formData.append('Date', document.getElementById('selectedDate').textContent);
+                    formData.append('Customer Name', document.getElementById('passengerName').textContent);
+                    formData.append('Contact Number', document.getElementById('contactNumber').textContent);
+                    formData.append('Email Address', document.getElementById('emailAddress').textContent);
+                    formData.append('Time', document.getElementById('pickupTime').textContent);
+                    formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
+                    formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
+                    formData.append('Passengers', document.getElementById('numPassengers').textContent);
+                    formData.append('Total Amount', document.getElementById('totalAmount').textContent);
 
-            fetch('https://formsubmit.co/endgameis21@hotmail.com', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Receipt and details sent successfully!');
-                    fileInput.value = '';
-                } else {
-                    alert('Submission failed. Please try again.');
+                    fetch('https://formsubmit.co/endgameis21@hotmail.com', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Receipt and details sent successfully!');
+                            fileInput.value = '';
+                        } else {
+                            alert('Submission failed. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred during submission.');
+                    });
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred during submission.');
-            });
+            };
         }
-    };
-}
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const date = urlParams.get("travelDate");
+            const passengerName = urlParams.get("passengerName");
+            const contactNumber = urlParams.get("contactNumber");
+            const emailAddress = urlParams.get("emailAddress");
+            const pickupTime = urlParams.get("pickupTime");
+            const pickupLocation = urlParams.get("pickupLocation");
+            const dropoffLocation = urlParams.get("dropoffLocation");
+            const numPassengers = urlParams.get("numPassengers");
+            const totalAmount = urlParams.get("F12_Amount");
+
+            if (!totalAmount) {
+                document.getElementById("missingInfo").style.display = "block";
+            } else {
+                document.getElementById("invoiceTable").style.display = "table";
+                document.getElementById("selectedDate").textContent = date || "Not provided";
+                document.getElementById("passengerName").textContent = passengerName || "Not provided";
+                document.getElementById("contactNumber").textContent = contactNumber || "Not provided";
+                document.getElementById("emailAddress").textContent = emailAddress || "Not provided";
+                document.getElementById("pickupTime").textContent = pickupTime || "Not provided";
+                document.getElementById("pickupLocation").textContent = pickupLocation || "Not provided";
+                document.getElementById("dropoffLocation").textContent = dropoffLocation || "Not provided";
+                document.getElementById("numPassengers").textContent = numPassengers || "Not provided";
+                document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount).toFixed(2)}`;
+            }
+        });
     </script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-
-    document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "Not provided";
-    document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "Not provided";
-    document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "Not provided";
-    document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "Not provided";
-    document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "Not provided";
-    document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "Not provided";
-    document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
-    document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "Not provided";
-
-    const totalAmount = urlParams.get("F12_Amount") || "0.00";
-    document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount).toFixed(2)}`;
-});
-</script>
 
 </body>
 </html>

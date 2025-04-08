@@ -1,360 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Singasavor Receipt | Cross Border Booking</title>
-  <meta name="description" content="Official receipt and payment page for Singasavor cross-border transport services." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://singasavor.com/transport3.html" />
-  <meta property="og:title" content="Singasavor Receipt | Cross Border Booking" />
-  <meta property="og:description" content="Confirm your payment and download your invoice for Singasavor transportation." />
-  <meta property="og:image" content="https://singasavor.com/assets/invoice.png" />
-  <meta property="og:url" content="https://singasavor.com/transport3.html" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Singasavor Receipt | Cross Border Booking" />
-  <meta name="twitter:description" content="Secure your cross-border transport invoice and payment receipt." />
-  <meta name="twitter:image" content="https://singasavor.com/assets/invoice.png" />
-  <link rel="icon" href="https://singasavor.com/assets/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Cross Border Transportation</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(45deg, #4fa3f7, #66a8ff, #8abff4, #0091d3);
+        background-size: 300% 300%;
+        animation: gradientBackground 12s ease infinite;
+        color: #ffffff;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-:root {
-  --primary-color: rgba(15, 43, 77, 0.9);
-  --secondary-color: rgba(20, 77, 114, 0.9);
-  --accent-color: rgba(0, 131, 143, 0.9);
-  --highlight-color: #00e676;
-  --white-blur: rgba(255, 255, 255, 0.1);
-  --glow-color: #00ffc3;
-}
+    .main-container {
+        width: 100%;
+        max-width: 800px;
+        background: rgba(24, 61, 95, 0.98);
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        backdrop-filter: blur(8px);
+        animation: fadeIn 1.5s ease;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    h1, h2, h3 {
+        text-align: center;
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        margin: 10px 0;
+        animation: glowText 2s ease infinite alternate;
+    }
 
-html, body {
-  width: 100vw;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-  background: radial-gradient(circle at top left, #0a0f1a, #1a273a, #243b55);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        background: rgba(255,255,255,0.1);
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://singasavor.com/assets/bg-texture.png');
-  opacity: 0.05;
-  z-index: 0;
-  pointer-events: none;
-}
+    th, td {
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 12px;
+        font-size: 15px;
+        text-align: left;
+        transition: background-color 0.3s ease;
+    }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    th {
+        background-color: rgba(0,145,211,0.7);
+    }
 
-.invoice-container,
-.payment-details {
-  width: 100vw;
-  padding: 20px;
-  margin: 0;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  background-color: rgba(30, 75, 110, 0.7);
-  backdrop-filter: blur(12px);
-  animation: fadeInUp 1.4s ease both;
-  z-index: 1;
-}
+    td:hover {
+        background-color: rgba(255,255,255,0.15);
+    }
 
-@media (min-width: 768px) {
-  .invoice-container,
-  .payment-details {
-    max-width: 960px;
-    margin: 20px auto;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--white-blur);
-  }
-}
+    .highlight {
+        font-weight: bold;
+        color: #00ff88;
+        text-shadow: 0 0 10px #00ff88;
+    }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .paynow-img {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        transition: transform 0.3s ease;
+    }
 
-h1, h2, h3 {
-  text-align: center;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-}
+    .paynow-img:hover {
+        transform: scale(1.05);
+    }
 
-h2 {
-  color: #00d9ff;
-  text-shadow: 0 0 12px #00d9ff, 0 0 24px rgba(0, 170, 255, 0.7);
-  font-weight: 700;
-  letter-spacing: 1px;
-  animation: glow-text 1.5s infinite alternate;
-}
+    .payment-info {
+        text-align: center;
+        margin: 10px auto;
+        font-size: 15px;
+        line-height: 1.8;
+    }
 
-@keyframes glow-text {
-  0% { text-shadow: 0 0 10px #00aaff; }
-  100% { text-shadow: 0 0 20px #00ffff; }
-}
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
 
-table {
-  width: 100%;
-  margin-top: 25px;
-  border-collapse: collapse;
-  background-color: rgba(25, 65, 105, 0.8);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
+    .btn {
+        background: linear-gradient(145deg, #00bfa5, #00796b);
+        color: #ffffff;
+        width: 100%;
+        max-width: 260px;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 15px #00796b;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+    }
 
-th, td {
-  padding: 16px;
-  border: 1px solid #ffffff2e;
-  font-size: 16px;
-  text-align: left;
-  transition: background 0.3s ease;
-}
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px #00bfa5;
+    }
 
-th {
-  background-color: rgba(0, 100, 160, 0.9);
-}
+    @keyframes gradientBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-td {
-  background-color: rgba(255, 255, 255, 0.05);
-}
+    @keyframes glowText {
+        0% { text-shadow: 0 0 10px #00e5ff; }
+        100% { text-shadow: 0 0 20px #00ffff; }
+    }
 
-td:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-.highlight {
-  font-weight: bold;
-  font-size: 18px;
-  color: var(--highlight-color);
-  text-shadow: 0 0 10px var(--highlight-color);
-}
+    @media (max-width: 768px) {
+        .main-container {
+            padding: 10px;
+            width: 100%;
+            border-radius: 0;
+        }
 
-.paynow-img {
-  width: 100%;
-  max-width: 320px;
-  margin: 25px auto;
-  display: block;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transition: all 0.3s ease;
-}
+        th, td {
+            font-size: 13px;
+            padding: 8px;
+        }
 
-.paynow-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-}
+        .btn {
+            max-width: 100%;
+        }
+    }
+</style><style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.btn {
-  background: linear-gradient(145deg, #00bfa5, #00796b);
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 14px 24px;
-  margin: 15px auto;
-  display: block;
-  width: 100%;
-  max-width: 280px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 0 15px #00ffc3aa;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
-  animation: glowPulse 2s infinite ease-in-out alternate;
-  position: relative;
-  overflow: hidden;
-}
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(45deg, #4fa3f7, #66a8ff, #8abff4, #0091d3);
+        background-size: 300% 300%;
+        animation: gradientBackground 12s ease infinite;
+        color: #ffffff;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.btn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #00ffc3 0%, transparent 70%);
-  opacity: 0.1;
-  animation: pulse 3s linear infinite;
-  z-index: 0;
-}
+    .main-container {
+        width: 100%;
+        max-width: 800px;
+        background: rgba(24, 61, 95, 0.98);
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        backdrop-filter: blur(8px);
+        animation: fadeIn 1.5s ease;
+    }
 
-.btn span {
-  position: relative;
-  z-index: 1;
-}
+    h1, h2, h3 {
+        text-align: center;
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        margin: 10px 0;
+        animation: glowText 2s ease infinite alternate;
+    }
 
-@keyframes pulse {
-  0% { transform: scale(0.8); opacity: 0.3; }
-  100% { transform: scale(1.6); opacity: 0; }
-}
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        background: rgba(255,255,255,0.1);
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color); }
-  100% { box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color); }
-}
+    th, td {
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 12px;
+        font-size: 15px;
+        text-align: left;
+        transition: background-color 0.3s ease;
+    }
 
-.btn:hover {
-  transform: scale(1.04);
-  background: linear-gradient(145deg, #00ffc3, #00b894);
-  box-shadow: 0 0 30px #00ffd5;
-}
+    th {
+        background-color: rgba(0,145,211,0.7);
+    }
 
-.payment-info p {
-  margin: 10px 0;
-  font-size: 16px;
-  text-align: center;
-}
+    td:hover {
+        background-color: rgba(255,255,255,0.15);
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #00ff88;
+        text-shadow: 0 0 10px #00ff88;
+    }
+
+    .paynow-img {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        transition: transform 0.3s ease;
+    }
+
+    .paynow-img:hover {
+        transform: scale(1.05);
+    }
+
+    .payment-info {
+        text-align: center;
+        margin: 10px auto;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        background: linear-gradient(145deg, #00bfa5, #00796b);
+        color: #ffffff;
+        width: 100%;
+        max-width: 260px;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 15px #00796b;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px #00bfa5;
+    }
+
+    @keyframes gradientBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowText {
+        0% { text-shadow: 0 0 10px #00e5ff; }
+        100% { text-shadow: 0 0 20px #00ffff; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .main-container {
+            padding: 10px;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        th, td {
+            font-size: 13px;
+            padding: 8px;
+        }
+
+        .btn {
+            max-width: 100%;
+        }
+    }
 </style>
 </head>
 <body>
+<div class="main-container">
 
-    <div class="invoice-container">
-        <h1>Invoice</h1>
-        <h2>Cross Border Transportation</h2>
-        
-        <div id="missingInfo" style="color: red; text-align: center; margin-top: 30px; display: none;">
-            <strong>Missing payment info. Please return to the booking page.</strong>
-        </div>
+    <h1>Invoice</h1>
+    <h2>Cross Border Transportation</h2>
 
-        <table id="invoiceTable" style="display: none;">
-            <tr><th>Description</th><th>Details</th></tr>
-            <tr><td>Date</td><td id="selectedDate">Loading...</td></tr>
-            <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
-            <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
-            <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
-            <tr><td>Time</td><td id="pickupTime">Loading...</td></tr>
-            <tr><td>Pick-Up Location</td><td id="pickupLocation">Loading...</td></tr>
-            <tr><td>Drop-Off Location</td><td id="dropoffLocation">Loading...</td></tr>
-            <tr><td>Passengers</td><td id="numPassengers">Loading...</td></tr>
-            <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
-        </table>
-    </div>
+    <table>
+        <tr><th>Description</th><th>Details</th></tr>
+        <tr><td>Travel Date</td><td id="selectedDate">Loading...</td></tr>
+        <tr><td>Customer Name</td><td id="passengerName">Loading...</td></tr>
+        <tr><td>Contact Number</td><td id="contactNumber">Loading...</td></tr>
+        <tr><td>Email Address</td><td id="emailAddress">Loading...</td></tr>
+        <tr><td>Pick Up Time</td><td id="pickupTime">Loading...</td></tr>
+        <tr><td>Pick Up Location</td><td id="pickupLocation">Loading...</td></tr>
+        <tr><td>Drop-Off Location</td><td id="dropoffLocation">Loading...</td></tr>
+        <tr><td>Passengers</td><td id="numPassengers">Loading...</td></tr>
+        <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
+    </table>
 
-    <div class="payment-details">
-        <h3>Payment Instructions</h3>
-        <p>Scan the PayNow QR Code below</p>
-        <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img">
-        <a href="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" download="PaynowQRCode.png" class="btn"><span>Download QR Code</span></a>
-        <p>Upload the QR code to your bank app, then adjust the amount accordingly. Once completed, screenshot and upload the receipt here.</p>
-
-        <div class="payment-info">
-            <p><strong>Payee Name:</strong> <span class="highlight">KL Transportation Services</span></p>
-            <p><strong>Bank:</strong> <span class="highlight">DBS BANK</span></p>
-            <p><strong>Account Number:</strong> <span class="highlight">88532600024849447</span></p>
-        </div>
+    <h3>Payment Instructions</h3>
+    <p>Scan the PayNow QR Code below</p>
+    <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img">
+  
+    <div class="payment-info">
+        <p><strong>Payee Name:</strong> <span class="highlight">Singasavor</span></p>
+        <p><strong>Bank Name:</strong> <span class="highlight">DBS BANK</span></p>
+        <p><strong>Account Number:</strong> <span class="highlight">88532600024849447</span></p>
     </div>
 
     <div class="btn-container">
         <input type="file" id="receiptUpload" name="receipt" accept="image/*" style="display: none;">
-        <button class="btn" onclick="uploadReceipt()"><span>Upload Receipt</span></button>
-        <a class="btn" href="https://wa.me/message/YX7KRSVBIV4ZJ1"><span>Contact Us</span></a>
+        <button class="btn" onclick="uploadReceipt()">Upload Receipt</button>
+        <a class="btn" href="https://wa.me/message/YX7KRSVBIV4ZJ1">Contact Us</a>
     </div>
 
-     <script>
-        function uploadReceipt() {
-            const fileInput = document.getElementById("receiptUpload");
-            fileInput.click();
+</div>
 
-            fileInput.onchange = () => {
-                const file = fileInput.files[0];
-                if (file) {
-                    const formData = new FormData();
-                    formData.append('receipt', file);
+<script>
+    function uploadReceipt() {
+        const fileInput = document.getElementById("receiptUpload");
+        fileInput.click();
 
-                    // Append all form details
-                    formData.append('Date', document.getElementById('selectedDate').textContent);
-                    formData.append('Customer Name', document.getElementById('passengerName').textContent);
-                    formData.append('Contact Number', document.getElementById('contactNumber').textContent);
-                    formData.append('Email Address', document.getElementById('emailAddress').textContent);
-                    formData.append('Time', document.getElementById('pickupTime').textContent);
-                    formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
-                    formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
-                    formData.append('Passengers', document.getElementById('numPassengers').textContent);
-                    formData.append('Total Amount', document.getElementById('totalAmount').textContent);
+        fileInput.onchange = () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append('receipt', file);
 
-                    fetch('https://formsubmit.co/endgameis21@hotmail.com', {
-                        method: 'POST',
-                        body: formData,
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('Receipt and details sent successfully!');
-                            fileInput.value = '';
+                // Append all form details
+                formData.append('Date', document.getElementById('selectedDate').textContent);
+                formData.append('Customer Name', document.getElementById('passengerName').textContent);
+                formData.append('Contact Number', document.getElementById('contactNumber').textContent);
+                formData.append('Email Address', document.getElementById('emailAddress').textContent);
+                formData.append('Time', document.getElementById('pickupTime').textContent);
+                formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
+                formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
+                formData.append('Passengers', document.getElementById('numPassengers').textContent);
+                formData.append('Total Amount', document.getElementById('totalAmount').textContent);
 
-                            // Redirect to thank-you.html after successful submission
-                            const urlParams = new URLSearchParams(window.location.search);
-                            const queryString = urlParams.toString();
-                            window.location.href = `thank-you.html?${queryString}`;
-                        } else {
-                            alert('Submission failed. Please try again.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('An error occurred during submission.');
-                    });
-                }
-            };
-        }
+                fetch('https://formsubmit.co/endgameis21@hotmail.com', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Receipt and details sent successfully!');
+                        fileInput.value = '';
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-
-            const date = urlParams.get("travelDate");
-            const passengerName = urlParams.get("passengerName");
-            const contactNumber = urlParams.get("contactNumber");
-            const emailAddress = urlParams.get("emailAddress");
-            const pickupTime = urlParams.get("pickupTime");
-            const pickupLocation = urlParams.get("pickupLocation");
-            const dropoffLocation = urlParams.get("dropoffLocation");
-            const numPassengers = urlParams.get("numPassengers");
-            const totalAmount = urlParams.get("F12_Amount");
-
-            if (!totalAmount) {
-                document.getElementById("missingInfo").style.display = "block";
-            } else {
-                document.getElementById("invoiceTable").style.display = "table";
-                document.getElementById("selectedDate").textContent = date || "Not provided";
-                document.getElementById("passengerName").textContent = passengerName || "Not provided";
-                document.getElementById("contactNumber").textContent = contactNumber || "Not provided";
-                document.getElementById("emailAddress").textContent = emailAddress || "Not provided";
-                document.getElementById("pickupTime").textContent = pickupTime || "Not provided";
-                document.getElementById("pickupLocation").textContent = pickupLocation || "Not provided";
-                document.getElementById("dropoffLocation").textContent = dropoffLocation || "Not provided";
-                document.getElementById("numPassengers").textContent = numPassengers || "Not provided";
-                document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount).toFixed(2)}`;
+                        // Redirect explicitly to your specified URL after successful submission
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const queryString = urlParams.toString();
+                        window.location.href = `https://singasavor.com/thank-you.html?${queryString}`;
+                    } else {
+                        alert('Submission failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during submission.');
+                });
             }
-        });
-    </script>
+        };
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const date = urlParams.get("travelDate");
+        const passengerName = urlParams.get("passengerName");
+        const contactNumber = urlParams.get("contactNumber");
+        const emailAddress = urlParams.get("emailAddress");
+        const pickupTime = urlParams.get("pickupTime");
+        const pickupLocation = urlParams.get("pickupLocation");
+        const dropoffLocation = urlParams.get("dropoffLocation");
+        const numPassengers = urlParams.get("numPassengers");
+        const totalAmount = urlParams.get("F12_Amount");
+
+        document.getElementById("selectedDate").textContent = date || "Not provided";
+        document.getElementById("passengerName").textContent = passengerName || "Not provided";
+        document.getElementById("contactNumber").textContent = contactNumber || "Not provided";
+        document.getElementById("emailAddress").textContent = emailAddress || "Not provided";
+        document.getElementById("pickupTime").textContent = pickupTime || "Not provided";
+        document.getElementById("pickupLocation").textContent = pickupLocation || "Not provided";
+        document.getElementById("dropoffLocation").textContent = dropoffLocation || "Not provided";
+        document.getElementById("numPassengers").textContent = numPassengers || "Not provided";
+        document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount || "0").toFixed(2)}`;
+    });
+</script>
 
 </body>
 </html>

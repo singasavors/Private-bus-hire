@@ -370,9 +370,15 @@ h2 {
     }
 
     function redirectToNextPage() {
-        const totalAmount = (selectedPrice * passengerCount).toFixed(2);
-        showLoading();
-        window.location.href = `https://www.singasavor.com/transport2.html?F12_Amount=${totalAmount}`;
+        try {
+            const totalAmount = (selectedPrice * passengerCount).toFixed(2);
+            console.log(`Redirecting to transport2.html with amount: ${totalAmount}`);
+            showLoading();
+            window.location.href = `https://www.singasavor.com/transport2.html?F12_Amount=${totalAmount}`;
+        } catch (error) {
+            console.error("Error during redirection:", error);
+            alert("An error occurred while processing your request. Please try again.");
+        }
     }
 
     function showLoading() {

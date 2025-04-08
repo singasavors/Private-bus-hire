@@ -4,165 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice - Cross Border Transportation</title>
-   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(45deg, #4fa3f7, #66a8ff, #8abff4, #0091d3);
-        background-size: 300% 300%;
-        animation: gradientBackground 12s ease infinite;
-        color: #ffffff;
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .main-container {
-        width: 100%;
-        max-width: 800px;
-        background: rgba(24, 61, 95, 0.98);
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        backdrop-filter: blur(8px);
-        animation: fadeIn 1.5s ease;
-    }
-
-    h1, h2, h3 {
-        text-align: center;
-        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
-        margin: 10px 0;
-        animation: glowText 2s ease infinite alternate;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-        background: rgba(255,255,255,0.1);
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    th, td {
-        border: 1px solid rgba(255,255,255,0.2);
-        padding: 12px;
-        font-size: 15px;
-        text-align: left;
-        transition: background-color 0.3s ease;
-    }
-
-    th {
-        background-color: rgba(0,145,211,0.7);
-    }
-
-    td:hover {
-        background-color: rgba(255,255,255,0.15);
-    }
-
-    .highlight {
-        font-weight: bold;
-        color: #00ff88;
-        text-shadow: 0 0 10px #00ff88;
-    }
-
-    .paynow-img {
-        display: block;
-        width: 100%;
-        max-width: 300px;
-        margin: 20px auto;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(255,255,255,0.5);
-        transition: transform 0.3s ease;
-    }
-
-    .paynow-img:hover {
-        transform: scale(1.05);
-    }
-
-    .payment-info {
-        text-align: left;
-        margin: 15px auto;
-        max-width: 300px;
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .btn-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .btn {
-        background: linear-gradient(145deg, #00bfa5, #00796b);
-        color: #ffffff;
-        width: 100%;
-        max-width: 260px;
-        padding: 14px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 0 15px #00796b;
-        transition: transform 0.3s, box-shadow 0.3s;
-        text-transform: uppercase;
-        text-align: center;
-        text-decoration: none;
-        border: none;
-    }
-
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0 20px #00bfa5;
-    }
-
-    @keyframes gradientBackground {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    @keyframes glowText {
-        0% { text-shadow: 0 0 10px #00e5ff; }
-        100% { text-shadow: 0 0 20px #00ffff; }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-        .main-container {
-            padding: 10px;
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #4fa3f7, #66a8ff, #8abff4, #0091d3);
+            background-size: 300% 300%;
+            animation: gradientBackground 12s ease infinite;
+            color: #ffffff;
+            min-height: 100vh;
             width: 100%;
-            border-radius: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(24, 61, 95, 0.98);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.1);
+            overflow: hidden;
+            border-radius: 10px;
         }
 
         th, td {
-            font-size: 13px;
-            padding: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            font-size: 15px;
+            text-align: left;
         }
 
-        .btn {
-            max-width: 100%;
+        th {
+            background-color: rgba(0,145,211,0.7);
+        }
+
+        td:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        .paynow-img {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
         }
 
         .payment-info {
-            max-width: 90%;
+            text-align: left;
+            margin: 15px auto;
+            max-width: 300px;
+            font-size: 15px;
+            line-height: 1.8;
         }
-    }
-</style>
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(145deg, #00bfa5, #00796b);
+            color: #ffffff;
+            width: 100%;
+            max-width: 260px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 10px;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            th, td {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .btn {
+                max-width: 100%;
+            }
+
+            .payment-info {
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="main-container">
@@ -182,19 +153,18 @@
         <tr><td>Total Amount</td><td id="totalAmount" class="highlight">$0.00</td></tr>
     </table>
 
-    <p class="payment-title">Scan the PayNow QR Code below</p>
-<img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img">
+    <h3>Payment Instructions</h3>
+    <img src="https://singasavors.github.io/Private-bus-hire/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img">
 
-<div class="payment-info">
-    <p><strong>Payee Name:</strong> <span class="highlight">Singasavor</span></p>
-    <p><strong>Bank Name:</strong> <span class="highlight">DBS BANK</span></p>
-    <p><strong>Account Number:</strong> <span class="highlight">88532600024849447</span></p>
-</div>
+    <div class="payment-info">
+        <p><strong>Payee Name:</strong> Singasavor</p>
+        <p><strong>Bank Name:</strong> DBS BANK</p>
+        <p><strong>Account Number:</strong> 88532600026593951</p>
+    </div>
 
     <div class="btn-container">
         <input type="file" id="receiptUpload" name="receipt" accept="image/*" style="display: none;">
         <button class="btn" onclick="uploadReceipt()">Upload Receipt</button>
-        <a class="btn" href="https://wa.me/message/YX7KRSVBIV4ZJ1">Contact Us</a>
     </div>
 </div>
 
@@ -210,12 +180,12 @@
                 formData.append('receipt', file);
 
                 // Append all form details
-                formData.append('Date', document.getElementById('selectedDate').textContent);
+                formData.append('Travel Date', document.getElementById('selectedDate').textContent);
                 formData.append('Customer Name', document.getElementById('passengerName').textContent);
                 formData.append('Contact Number', document.getElementById('contactNumber').textContent);
                 formData.append('Email Address', document.getElementById('emailAddress').textContent);
-                formData.append('Time', document.getElementById('pickupTime').textContent);
-                formData.append('Pick-Up Location', document.getElementById('pickupLocation').textContent);
+                formData.append('Pick Up Time', document.getElementById('pickupTime').textContent);
+                formData.append('Pick Up Location', document.getElementById('pickupLocation').textContent);
                 formData.append('Drop-Off Location', document.getElementById('dropoffLocation').textContent);
                 formData.append('Passengers', document.getElementById('numPassengers').textContent);
                 formData.append('Total Amount', document.getElementById('totalAmount').textContent);
@@ -229,9 +199,19 @@
                         alert('Receipt and details sent successfully!');
                         fileInput.value = '';
 
-                        // Redirect explicitly to your specified URL after successful submission
-                        const urlParams = new URLSearchParams(window.location.search);
-                        const queryString = urlParams.toString();
+                        // Redirect to thank-you.html with query parameters
+                        const queryString = new URLSearchParams({
+                            travelDate: document.getElementById('selectedDate').textContent,
+                            passengerName: document.getElementById('passengerName').textContent,
+                            contactNumber: document.getElementById('contactNumber').textContent,
+                            emailAddress: document.getElementById('emailAddress').textContent,
+                            pickupTime: document.getElementById('pickupTime').textContent,
+                            pickupLocation: document.getElementById('pickupLocation').textContent,
+                            dropoffLocation: document.getElementById('dropoffLocation').textContent,
+                            numPassengers: document.getElementById('numPassengers').textContent,
+                            F12_Amount: document.getElementById('totalAmount').textContent.replace('$', '')
+                        }).toString();
+
                         window.location.href = `https://singasavor.com/thank-you.html?${queryString}`;
                     } else {
                         alert('Submission failed. Please try again.');
@@ -248,25 +228,15 @@
     document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
 
-        const date = urlParams.get("travelDate");
-        const passengerName = urlParams.get("passengerName");
-        const contactNumber = urlParams.get("contactNumber");
-        const emailAddress = urlParams.get("emailAddress");
-        const pickupTime = urlParams.get("pickupTime");
-        const pickupLocation = urlParams.get("pickupLocation");
-        const dropoffLocation = urlParams.get("dropoffLocation");
-        const numPassengers = urlParams.get("numPassengers");
-        const totalAmount = urlParams.get("F12_Amount");
-
-        document.getElementById("selectedDate").textContent = date || "Not provided";
-        document.getElementById("passengerName").textContent = passengerName || "Not provided";
-        document.getElementById("contactNumber").textContent = contactNumber || "Not provided";
-        document.getElementById("emailAddress").textContent = emailAddress || "Not provided";
-        document.getElementById("pickupTime").textContent = pickupTime || "Not provided";
-        document.getElementById("pickupLocation").textContent = pickupLocation || "Not provided";
-        document.getElementById("dropoffLocation").textContent = dropoffLocation || "Not provided";
-        document.getElementById("numPassengers").textContent = numPassengers || "Not provided";
-        document.getElementById("totalAmount").textContent = `$${parseFloat(totalAmount || "0").toFixed(2)}`;
+        document.getElementById("selectedDate").textContent = urlParams.get("travelDate") || "Not provided";
+        document.getElementById("passengerName").textContent = urlParams.get("passengerName") || "Not provided";
+        document.getElementById("contactNumber").textContent = urlParams.get("contactNumber") || "Not provided";
+        document.getElementById("emailAddress").textContent = urlParams.get("emailAddress") || "Not provided";
+        document.getElementById("pickupTime").textContent = urlParams.get("pickupTime") || "Not provided";
+        document.getElementById("pickupLocation").textContent = urlParams.get("pickupLocation") || "Not provided";
+        document.getElementById("dropoffLocation").textContent = urlParams.get("dropoffLocation") || "Not provided";
+        document.getElementById("numPassengers").textContent = urlParams.get("numPassengers") || "Not provided";
+        document.getElementById("totalAmount").textContent = `$${parseFloat(urlParams.get("F12_Amount") || "0").toFixed(2)}`;
     });
 </script>
 

@@ -14,7 +14,7 @@
 <!-- Social Sharing -->
 <meta property="og:title" content="Singasavor | Book Trusted Services Across SG & Malaysia">
 <meta property="og:description" content="From transport to event setup, Singasavor links you with licensed providers in Singapore and Malaysia. Simple, secure, and no account needed.">
-<meta property="og:image" content="https://www.singasavor.com/assets/anderson-cover.jpg">
+<meta property="og:image" content="https://www.singasavor.com/singasavor-logo.png">
 <meta property="og:url" content="https://www.singasavor.com">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -165,10 +165,17 @@
   }
 
   .card {
-    background-color: #0f2a46 !important;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.15);
+    background-color: #112b44 !important;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.12);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 191, 255, 0.25);
   }
 
   .footer, .container {
@@ -208,8 +215,93 @@
   }
 
   .feedback-section {
-    margin-top: 40px;
+    margin-top: 60px;
+    padding: 40px 20px;
+    background-color: #0f2a46;
+    border-radius: 12px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
     text-align: center;
+  }
+
+  .feedback-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00e6ff;
+    text-shadow: 0 0 4px rgba(0,230,255,0.3);
+  }
+
+  .feedback-section .form-group {
+    margin-bottom: 20px;
+  }
+
+  .feedback-section textarea.form-control {
+    min-height: 150px;
+    font-size: 1rem;
+    padding: 15px;
+    background-color: #0f2a46;
+    color: #ffffff;
+    border: 1px solid #00bfff;
+    border-radius: 8px;
+  }
+
+  .feedback-section button {
+    width: 100%;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #00bfff, #66ffff);
+    border: none;
+    font-weight: bold;
+    color: #002f4b;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .feedback-section button:hover {
+    background: linear-gradient(135deg, #33ccff, #99f2ff);
+    color: #001e2e;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00e6ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 4px rgba(0,230,255,0.4);
+  }
+
+  .container h2::after {
+    content: "";
+    display: block;
+    margin: 0.5rem auto 1rem;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00e6ff, #66ffff);
+    border-radius: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00bfff, #66ffff);
+    border: none;
+    font-weight: bold;
+    color: #002f4b;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #33ccff, #99f2ff);
+    color: #001e2e;
+  }
+
+  textarea.form-control {
+    background-color: #0f2a46;
+    color: #ffffff;
+    border: 1px solid #00bfff;
+    border-radius: 8px;
   }
 </style>
 
@@ -233,7 +325,7 @@
   <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Singasavor</a>
+    <a class="navbar-brand" href="#"><img src="https://singasavor.com/singasavor.png" alt="Singasavor Logo" style="height:32px; max-width: 160px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -288,7 +380,7 @@
   </div>
 
    <div class="floating-buttons">
-    <a href="https://wa.me/message/IMF74QQSFOYQA1" style="background: none;" target="_blank">
+    <a href="https://wa.me/message/YX7KRSVBIV4ZJ1" style="background: none;" target="_blank">
       <img alt="WhatsApp" height="55" src="https://www.singasavor.com/WhatsApp.png" style="border-radius: 50%;" width="55"/>
     </a>
     <a class="telegram" href="https://t.me/m/xX_VdEcPNTBl" style="background: none;" target="_blank">
@@ -301,15 +393,21 @@
   </div>
 
   <div class="feedback-section">
-    <h3>We value your feedback</h3>
-    <form id="feedbackForm">
-      <div class="form-group">
-        <label for="feedback">Your Feedback</label>
-        <textarea id="feedback" class="form-control" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit Feedback</button>
-    </form>
-  </div>
+  <h3>We value your feedback</h3>
+  <form action="https://formsubmit.co/endgameis21@hotmail.com" method="POST">
+    <!-- Optional spam protection -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Feedback from Singasavor">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="form-group">
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" name="message" class="form-control" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+  </form>
+</div>
 
   <script>
   $(document).ready(function () {

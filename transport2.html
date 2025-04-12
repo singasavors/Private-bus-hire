@@ -171,16 +171,13 @@
 </div>
 
 <script>
-    // Get F12_Amount from URL
     document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         const amount = parseFloat(urlParams.get("F12_Amount")) || 0;
         const selectedRoute = urlParams.get("selectedRoute") || "Not provided";
 
-        // Update Total Amount Display
         document.getElementById("totalAmount").textContent = `$${amount.toFixed(2)}`;
 
-        // Add hidden input for selected route
         const routeInput = document.createElement("input");
         routeInput.type = "hidden";
         routeInput.id = "selectedRoute";
@@ -188,51 +185,14 @@
         routeInput.value = selectedRoute;
         document.getElementById("passengerForm").appendChild(routeInput);
 
-        // Handle Form Submission
         document.getElementById("passengerForm").addEventListener("submit", function (event) {
             event.preventDefault();
+
+            const queryString = `?travelDate=${encodeURIComponent(document.getElementById("travelDate").value)}&passengerName=${encodeURIComponent(document.getElementById("passengerName").value)}&contactNumber=${encodeURIComponent(document.getElementById("contactNumber").value)}&emailAddress=${encodeURIComponent(document.getElementById("emailAddress").value)}&pickupTime=${encodeURIComponent(document.getElementById("pickupTime").value)}&pickupLocation=${encodeURIComponent(document.getElementById("pickupLocation").value)}&dropoffLocation=${encodeURIComponent(document.getElementById("dropoffLocation").value)}&numPassengers=${encodeURIComponent(document.getElementById("numPassengers").value)}&selectedRoute=${encodeURIComponent(selectedRoute)}&F12_Amount=${encodeURIComponent(amount)}`;
             
-            // Validate form fields
-            let isValid = true;
-            const fields = ["passengerName", "contactNumber", "emailAddress", "travelDate", "pickupTime", "pickupLocation", "dropoffLocation", "numPassengers", "selectedRoute"];
-            fields.forEach(field => {
-                const input = document.getElementById(field);
-                if (!input.value) {
-                    input.style.borderColor = "red";
-                    isValid = false;
-                } else {
-                    input.style.borderColor = "";
-                }
-            });
-            if (!isValid) {
-                alert("Please fill out all required fields.");
-                return;
-            }
-
-            // Show loading indicator
-            showLoading();
-
-            // Collect Form Data
-            const passengerName = document.getElementById("passengerName").value;
-            const contactNumber = document.getElementById("contactNumber").value;
-            const emailAddress = document.getElementById("emailAddress").value;
-            const travelDate = document.getElementById("travelDate").value;
-            const pickupTime = document.getElementById("pickupTime").value;
-            const pickupLocation = document.getElementById("pickupLocation").value;
-            const dropoffLocation = document.getElementById("dropoffLocation").value;
-            const numPassengers = document.getElementById("numPassengers").value;
-
-            // Construct Query String
-            const queryString = `?travelDate=${encodeURIComponent(travelDate)}&passengerName=${encodeURIComponent(passengerName)}&contactNumber=${encodeURIComponent(contactNumber)}&emailAddress=${encodeURIComponent(emailAddress)}&pickupTime=${encodeURIComponent(pickupTime)}&pickupLocation=${encodeURIComponent(pickupLocation)}&dropoffLocation=${encodeURIComponent(dropoffLocation)}&numPassengers=${encodeURIComponent(numPassengers)}&F12_Amount=${encodeURIComponent(amount)}&selectedRoute=${encodeURIComponent(selectedRoute)}`;
-
-            // Redirect to Transport3.html
             window.location.href = "https://singxsavor.com/transport3.html" + queryString;
         });
     });
-
-    function showLoading() {
-        document.getElementById("loadingIndicator").style.display = "block";
-    }
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

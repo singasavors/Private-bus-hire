@@ -27,6 +27,7 @@
   <link rel="canonical" href="https://singxsavor.com/carpool.html" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+
   <style>
 html, body {
   margin: 0;
@@ -286,11 +287,15 @@ h2 {
   }
 }
 </style>
+
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">singxsavor</a>
+    <a class="navbar-brand" href="#">
+      <img src="https://singasavors.github.io/Private-bus-hire/singasavor.png" alt="Singxsavor Logo" style="height:32px;">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -308,86 +313,95 @@ h2 {
 </nav>
 
 <div class="container my-4">
-    <h2 class="text-center mb-3">For all travelers commuting between Singapore and Malaysia</h2>
-    <div id="service-list"></div>
-    <div class="total" id="totalPrice">Total: $15.00</div>
-    <button onclick="redirectToNextPage()" class="btn btn-primary btn-lg mt-3 d-block mx-auto">Next Page</button>
+  <h2 class="text-center mb-4">For all travelers commuting between Singapore and Malaysia</h2>
+  <div id="service-list"></div>
+  <div class="total" id="totalPrice">Total: $15.00</div>
+  <button id="nextPageBtn" class="btn btn-primary btn-lg mt-4 d-block mx-auto">Next Page</button>
 </div>
 
 <div id="loadingIndicator" class="loading-indicator">
-    <img src="loading.gif" alt="Loading..." />
+  <img src="loading.gif" alt="Loading..." />
 </div>
 
 <script>
-    let selectedPrice = 15;
-    let passengerCount = 1;
+  let selectedPrice = 15;
+  let passengerCount = 1;
 
-    const services = [
-        { title: "Singapore - Johor", description: "Hassle-free travel.", price: 15, img: "https://singxsavor.com/jb.png" },
-        { title: "Singapore - Melaka", description: "Comfortable journey.", price: 20, img: "https://singxsavor.com/malacca.png" },
-        { title: "Singapore - Kuala Lumpur", description: "Stylish travel.", price: 25, img: "https://singxsavor.com/kl.png" },
-        { title: "Singapore - Genting", description: "Comfortable to Genting.", price: 30, img: "https://singxsavor.com/genting.png" }
-    ];
+  const services = [
+    { title: "Singapore - Johor", description: "Hassle-free travel.", price: 15, img: "https://singxsavor.com/jb.png" },
+    { title: "Singapore - Melaka", description: "Comfortable journey.", price: 20, img: "https://singxsavor.com/malacca.png" },
+    { title: "Singapore - Kuala Lumpur", description: "Stylish travel.", price: 25, img: "https://singxsavor.com/kl.png" },
+    { title: "Singapore - Genting", description: "Comfortable to Genting.", price: 30, img: "https://singxsavor.com/genting.png" }
+  ];
 
-    const serviceList = document.getElementById('service-list');
-    services.forEach((service, index) => {
-        const card = document.createElement('div');
-        card.className = 'service-card ' + (index === 0 ? 'selected' : '');
-        card.onclick = () => selectService(card, service.price);
-        card.innerHTML = `
-            <div class="service-details">
-                <div class="service-title">${service.title}</div>
-                <div class="service-description">${service.description}</div>
-                <div class="price">$${service.price.toFixed(2)}</div>
-                <div class="passenger-control">
-                    <button class="btn-small" onclick="changePassengers(event, -1)">-</button>
-                    <span class="passenger-count">1</span>
-                    <button class="btn-small" onclick="changePassengers(event, 1)">+</button>
-                </div>
-            </div>
-            <img src="${service.img}" alt="${service.title}" class="service-img">
-        `;
-        serviceList.appendChild(card);
+  const serviceList = document.getElementById('service-list');
+
+  services.forEach((service, index) => {
+    const card = document.createElement('div');
+    card.className = 'service-card' + (index === 0 ? ' selected' : '');
+    card.innerHTML = `
+      <div class="service-details">
+        <div class="service-title">${service.title}</div>
+        <div class="service-description">${service.description}</div>
+        <div class="price">$${service.price.toFixed(2)}</div>
+        <div class="passenger-control">
+          <button class="btn-small decrement">-</button>
+          <span class="passenger-count">1</span>
+          <button class="btn-small increment">+</button>
+        </div>
+      </div>
+      <img src="${service.img}" alt="${service.title}" class="service-img">
+    `;
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedPrice = service.price;
+      passengerCount = 1;
+      card.querySelector('.passenger-count').textContent = passengerCount;
+      updateTotal();
     });
 
-    function selectService(selectedCard, price) {
-        document.querySelectorAll('.service-card').forEach(card => card.classList.remove('selected'));
-        selectedCard.classList.add('selected');
-        selectedPrice = price;
-        passengerCount = 1;
-        updateTotal();
-    }
+    card.querySelector('.decrement').addEventListener('click', (e) => {
+      e.stopPropagation();
+      passengerCount = Math.max(1, passengerCount - 1);
+      card.querySelector('.passenger-count').textContent = passengerCount;
+      updateTotal();
+    });
 
-    function changePassengers(event, change) {
-        event.stopPropagation();
-        passengerCount = Math.max(1, passengerCount + change);
-        document.querySelectorAll('.passenger-count').forEach(el => el.textContent = passengerCount);
-        updateTotal();
-    }
+    card.querySelector('.increment').addEventListener('click', (e) => {
+      e.stopPropagation();
+      passengerCount += 1;
+      card.querySelector('.passenger-count').textContent = passengerCount;
+      updateTotal();
+    });
 
-    function updateTotal() {
-        document.getElementById('totalPrice').textContent = `Total: $${(selectedPrice * passengerCount).toFixed(2)}`;
-    }
+    serviceList.appendChild(card);
+  });
 
-    function redirectToNextPage() {
-        try {
-            const totalAmount = (selectedPrice * passengerCount).toFixed(2);
-            console.log(`Redirecting to transport2.html with amount: ${totalAmount}`);
-            showLoading();
-            window.location.href = `https://www.singxsavor.com/transport2.html?F12_Amount=${totalAmount}`;
-        } catch (error) {
-            console.error("Error during redirection:", error);
-            alert("An error occurred while processing your request. Please try again.");
-        }
-    }
+  function updateTotal() {
+    document.getElementById('totalPrice').textContent = `Total: $${(selectedPrice * passengerCount).toFixed(2)}`;
+  }
 
-    function showLoading() {
-        document.getElementById("loadingIndicator").style.display = "block";
+  function redirectToNextPage() {
+    try {
+      const totalAmount = (selectedPrice * passengerCount).toFixed(2);
+      showLoading();
+      window.location.href = `https://www.singxsavor.com/transport2.html?F12_Amount=${totalAmount}`;
+    } catch (error) {
+      console.error("Redirection failed:", error);
+      alert("Something went wrong. Please try again.");
     }
+  }
 
-    function hideLoading() {
-        document.getElementById("loadingIndicator").style.display = "none";
-    }
+  function showLoading() {
+    document.getElementById("loadingIndicator").style.display = "block";
+  }
+
+  function hideLoading() {
+    document.getElementById("loadingIndicator").style.display = "none";
+  }
+
+  document.getElementById('nextPageBtn').addEventListener('click', redirectToNextPage);
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

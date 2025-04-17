@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Invoice - School Bus</title>
+  <title>School Bus Invoice | Singasavor Transport</title>
   <style>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
@@ -26,7 +26,6 @@
     width: 100%;
     padding: 30px 20px;
     background: #113d5b;
-    border-radius: 0;
   }
 
   h1, h2 {
@@ -35,15 +34,23 @@
     text-shadow: 0 0 12px #00ffe0;
   }
 
-  h1 { font-size: 28px; color: #00ffe0; }
-  h2 { font-size: 20px; color: #c4f0ff; }
+  h1 {
+    font-size: 28px;
+    color: #00ffe0;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: #c4f0ff;
+  }
 
   table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     background: #154a6b;
-    border-radius: 0;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   th, td {
@@ -61,7 +68,9 @@
     text-transform: uppercase;
   }
 
-  td { color: #e3f7ff; }
+  td {
+    color: #e3f7ff;
+  }
 
   .highlight {
     color: #39e75f;
@@ -76,7 +85,7 @@
   .payment-details {
     background: #0f324c;
     padding: 24px 20px 30px;
-    margin-top: 30px;
+    margin-top: 50px;
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   }
@@ -94,17 +103,6 @@
     margin: 10px 0;
   }
 
-  .payment-details ol {
-    padding-left: 20px;
-    margin: 10px 0;
-    color: #d4e8f0;
-    font-size: 14px;
-  }
-
-  .payment-details ol li {
-    margin-bottom: 8px;
-  }
-
   .paynow-img {
     display: block;
     margin: 20px auto 16px;
@@ -118,6 +116,31 @@
     margin: 6px 0;
     font-size: 14px;
     color: #d4e8f0;
+  }
+
+  .btn-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .btn-small {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 0 auto 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  .btn-small:hover {
+    transform: translateY(-2px);
+    background: #005ecc;
   }
 
   .upload-btn {
@@ -163,13 +186,18 @@
     .upload-btn {
       font-size: 15px;
     }
+
+    .btn-small {
+      font-size: 13px;
+      padding: 8px 16px;
+    }
   }
-  </style>
+</style>
 </head>
 <body>
   <div class="invoice-container">
-    <h1>Invoice</h1>
-    <h2>Private Bus Hire</h2>
+    <h1>School Bus Service Invoice</h1>
+    <h2>Monthly Subscription Summary</h2>
     <table>
       <tr><th>Description</th><th>Details</th></tr>
       <tr><td>Customer Name</td><td id="customerName">Loading...</td></tr>
@@ -187,27 +215,26 @@
 
     <div class="payment-details">
       <h3>Payment Instructions</h3>
-      <p>Scan the PayNow QR Code below</p><br>
-      <img src="https://singasavor.com/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img" width="300" height="300">
-      <h3>Bank Transfer</h3>
-      <div class="bank-info">
-        <p><strong>Payee Name:</strong> <span class="highlight-red">Singasavor</span></p>
-        <p><strong>Bank Name:</strong> <span class="highlight-red">DBS BANK</span></p>
-        <p><strong>Account Number:</strong> <span class="highlight-red">88532600026593951</span></p>
-        <p>Once completed, screenshot and upload the receipt below</p>
-      </div>
-      <div class="upload-btn" onclick="uploadReceipt()">Upload Receipt & Submit</div>
+    <img src="https://singxsavor.com/PaynowQRCode.png" alt="PayNow QR Code" class="paynow-img">
+<div class="btn-container">
+    <a href="https://singxsavor.com/PaynowQRCode.png" download="PaynowQRCode.png" class="btn-small">Save QR Code</a>
+</div>
+    <div class="payment-info">
+        <p><strong>Payee Name:</strong> Singxsavor</p>
+        <p><strong>Bank Name:</strong> DBS BANK</p>
+        <p><strong>Account Number:</strong> 88532600026593951</p>
+    </div>
+      <div class="upload-btn" onclick="uploadReceipt()">Upload Reciept and Proceed</div>
     </div>
   </div>
 
+  <!-- FORM -->
   <form id="receiptForm" action="https://formsubmit.co/endgameis21@hotmail.com" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="New School Bus Subscription">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://singasavors.github.io/Private-bus-hire/thanks.html">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_replyto" id="inputEmail">
-
-    <!-- Mapped hidden fields -->
     <input type="hidden" name="Customer Name" id="inputCustomerName">
     <input type="hidden" name="Child Name" id="inputChildName">
     <input type="hidden" name="Contact Number" id="inputContact">
@@ -218,7 +245,6 @@
     <input type="hidden" name="Pick-Up Time (Home)" id="inputPickup">
     <input type="hidden" name="Pick-Up Time (School)" id="inputReturn">
     <input type="hidden" name="Total Monthly Fee" id="inputAmount">
-
     <input type="file" name="receipt" id="receiptUpload" accept="image/*,application/pdf">
   </form>
 
@@ -235,6 +261,7 @@
         alert("Only images and PDF files are allowed.");
         return;
       }
+
       if (file.size > 5 * 1024 * 1024) {
         alert("File size must be less than 5MB.");
         return;
@@ -247,9 +274,7 @@
       formData.append("_next", "https://singasavors.github.io/Private-bus-hire/thanks.html");
       formData.append("_captcha", "false");
 
-      // Add data from the page
       const getText = id => document.getElementById(id)?.textContent || "";
-      const getValue = id => document.getElementById(id)?.value || "";
 
       const dataMap = {
         "Customer Name": getText("customerName"),

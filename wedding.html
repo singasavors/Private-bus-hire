@@ -1,275 +1,360 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Wedding Transport Services</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="#10253f" name="theme-color"/>
+<title>Wedding Transport Packages</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #10253f, #183d5d);
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00eaff;
+      font-family: 'Baloo 2', cursive;
+      margin: 20px auto;
+      text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
+    }
+    nav {
+      background: #0b1e30;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+    }
+    nav a {
+      color: #00eaff;
+      text-decoration: none;
+      margin: 10px 8px;
+      font-weight: bold;
+    }
+    .section {
+      padding: 20px 15px;
+      margin: auto;
+      max-width: 1100px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #112b44;
+      margin: 20px 0;
+      box-shadow: 0 6px 12px rgba(0, 191, 255, 0.1);
+    }
+    th, td {
+      padding: 12px 10px;
+      text-align: center;
+      border: 1px solid #00bfff33;
+    }
+    th {
+      background-color: #004a70;
+      color: #00eaff;
+    }
+    td img {
+      width: 80px;
+      border-radius: 6px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+    ul li { margin-bottom: 10px; text-align: left; }
+    .contact-form {
+      margin-top: 30px;
+      padding: 20px;
+      background: #0f2a46;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 191, 255, 0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1px solid #00bfff;
+      background-color: #092030;
+      color: #fff;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .contact-form button {
+      padding: 14px;
+      background: linear-gradient(135deg, #00bfff, #66ffff);
+      border: none;
+      color: #002f4b;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background: linear-gradient(135deg, #33ccff, #99f2ff);
+    }
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr {
+        margin-bottom: 16px;
+        background: #0a1f38;
+        padding: 12px;
+        border-radius: 10px;
+      }
+      td {
+        padding: 10px 10px 10px 50%;
+        position: relative;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #1e354a;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        font-weight: bold;
+        color: #00eaff;
+      }
+      td img {
+        width: 100%;
+        max-width: 120px;
+        margin: 5px auto;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
 
-html, body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #10253f, #183d5d);
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+    .section {
+      padding: 0 10px;
+      margin: 0;
+      max-width: 100%;
+    }
 
-h1, h2 {
-  text-align: center;
-  color: #00eaff;
-  font-family: 'Baloo 2', cursive;
-  margin: 20px auto;
-  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
-}
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #00eaff;
+      font-weight: bold;
+    }
 
-.section {
-  padding: 20px 15px;
-  margin: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #112b44;
-  color: #fff;
-  margin: 20px 0;
-  box-shadow: 0 6px 12px rgba(0, 191, 255, 0.1);
-}
-
-th, td {
-  padding: 12px 10px;
-  text-align: center;
-  font-size: 15px;
-  border: 1px solid #00bfff33;
-}
-
-th {
-  background-color: #004a70;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-img {
-  width: 80px;
-  height: auto;
-  border-radius: 6px;
-}
-
-.highlight {
-  color: #00ffae;
-  font-weight: bold;
-}
-
-ul {
-  padding-left: 20px;
-  margin-bottom: 25px;
-}
-
-ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-  text-align: left;
-}
-
-p {
-  margin: 15px 0;
-  text-align: justify;
-  padding: 0 5px;
-}
-
-.contact-form {
-  margin-top: 30px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  font-size: 15px;
-  border-radius: 6px;
-  border: 1px solid #00bfff;
-  background-color: #0f2a46;
-  color: #fff;
-  width: 100%;
-}
-
-.contact-form button {
-  padding: 14px;
-  background: linear-gradient(135deg, #00bfff, #66ffff);
-  border: none;
-  font-weight: bold;
-  color: #002f4b;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: linear-gradient(135deg, #33ccff, #99f2ff);
-}
-
-@media screen and (max-width: 768px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-
-  thead {
-    display: none;
-  }
-
-  tr {
-    margin-bottom: 20px;
-    background: #0a1f38;
-    border: 1px solid #1a2d45;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  td {
-    padding-left: 50%;
-    position: relative;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid #1e354a;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    font-weight: bold;
-    color: #00eaff;
-    font-size: 13px;
-  }
-
-  td img {
-    width: 100%;
-    max-width: 120px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 17px;
-  }
-
-  ul li, p {
-    font-size: 14px;
-  }
-}
-</style>
+    .contact-form button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #00eaff;
+    }
+    </style>
 </head>
 <body>
+<nav>
+<div><img alt="Singasavor Logo" src="https://singxsavor.com/singasavor.png" style="height:32px; max-width: 160px;"/></div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="carpool.html">Carpool Booking</a>
+<a href="monthly-pass.html">Monthly Pass</a>
+<a href="private-bus.html">Private Bus Hire</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 <div class="section">
 <h1>Wedding Transport Packages</h1>
-<h2>50% Off Promo Rates</h2>
+<p style="text-align:center;">50% OFF all rates this month</p>
 <table>
 <thead>
 <tr>
-<th>Vehicle</th>
-<th>Image</th>
-<th>ROM Package (3 hrs)</th>
-<th>Half Day (8 hrs)</th>
-<th>Full Day (12 hrs)</th>
-<th>Additional Hour</th>
-<th>Midnight Surcharge</th>
+<th>Vehicle</th><th>Image</th><th>ROM (3hrs)</th><th>Half Day</th><th>Full Day</th><th>Extra Hour</th><th>Midnight</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mercedes Cab</td>
-<td><img alt="Mercedes Cab" src="https://singasavors.github.io/Logo/mercedeseclass.png"/></td>
-<td class="highlight">SGD 68</td>
-<td class="highlight">SGD 219</td>
-<td class="highlight">SGD 294</td>
-<td>SGD 23</td>
-<td>SGD 6</td>
+<td data-label="Vehicle">Mercedes Cab</td>
+<td data-label="Image"><img alt="" src="https://singasavors.github.io/Logo/mercedeseclass.png"/></td>
+<td data-label="ROM">SGD 68</td>
+<td data-label="Half Day">SGD 219</td>
+<td data-label="Full Day">SGD 294</td>
+<td data-label="Extra Hour">SGD 23</td>
+<td data-label="Midnight">SGD 6</td>
 </tr>
 <tr>
-<td>Mini Bus (23 Seater)</td>
-<td><img alt="Mini Bus" src="https://singasavors.github.io/Logo/minibus23.png"/></td>
-<td class="highlight">SGD 83</td>
-<td class="highlight">SGD 294</td>
-<td class="highlight">SGD 369</td>
-<td>SGD 28</td>
-<td>SGD 10</td>
+<td data-label="Vehicle">Toyota MPV</td>
+<td data-label="Image"><img alt="" src="https://singasavors.github.io/Logo/toyota.png"/></td>
+<td data-label="ROM">SGD 75</td>
+<td data-label="Half Day">SGD 240</td>
+<td data-label="Full Day">SGD 300</td>
+<td data-label="Extra Hour">SGD 25</td>
+<td data-label="Midnight">SGD 10</td>
 </tr>
 <tr>
-<td>Coach (45 Seater)</td>
-<td><img alt="Coach" src="https://singasavors.github.io/Logo/Coach45.png"/></td>
-<td class="highlight">SGD 83</td>
-<td class="highlight">SGD 265</td>
-<td class="highlight">SGD 330</td>
-<td>SGD 28</td>
-<td>SGD 10</td>
+<td data-label="Vehicle">Tesla Model 3</td>
+<td data-label="Image"><img alt="Tesla Model 3" src="https://singasavors.github.io/Logo/telsa-model-3.png"/></td>
+<td data-label="ROM">SGD 88</td>
+<td data-label="Half Day">SGD 260</td>
+<td data-label="Full Day">SGD 330</td>
+<td data-label="Extra Hour">SGD 28</td>
+<td data-label="Midnight">SGD 10</td>
 </tr>
 <tr>
-<td>Toyota MPV</td>
-<td><img alt="Toyota MPV" src="https://singasavors.github.io/Logo/toyota.png"/></td>
-<td class="highlight">SGD 90</td>
-<td class="highlight">SGD 265</td>
-<td class="highlight">SGD 330</td>
-<td>SGD 33</td>
-<td>SGD 10</td>
+<td data-label="Vehicle">BYD Seal</td>
+<td data-label="Image"><img alt="BYD Seal" src="https://singasavors.github.io/Logo/byd-seal.png"/></td>
+<td data-label="ROM">SGD 83</td>
+<td data-label="Half Day">SGD 250</td>
+<td data-label="Full Day">SGD 320</td>
+<td data-label="Extra Hour">SGD 26</td>
+<td data-label="Midnight">SGD 10</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Mazda 3</td>
+<td data-label="Image"><img alt="Mazda 3" src="https://singasavors.github.io/Logo/mazda3.png"/></td>
+<td data-label="ROM">SGD 70</td>
+<td data-label="Half Day">SGD 220</td>
+<td data-label="Full Day">SGD 295</td>
+<td data-label="Extra Hour">SGD 23</td>
+<td data-label="Midnight">SGD 6</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Honda Civic</td>
+<td data-label="Image"><img alt="Honda Civic" src="https://singasavors.github.io/Logo/honda-civic1.png"/></td>
+<td data-label="ROM">SGD 72</td>
+<td data-label="Half Day">SGD 230</td>
+<td data-label="Full Day">SGD 298</td>
+<td data-label="Extra Hour">SGD 24</td>
+<td data-label="Midnight">SGD 8</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Hyundai Elantra</td>
+<td data-label="Image"><img alt="Hyundai Elantra" src="https://singasavors.github.io/Logo/hyundai-elantra.png"/></td>
+<td data-label="ROM">SGD 69</td>
+<td data-label="Half Day">SGD 218</td>
+<td data-label="Full Day">SGD 290</td>
+<td data-label="Extra Hour">SGD 22</td>
+<td data-label="Midnight">SGD 6</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Mercedes GLB</td>
+<td data-label="Image"><img alt="Mercedes GLB" src="https://singasavors.github.io/Logo/mercedes-glb.png"/></td>
+<td data-label="ROM">SGD 120</td>
+<td data-label="Half Day">SGD 350</td>
+<td data-label="Full Day">SGD 450</td>
+<td data-label="Extra Hour">SGD 35</td>
+<td data-label="Midnight">SGD 15</td>
+</tr>
+<tr>
+<td data-label="Vehicle">BMW X2</td>
+<td data-label="Image"><img alt="BMW X2" src="https://singasavors.github.io/Logo/bmw-x2.png"/></td>
+<td data-label="ROM">SGD 125</td>
+<td data-label="Half Day">SGD 360</td>
+<td data-label="Full Day">SGD 460</td>
+<td data-label="Extra Hour">SGD 38</td>
+<td data-label="Midnight">SGD 15</td>
+</tr>
+<tr>
+<td data-label="Vehicle">BMW 3 Series</td>
+<td data-label="Image"><img alt="BMW 3 Series" src="https://singasavors.github.io/Logo/bmw-3.png"/></td>
+<td data-label="ROM">SGD 128</td>
+<td data-label="Half Day">SGD 370</td>
+<td data-label="Full Day">SGD 480</td>
+<td data-label="Extra Hour">SGD 40</td>
+<td data-label="Midnight">SGD 18</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Mini Bus (23 Seater)</td>
+<td data-label="Image"><img alt="Mini Bus (23 Seater)" src="https://singasavors.github.io/Logo/minibus23.png"/></td>
+<td data-label="ROM">SGD 83</td>
+<td data-label="Half Day">SGD 255</td>
+<td data-label="Full Day">SGD 315</td>
+<td data-label="Extra Hour">SGD 28</td>
+<td data-label="Midnight">SGD 10</td>
+</tr>
+<tr>
+<td data-label="Vehicle">Coach (45 Seater)</td>
+<td data-label="Image"><img alt="Coach (45 Seater)" src="https://singasavors.github.io/Logo/Coach45.png"/></td>
+<td data-label="ROM">SGD 90</td>
+<td data-label="Half Day">SGD 265</td>
+<td data-label="Full Day">SGD 330</td>
+<td data-label="Extra Hour">SGD 28</td>
+<td data-label="Midnight">SGD 10</td>
 </tr>
 </tbody>
 </table>
 <h2>What's Included</h2>
 <ul>
-<li>Private door-to-door transfers.</li>
-<li>Your personal chauffeur.</li>
-<li>English speaking driver.</li>
-<li>Inclusive of fuel, insurance, toll fees (ERP).</li>
-<li>Driver will take you to/from the address you provide on booking.</li>
-<li>No extra fees for online booking &amp; payment.</li>
+<li>Private door-to-door transfers</li>
+<li>English-speaking personal chauffeur</li>
+<li>Fuel, insurance, and ERP tolls included</li>
+<li>Wedding car decoration timing options</li>
 </ul>
-<h2>Availability</h2>
-<p>24 hours daily including Public Holidays with online bookings made at least 24 hrs in advance. Subject to availability for bookings made within 24 hrs. For travel within Singapore only.</p>
-<h2>Bridal Decor</h2>
-<p>
-      - If pick-up is before 07:59 AM, decoration will be done on wedding eve at your deco shop after 8 PM.<br/>
-      - If pick-up is after 08:00 AM, decoration will be done on wedding day after 7 AM.
-    </p>
-<h2>Amendments, Cancellations &amp; Refunds</h2>
-<table>
-<thead>
-<tr>
-<th>Policy</th>
-<th colspan="4">All Vehicle Types</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Amendments (24 hrs in advance)</td><td colspan="4">YES</td></tr>
-<tr><td>Amendments (within 24 hrs)</td><td colspan="4">No amendment &amp; refund allowed</td></tr>
-<tr><td>Cancellations (24 hrs in advance)</td><td colspan="4">Refund with processing fee applicable</td></tr>
-<tr><td>Cancellations (within 24 hrs)</td><td colspan="4">No cancellation &amp; refund allowed</td></tr>
-<tr><td>Refunds (24 hrs in advance)</td><td colspan="4">SGD 5 processing fee</td></tr>
-<tr><td>Refunds (within 24 hrs)</td><td colspan="4">No refund allowed</td></tr>
-</tbody>
-</table>
+<h2>Get a Quote</h2>
 <div class="contact-form">
-<h2>Enquire or Book Now</h2>
 <form action="https://formsubmit.co/corporate@singxsavor.com" method="POST">
-<input name="_subject" type="hidden" value="Wedding Transport Booking Request"/>
-<input name="Transfer Details" placeholder="Date, time / hours, pick-up, destination &amp; address" required="" type="text"/>
-<input name="Flight Details (if any)" placeholder="Flight info (if applicable)" type="text"/>
-<input name="Vehicle Type" placeholder="Vehicle type, no. of passengers" required="" type="text"/>
-<input name="Guest Details" placeholder="Name, mobile no. with country code" required="" type="text"/>
-<textarea name="Special Remarks" placeholder="Any other requests or remarks"></textarea>
-<button type="submit">Submit Request</button>
+<input name="_subject" type="hidden" value="Wedding Booking Request"/>
+<label for="transfer" style="color:#00eaff;font-weight:bold;margin-top:12px;display:block;">Transfer Details</label>
+<input id="transfer" name="Transfer Details" placeholder="Date, pick-up, destination" required="" type="text"/>
+<label for="Vehicle" style="color:#00eaff;font-weight:bold;margin-top:12px;display:block;">Select Vehicle</label>
+<select id="Vehicle" name="Vehicle" required="" style="border-radius:10px;padding:12px;background:#0d1b2f;color:white;font-size:15px;border:1px solid #00bfff;width:100%;">
+<option disabled="" selected="" value="">Select your vehicle</option>
+<option value="TESLA">Tesla Model 3</option>
+<option value="BYD">BYD Seal</option>
+<option value="GLB">Mercedes GLB</option>
+<option value="BMW-X2">BMW X2</option>
+<option value="BMW-3-SERIES">BMW 3 Series</option>
+<option value="HONDA-CIVIC">Honda Civic</option>
+<option value="MAZDA-3">Mazda 3</option>
+<option value="HYUNDAI-ELANTRA">Hyundai Elantra</option>
+<option value="MERCEDES-CAB">Mercedes Cab</option>
+<option value="MINIBUS-23">Mini Bus (23 Seater)</option>
+<option value="COACH-45">Coach (45 Seater)</option>
+</select>
+<label for="guest" style="color:#00eaff;font-weight:bold;margin-top:12px;display:block;">Guest Details</label>
+<input id="guest" name="Guest Details" placeholder="Name &amp; contact" required="" type="text"/>
+<label for="remarks" style="color:#00eaff;font-weight:bold;margin-top:12px;display:block;">Special Requests</label>
+<textarea id="remarks" name="Remarks" placeholder="Any other requests or remarks"></textarea>
+<button type="submit">Submit Booking</button>
 </form>
 </div>
 </div>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBtn = document.createElement('div');
+  menuBtn.classList.add('menu-btn');
+  menuBtn.innerHTML = '&#9776;';
+  const nav = document.querySelector('nav');
+  nav.insertBefore(menuBtn, nav.children[1]);
+  menuBtn.addEventListener('click', function () {
+    const links = document.querySelector('.nav-links');
+    if (links) links.classList.toggle('active');
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+});
+</script></body>
 </html>

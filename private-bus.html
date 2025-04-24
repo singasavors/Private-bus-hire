@@ -1,40 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Private Bus Hire | Singapore School Bus Services</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Reliable private school bus hire service in Singapore for students and daily transport. Safe, punctual, and trusted by parents. View pricing and enroll online." />
-  <meta name="keywords" content="school bus Singapore, private bus hire, student transport service, school transport Singapore, SingXSavor bus rental" />
-  <meta name="author" content="SingXSavor" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://singxsavor.com/private-bus.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Private Bus Hire | Singapore School Bus Services" />
-  <meta property="og:description" content="Reliable private school bus hire service in Singapore. Safe, licensed transport for students. View pricing and enroll online." />
-  <meta property="og:url" content="https://singxsavor.com/private-bus.html" />
-  <meta property="og:image" content="https://singxsavor.com/assets/bus1.png" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Private Bus Hire | Singapore School Bus Services" />
-  <meta name="twitter:description" content="Reliable private school bus hire service in Singapore. Safe, licensed transport for students." />
-  <meta name="twitter:image" content="https://singxsavor.com/assets/bus1.png" />
-
-  <!-- Favicons -->
-  <link rel="icon" href="https://singxsavor.com/favicon.ico" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="32x32" href="https://singxsavor.com/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="https://singxsavor.com/favicon-16x16.png" />
-  <link rel="apple-touch-icon" href="https://singxsavor.com/apple-touch-icon.png" />
-  <link rel="manifest" href="https://singxsavor.com/site.webmanifest" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Private Bus Hire | Singapore School Bus Services</title>
+<!-- SEO Meta -->
+<meta content="Reliable private school bus hire service in Singapore for students and daily transport. Safe, punctual, and trusted by parents. View pricing and enroll online." name="description"/>
+<meta content="school bus Singapore, private bus hire, student transport service, school transport Singapore, SingXSavor bus rental" name="keywords"/>
+<meta content="SingXSavor" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://singxsavor.com/private-bus.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="Private Bus Hire | Singapore School Bus Services" property="og:title"/>
+<meta content="Reliable private school bus hire service in Singapore. Safe, licensed transport for students. View pricing and enroll online." property="og:description"/>
+<meta content="https://singxsavor.com/private-bus.html" property="og:url"/>
+<meta content="https://singxsavor.com/assets/bus1.png" property="og:image"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Private Bus Hire | Singapore School Bus Services" name="twitter:title"/>
+<meta content="Reliable private school bus hire service in Singapore. Safe, licensed transport for students." name="twitter:description"/>
+<meta content="https://singxsavor.com/assets/bus1.png" name="twitter:image"/>
+<!-- Favicons -->
+<link href="https://singxsavor.com/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://singxsavor.com/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://singxsavor.com/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://singxsavor.com/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://singxsavor.com/site.webmanifest" rel="manifest"/>
+<!-- Structured Data -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -51,14 +46,11 @@
     "description": "Private school bus transport for students across Singapore. Safe, reliable, and trusted by families for daily school runs."
   }
   </script>
-
-  <!-- External CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-
-    <style>
-    /* Theme Variables */
+<!-- External CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
 :root {
     --primary-color: #003366;
     --secondary-color: #005f8a;
@@ -69,7 +61,6 @@
     --text-color: white;
 }
 
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -86,18 +77,19 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Navigation Bar */
-.navbar {
-    background-color: var(--primary-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
+.main-content {
+    margin-top: 56px; /* match exact navbar height */
+    padding: 0 10px 20px;
     width: 100%;
-    z-index: 1000;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.main-content h1,
+.main-content h2 {
+    margin: 6px 0;
 }
 
 .navbar {
@@ -105,21 +97,24 @@ html, body {
     color: #fff;
     padding: 0.75rem 1.25rem;
     box-shadow: 0 4px 12px rgba(0, 191, 255, 0.15);
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 999;
-  }
+}
 
-  .nav-link {
+.nav-link {
     color: white !important;
     font-weight: 600;
     position: relative;
     padding: 0.5rem 1rem;
-  }
+}
 
-  .nav-link:hover {
+.nav-link:hover {
     color: #33ccff !important;
-  }
+}
 
-  .nav-link::after {
+.nav-link::after {
     content: '';
     display: block;
     height: 2px;
@@ -129,29 +124,20 @@ html, body {
     position: absolute;
     bottom: 0;
     left: 0;
-  }
+}
 
-  .nav-link:hover::after {
+.nav-link:hover::after {
     width: 100%;
-  }
+}
 
-  .navbar-toggler {
+.navbar-toggler {
     border: none;
-  }
+}
 
-  .navbar-toggler-icon {
+.navbar-toggler-icon {
     filter: brightness(10);
-  }
+}
 
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-top: 100px;
-    padding-bottom: 40px;
-  }
-
-/* Mobile Menu */
 .menu-toggle {
     display: none;
     font-size: 28px;
@@ -187,62 +173,6 @@ html, body {
     }
 }
 
-/* Full-width Container */
-.container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 100px 0 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Table Styling */
-.pricing-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-.pricing-table th {
-    background: linear-gradient(90deg, var(--highlight-color), #0077cc);
-    color: #fff;
-    padding: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.pricing-table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.pricing-table tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.pricing-table tr:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transition: background 0.3s ease-in-out;
-}
-
-/* CTA Buttons */
-.cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
 .cta-button {
     background: linear-gradient(90deg, var(--cta-color), #e67e22);
     color: white;
@@ -262,7 +192,6 @@ html, body {
     transform: scale(1.05);
 }
 
-/* Different color for Enroll Button */
 .cta-enroll {
     background: #28a745;
 }
@@ -271,43 +200,87 @@ html, body {
     box-shadow: 0 0 18px #28a745;
 }
 
-/* FAQ Section */
+.pricing-table {
+    width: 100%;
+    margin: 12px auto;
+    border-collapse: collapse;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.pricing-table th {
+    background: linear-gradient(90deg, var(--highlight-color), #0077cc);
+    color: #fff;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pricing-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pricing-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-table tr:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.fleet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+.fleet img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
 .faq {
     background: var(--faq-bg);
     padding: 20px;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 24px;
     width: 100%;
-    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: left;
 }
 
-/* Individual FAQ Items */
 .faq-item {
     width: 100%;
-    max-width: 100%;
     margin: 15px 0;
     border-bottom: 1px solid var(--highlight-color);
     padding-bottom: 12px;
 }
 
-/* FAQ Question Styling */
 .faq-item h3 {
     cursor: pointer;
     padding: 15px;
-    margin: 0;
     background: #0e223a;
     border-radius: 5px;
     transition: background 0.3s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left;
     font-size: 16px;
     font-weight: bold;
     color: white;
+    margin: 0;
 }
 
 .faq-item h3:hover {
@@ -324,17 +297,15 @@ html, body {
     content: "−";
 }
 
-/* FAQ Answer Styling */
 .faq-item p {
-    max-height: 0px;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.3s ease-in-out;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    padding: 0px;
+    padding: 0;
     display: block;
-    white-space: normal;
 }
 
 .faq-item.active p {
@@ -342,349 +313,200 @@ html, body {
     opacity: 1;
     padding: 12px;
     overflow: visible;
-    display: block;
-    word-wrap: break-word;
 }
 
-/* Adjust FAQ container */
-.faq {
-    background: var(--faq-bg);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 100%;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    text-align: left;
-}
-
-/* Improve FAQ question button */
-.faq-item h3 {
-    cursor: pointer;
-    padding: 15px;
-    margin: 0;
-    background: #0e223a;
-    border-radius: 5px;
-    transition: background 0.3s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-}
-
-.faq-item h3:hover {
-    background: var(--highlight-color);
-}
-
-.faq-item h3::after {
-    content: "+";
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.faq-item.active h3::after {
-    content: "−";
-}
-
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
+    h1 { font-size: 26px; margin: 6px 0; }
+    h2 { font-size: 18px; margin: 6px 0; }
 
     .cta-button {
         padding: 12px;
         font-size: 14px;
-    }
-
-    .faq {
         width: 100%;
+        margin-bottom: 10px;
     }
 
-    .fleet img {
-        max-width: 100%;
-    }
+    .faq { width: 100%; }
 
-    .navbar {
-        flex-direction: column;
-    }
-
-    .navbar a {
-        padding: 12px;
-    }
-    
+    .navbar { flex-direction: column; }
+    .navbar a { padding: 12px; }
 
     .cta-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .pricing-table {
-        width: 100%;
-        font-size: 14px;
+    .pricing-table { font-size: 14px; }
+
+    .fleet img {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 56px 10px 20px;
     }
 }
 </style>
 </head>
-
-<body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="https://singxsavor.com/singasavor.png" alt="Singasavor Logo" style="height:32px; max-width: 160px;" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="terms-of-service.html">Terms of Service</a></li>
-          <li class="nav-item"><a class="nav-link" href="carpool.html">Carpool Booking</a></li>
-          <li class="nav-item"><a class="nav-link" href="monthly-pass.html">Monthly Pass</a></li>
-          <li class="nav-item"><a class="nav-link" href="private-bus.html">Private Bus Hire</a></li>
-          <li class="nav-item"><a class="nav-link" href="wedding.html">Wedding/Rental</a></li>
-          <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-    <div class="container">
-        <h1>Private Bus Hire</h1><br>
-        <h2>Mon to Fri</h2><br>
-    <h2>Two Way Price</h2><br>
-
-
-    <table class="pricing-table">
-
-
-        <tr>
-
-
-            <th>Distance</th>
-
-
-            <th>Monthly Price</th>
-
-
-        </tr>
-
-
-        <tr><td>Up to 2 km</td><td>$119</td></tr>
-
-
-        <tr><td>2 – 4 km</td><td>$147</td></tr>
-
-
-        <tr><td>4 – 6 km</td><td>$189</td></tr>
-
-
-        <tr><td>6 – 8 km</td><td>$224</td></tr>
-
-
-        <tr><td>8 – 10 km</td><td>$259</td></tr>
-
-
-        <tr><td>10 – 12 km</td><td>$294</td></tr>
-
-
-        <tr><td>12 – 14 km</td><td>$322</td></tr>
-
-
-        <tr><td>14 – 16 km</td><td>$336</td></tr>
-
-
-    </table>
-
-
-    
-
-
-    <h2>Our Fleet</h2>
-
-
-    <div class="fleet">
-
-
-        <img src="https://singasavors.github.io/Logo/bus2.png" alt="Mini Van">
-
-
-        <img src="https://singasavors.github.io/Logo/bus1.png" alt="Bus">
-
-
-    </div>
-
-
-    
-
-
-    <div class="cta-container">
-
-
-        <a href="https://wa.me/+6580147841" class="cta-button">Contact Us</a>
-
-
-        <a href="https://singasavors.github.io/Private-bus-hire/submit-details.html" class="cta-button cta-enroll">Enroll Online</a>
-
-
-    </div>
-
-
-    
-
-
-    <div class="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <!-- Pricing & Services -->
-    <h3 class="faq-category">Pricing & Services</h3>
-    
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What does the price include?</h3>
-        <p>The price covers transport service five days a week, including both pickup from home to school and return trips.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">Do you offer one-way or private transport?</h3>
-        <p>Yes! You can choose a one-way service (either morning or afternoon) at half the full price. Private transport for a single child is also available—please contact us for a customized quote[...]
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">Are your vehicles licensed and insured?</h3>
-        <p>Yes, all our minibuses are approved by the Land Transport Authority (LTA) and covered by Comprehensive Commercial Vehicle Insurance. Our drivers hold valid Bus Driver Vocational Licences (B[...]
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What types of vehicles do you use?</h3>
-        <p>We operate 13-seater minibuses designed for safe and efficient school transportation.</p>
-    </div>
-
-    <!-- Scheduling & Adjustments -->
-    <h3 class="faq-category">Scheduling & Adjustments</h3>
-    
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">How are pickup and drop-off times determined?</h3>
-        <p>Schedules are based on your child's school timing and our route planning. Initial adjustments may be needed, but we maintain consistent timing thereafter.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What if my child is sick or absent?</h3>
-        <p>Please inform us in advance if your child will not be taking the bus. While there are no refunds for missed rides, this helps us manage scheduling better.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What if school dismissal times change?</h3>
-        <p>If there are occasional changes like early dismissal, let us know in advance, and we will adjust pickup accordingly.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What happens if my child is not at the pickup point on time?</h3>
-        <p>If your child is not at the pickup point, we will reach out to the school directly and handle the situation accordingly. Our drivers are experienced in managing such cases smoothly.</p>
-    </div>
-
-    <!-- Safety & Special Requests -->
-    <h3 class="faq-category">Safety & Special Requests</h3>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What safety measures do you have in place?</h3>
-        <p>All children are seated securely throughout the journey. Our vehicles are regularly maintained, and our experienced drivers undergo background checks.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">Can I request a fixed driver for my child?</h3>
-        <p>Yes, we can assign a dedicated driver to provide consistency in daily transport.</p>
-    </div>
-
-    <div class="faq-item">
-        <h3 onclick="toggleFAQ(this)">What if the school does not allow private bus pickups?</h3>
-        <p>If private buses are not permitted inside, we can arrange pickup at a designated location nearby.</p>
-    </div>
-
-   <!-- Enrollment & Booking -->
-<h3 class="faq-category">Enrollment & Booking</h3>
-
-<div class="faq-item">
-    <h3 onclick="toggleFAQ(this)">How far in advance do I need to enroll?</h3>
-    <p>Your child can start as soon as the next day after payment. However, school entry permission for our bus takes around two weeks. Until then, we will pick up and drop off outside the school.</p>
+<body> <!-- Navigation Bar --> <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">
+<img alt="Singasavor Logo" src="https://singxsavor.com/singasavor.png" style="height:32px; max-width:160px;"/>
+</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="terms-of-service.html">Terms of Service</a></li>
+<li class="nav-item"><a class="nav-link" href="carpool.html">Carpool Booking</a></li>
+<li class="nav-item"><a class="nav-link" href="monthly-pass.html">Monthly Pass</a></li>
+<li class="nav-item"><a class="nav-link" href="private-bus.html">Private Bus Hire</a></li>
+<li class="nav-item"><a class="nav-link" href="wedding.html">Wedding/Rental</a></li>
+<li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
 </div>
-
-<div class="faq-item">
-    <h3 onclick="toggleFAQ(this)">Can students living in Johor Bahru enroll in your private bus hire?</h3>
-    <p>Yes, we provide cross-border transportation for students staying in Johor Bahru. We recommend subscribing to our monthly travel pass at $250 per month for a hassle-free commute.</p>
 </div>
+</nav> <!-- Main Content Wrapper --> <div class="main-content">
+
+
+
+
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menuItems = document.querySelector(".menu-items");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menuItems = document.querySelector(".menu-items");
 
-    // Toggle menu visibility on click
-    menuToggle.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevent unintended closing when clicking the button
-        menuItems.classList.toggle("active");
-    });
+        // Toggle menu visibility on click
+        if (menuToggle && menuItems) {
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+                menuItems.classList.toggle("active");
+            });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!menuToggle.contains(event.target) && !menuItems.contains(event.target)) {
-            menuItems.classList.remove("active");
+            document.addEventListener("click", function (event) {
+                if (!menuToggle.contains(event.target) && !menuItems.contains(event.target)) {
+                    menuItems.classList.remove("active");
+                }
+            });
+
+            menuItems.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
         }
-    });
 
-    // Prevent menu from closing when clicking inside it
-    menuItems.addEventListener("click", function (event) {
-        event.stopPropagation();
-    });
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle("active");
 
-    // FAQ Toggle Function
-    function toggleFAQ(element) {
-        const faqItem = element.parentElement;
-        const answer = faqItem.querySelector("p");
-
-        if (!answer) return; // Avoid errors if no paragraph is found
-
-        // Check if already active
-        const isActive = faqItem.classList.contains("active");
-
-        // Close all FAQs before opening the clicked one
-        document.querySelectorAll(".faq-item").forEach(item => {
-            item.classList.remove("active");
-            const itemAnswer = item.querySelector("p");
-            if (itemAnswer) {
-                itemAnswer.style.maxHeight = "0px";
-                itemAnswer.style.opacity = "0";
-                itemAnswer.style.padding = "0px";
+            const answer = faqItem.querySelector("p");
+            if (answer) {
+                if (faqItem.classList.contains("active")) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    answer.style.opacity = "1";
+                    answer.style.padding = "12px";
+                } else {
+                    answer.style.maxHeight = "0px";
+                    answer.style.opacity = "0";
+                    answer.style.padding = "0px";
+                }
             }
-        });
-
-        // Toggle the clicked FAQ
-        if (!isActive) {
-            faqItem.classList.add("active");
-            answer.style.maxHeight = answer.scrollHeight + "px";
-            answer.style.opacity = "1";
-            answer.style.padding = "12px";
         }
-    }
 
-    // Attach click event to FAQ questions
-    document.querySelectorAll(".faq-item h3").forEach(item => {
-        item.addEventListener("click", function () {
-            toggleFAQ(this);
+        document.querySelectorAll(".faq-item h3").forEach(item => {
+            item.addEventListener("click", function () {
+                toggleFAQ(this);
+            });
         });
     });
-});
 </script>
-
-</body>
-
-    </html>
+</div><div class="container-fluid px-3 px-md-5 main-content"><h1 class="mt-4 mb-2">Private Bus Hire</h1><h2 class="mb-2">Mon to Fri</h2><h2 class="mb-4">Two Way Price</h2><table class="pricing-table table table-bordered table-hover table-striped text-white">
+<thead>
+<tr>
+<th>Distance</th>
+<th>Monthly Price</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Up to 2 km</td><td>$119</td></tr>
+<tr><td>2 – 4 km</td><td>$147</td></tr>
+<tr><td>4 – 6 km</td><td>$189</td></tr>
+<tr><td>6 – 8 km</td><td>$224</td></tr>
+<tr><td>8 – 10 km</td><td>$259</td></tr>
+<tr><td>10 – 12 km</td><td>$294</td></tr>
+<tr><td>12 – 14 km</td><td>$322</td></tr>
+<tr><td>14 – 16 km</td><td>$336</td></tr>
+</tbody>
+</table><h2 class="my-4">Our Fleet</h2><div class="fleet d-flex justify-content-center flex-wrap gap-4 mb-4">
+<img alt="Mini Van" class="img-fluid rounded shadow" src="https://singasavors.github.io/Logo/bus2.png"/>
+<img alt="Bus" class="img-fluid rounded shadow" src="https://singasavors.github.io/Logo/bus1.png"/>
+</div><div class="cta-container">
+<a class="cta-button" href="https://wa.me/message/YX7KRSVBIV4ZJ1">Contact Us</a>
+<a class="cta-button cta-enroll" href="https://singasavors.github.io/Private-bus-hire/submit-details.html">Enroll Online</a>
+</div><div class="faq">
+<h2>Frequently Asked Questions</h2>
+<h3 class="faq-category">Pricing &amp; Services</h3>
+<div class="faq-item">
+<h3>What does the price include?</h3>
+<p>The price covers transport service five days a week, including both pickup from home to school and return trips.</p>
+</div>
+<div class="faq-item">
+<h3>Do you offer one-way or private transport?</h3>
+<p>Yes! You can choose a one-way service (either morning or afternoon) at half the full price. Private transport for a single child is also available—please contact us for a customized quote.</p>
+</div>
+<div class="faq-item">
+<h3>Are your vehicles licensed and insured?</h3>
+<p>Yes, all our minibuses are approved by the Land Transport Authority (LTA) and covered by Comprehensive Commercial Vehicle Insurance. Our drivers hold valid Bus Driver Vocational Licences (BDVL).</p>
+</div>
+<div class="faq-item">
+<h3>What types of vehicles do you use?</h3>
+<p>We operate 13-seater minibuses designed for safe and efficient school transportation.</p>
+</div>
+<h3 class="faq-category">Scheduling &amp; Adjustments</h3>
+<div class="faq-item">
+<h3>How are pickup and drop-off times determined?</h3>
+<p>Schedules are based on your child's school timing and our route planning. Initial adjustments may be needed, but we maintain consistent timing thereafter.</p>
+</div>
+<div class="faq-item">
+<h3>What if my child is sick or absent?</h3>
+<p>Please inform us in advance if your child will not be taking the bus. While there are no refunds for missed rides, this helps us manage scheduling better.</p>
+</div>
+<div class="faq-item">
+<h3>What if school dismissal times change?</h3>
+<p>If there are occasional changes like early dismissal, let us know in advance, and we will adjust pickup accordingly.</p>
+</div>
+<div class="faq-item">
+<h3>What happens if my child is not at the pickup point on time?</h3>
+<p>If your child is not at the pickup point, we will reach out to the school directly and handle the situation accordingly. Our drivers are experienced in managing such cases smoothly.</p>
+</div>
+<h3 class="faq-category">Safety &amp; Special Requests</h3>
+<div class="faq-item">
+<h3>What safety measures do you have in place?</h3>
+<p>All children are seated securely throughout the journey. Our vehicles are regularly maintained, and our experienced drivers undergo background checks.</p>
+</div>
+<div class="faq-item">
+<h3>Can I request a fixed driver for my child?</h3>
+<p>Yes, we can assign a dedicated driver to provide consistency in daily transport.</p>
+</div>
+<div class="faq-item">
+<h3>What if the school does not allow private bus pickups?</h3>
+<p>If private buses are not permitted inside, we can arrange pickup at a designated location nearby.</p>
+</div>
+<h3 class="faq-category">Enrollment &amp; Booking</h3>
+<div class="faq-item">
+<h3>How far in advance do I need to enroll?</h3>
+<p>Your child can start as soon as the next day after payment. However, school entry permission for our bus takes around two weeks. Until then, we will pick up and drop off outside the school.</p>
+</div>
+<div class="faq-item">
+<h3>Can students living in Johor Bahru enroll in your private bus hire?</h3>
+<p>Yes, we provide cross-border transportation for students staying in Johor Bahru. We recommend subscribing to our monthly travel pass at $250 per month for a hassle-free commute.</p>
+</div>
+</div></div></body>
+</html>

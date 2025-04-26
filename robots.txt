@@ -1,0 +1,12 @@
+# Allow all web crawlers to access everything
+User-agent: *
+Allow: /
+
+# Disallow access to private admin or sensitive folders (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /dashboard/
+
+# Sitemap location
+Sitemap: https://singxsavor.com/sitemap.xml

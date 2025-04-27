@@ -47,7 +47,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Baloo+2&display=swap" rel="stylesheet" />
 
   <!-- Custom Styles -->
- <style>
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
 
+/* Navbar */
 .navbar {
   background: linear-gradient(135deg, #10253f, #183d5d);
   color: white;
@@ -122,14 +123,21 @@ h1, h2, h3, h4, h5 {
   color: #33ccff;
 }
 
+/* Slider */
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
 .slider img {
   width: 100%;
-  max-height: 400px;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
   margin: 10px 0;
 }
 
+/* Other content */
 iframe {
   border: none;
   border-radius: 12px;
@@ -150,9 +158,10 @@ iframe {
   text-decoration: none;
 }
 
+/* Floating Buttons */
 .floating-buttons {
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   display: flex;
   flex-direction: column;
@@ -182,6 +191,7 @@ iframe {
   background: #33ccff;
 }
 
+/* Cards */
 .card {
   background-color: #112b44 !important;
   border-radius: 16px;
@@ -200,6 +210,7 @@ iframe {
   background-color: transparent !important;
 }
 
+/* Responsive Nav */
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
@@ -226,12 +237,14 @@ iframe {
   }
 }
 
+/* Loading Indicator */
 .loading-indicator {
   display: none;
   text-align: center;
   margin: 20px 0;
 }
 
+/* Feedback Section */
 .feedback-section {
   margin-top: 60px;
   padding: 40px 20px;
@@ -282,6 +295,7 @@ iframe {
   color: #001e2e;
 }
 
+/* Headings */
 h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -300,6 +314,7 @@ h2 {
   border-radius: 8px;
 }
 
+/* Buttons */
 .btn-primary {
   background: linear-gradient(135deg, #00bfff, #66ffff);
   border: none;
@@ -322,7 +337,7 @@ textarea.form-control {
   border-radius: 8px;
 }
 
-/* Slick Dots Styling */
+/* Slick Carousel Dots */
 .slick-dots li button:before {
   font-size: 12px;
   color: #00bfff;
@@ -334,7 +349,7 @@ textarea.form-control {
   opacity: 1;
 }
 
-/* Slick Arrows Final Styling */
+/* Slick Arrows */
 .slick-prev::before, .slick-next::before {
   content: '';
 }
@@ -403,52 +418,53 @@ textarea.form-control {
   </div>
 </nav>
 
-<!-- Content -->
+<!-- Cross Border Services -->
 <div class="container my-5">
-    <h2>Cross Border Services</h2>
-  </div>
-  <div class="slider container mb-5">
+  <h2>Cross Border Services</h2>
+  <div class="slider">
     <img src="https://singxsavor.com/Carpool2.png" alt="Carpool Image" />
     <img src="https://singxsavor.com/Carpool1.png" alt="Carpool Image" />
     <img src="https://singxsavor.com/Carpool3.png" alt="Carpool Image" />
     <img src="https://singxsavor.com/Carpool4.png" alt="Carpool Image" />
   </div>
+</div>
 
-  <div class="container my-5">
-    <h2>Disposal and Moving Services</h2>
-  </div>
-  <div class="slider container mb-5">
+<!-- Disposal and Moving Services -->
+<div class="container my-5">
+  <h2>Disposal and Moving Services</h2>
+  <div class="slider">
     <img src="https://singxsavor.com/Mover1.png" alt="Mover Image" />
     <img src="https://singxsavor.com/Mover2.png" alt="Mover Image" />
     <img src="https://singxsavor.com/Mover3.png" alt="Mover Image" />
     <img src="https://singxsavor.com/Mover4.png" alt="Mover Image" />
   </div>
+</div>
 
-  <div class="container my-5">
-    <h2>Private School Bus Hire</h2>
-  </div>
-  <div class="slider container mb-5">
+<!-- Private School Bus Hire -->
+<div class="container my-5">
+  <h2>Private School Bus Hire</h2>
+  <div class="slider">
     <img src="https://singxsavor.com/Private4.png" alt="Private Bus Image" />
     <img src="https://singxsavor.com/Private3.png" alt="Private Bus Image" />
     <img src="https://singxsavor.com/Private2.png" alt="Private Bus Image" />
     <img src="https://singxsavor.com/Private1.png" alt="Private Bus Image" />
   </div>
-  
-  <div class="container my-5">
-    <h2>Wedding Packages</h2>
-  </div>
-  <div class="slider container mb-5">
-    <img src="https://singxsavor.com/audi-a5.png" alt="Private Bus Image" />
-    <img src="https://singxsavor.com/mercedes-s-class.png" alt="Private Bus Image" />
-    <img src="https://singxsavor.com/audi-a6.png" alt="Private Bus Image" />
-    <img src="https://singxsavor.com/bmw-116.png" alt="Private Bus Image" />
-  </div>
+</div>
 
-<!-- Google Map -->
+<!-- Wedding Packages -->
+<div class="container my-5">
+  <h2>Wedding Packages</h2>
+  <div class="slider">
+    <img src="https://singxsavor.com/audi-a5.png" alt="Wedding Car Image" />
+    <img src="https://singxsavor.com/mercedes-s-class.png" alt="Wedding Car Image" />
+    <img src="https://singxsavor.com/audi-a6.png" alt="Wedding Car Image" />
+    <img src="https://singxsavor.com/bmw-116.png" alt="Wedding Car Image" />
+  </div>
+</div>
+
+<!-- Google Map Location -->
 <div class="container my-5">
   <h2>352C Canberra Road #08-237 Singapore 753352</h2>
-</div>
-<div class="container mb-5">
   <iframe 
     src="https://www.google.com/maps?q=352C%20Canberra%20Road%20%2308-237%2C%20Singapore%20753352&output=embed" 
     width="100%" 
@@ -459,7 +475,7 @@ textarea.form-control {
   </iframe>
 </div>
 
-<!-- Floating Buttons -->
+<!-- Floating Buttons (WhatsApp and Telegram) -->
 <div class="floating-buttons">
   <a href="https://wa.me/+6589139775" target="_blank" rel="noopener noreferrer">
     <img src="https://singxsavor.com/WhatsApp.png" alt="WhatsApp" />
@@ -486,6 +502,7 @@ textarea.form-control {
   </form>
 </div>
 
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
@@ -493,6 +510,7 @@ textarea.form-control {
 
 <script defer>
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Slick Sliders
   $('.slider').slick({
     autoplay: true,
     dots: true,
@@ -504,15 +522,17 @@ document.addEventListener('DOMContentLoaded', function() {
     adaptiveHeight: true
   });
 
-  // Feedback form
+  // Feedback Form Submission
   const feedbackForm = document.getElementById('feedbackForm');
-  feedbackForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent actual form submit before showing alert
-    alert('Thank you for your feedback!');
-    this.submit(); // continue submit after alert
-  });
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your feedback!');
+      this.submit();
+    });
+  }
 
-  // Smooth Fade-in animation for sections
+  // Smooth Fade-In Animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
